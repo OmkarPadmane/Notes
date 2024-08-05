@@ -1,23 +1,70 @@
 
 GIT : 
 
-To check version
+- To check version
 $ git --version
+
+- Make dir
+$ mkdir devops     --in windows path of devops is c/User/{username}/devops
+
+- change dir
+$ cd devops/
+
+- Initialize a Git Repository:
+
+    $ git init
+
+    - Initializes a new Git repository in the current directory.
+    - make sure you are in your dir (devops)
+
+- Stage area/Changes:
+
+    $ git add <file_name>
+        - Stages changes in <file_name> for the next commit. Use git add . to stage all changes.
+
+    $ git diff
+        - shows the differences between the working directory and the last changes
+
+    $ git status
+        - Shows the current status of the repository, including tracked, untracked, and modified files.
+
+- Commit Changes:
+
+    $ git commit -a -m "Commit message"      - for all fiels
+    $ git commit <filename> -m "Commit message"       - for specific files
+
+        - Commits only stage area files to the local repository with a descriptive message.
+        -a : for commit all files
+        -m : for adding message
+
+
+- Remote Repositories : 
+    - Links the local repository to a remote repository.
+    - lets you create, view, and delete connections to other rempote repositories.
+
+  - Add a Remote Repository:
+
+    syntax  :  git remote add <repo name> <repo url>
+    ex : git remote add devops https://github.com/OmkarPadmane/Devops.git
+
+
+- Push Changes to a Remote Repository:
+
+    - syntax : $ git push <remote_name> <branch_name>
+    - ex :  $ git push devops main
+
+        - used to upload local repository content to a remote repository.
+        - Pushes committed changes from the local repository to the remote repository.
+
 
 
 fork  -  code reusability
-
-
 git fetch + git merge  = git pull
 
 
 
 
-# Initialize a Git Repository:
 
-    $ git init
-
-        - Initializes a new Git repository in the current directory.
 
 # Clone an Existing Repository:
 
@@ -26,23 +73,10 @@ git fetch + git merge  = git pull
         - Creates a local copy of a remote repository.
 
 # Basic Workflow
-Check Status:
 
-    $ git status
 
-        - Shows the current status of the repository, including tracked, untracked, and modified files.
 
-Stage Changes:
 
-    $ git add <file_name>
-
-        - Stages changes in <file_name> for the next commit. Use git add . to stage all changes.
-
-Commit Changes:
-
-    $ git commit -m "Commit message"
-
-        - Commits staged changes to the local repository with a descriptive message.
 
 # Reviewing History
 View Commit History:
@@ -82,18 +116,6 @@ Delete a Branch:
 
         - Deletes the specified branch after its changes have been merged.
 
-# Remote Repositories
-Add a Remote Repository:
-
-    $ git remote add origin <repository_URL>
-
-        - Links the local repository to a remote repository.
-
-Push Changes to a Remote Repository:
-
-    $ git push -u origin <branch_name>
-
-        - Pushes committed changes from the local repository to the remote repository.
 
 Pull Changes from a Remote Repository:
 
