@@ -37,6 +37,20 @@ $ cd devops/
         -a : for commit all files
         -m : for adding message
 
+# Reviewing History
+View Commit History:
+
+    $ git log
+
+        - Displays a list of commits in reverse chronological order.
+
+View Changes in a Commit:
+
+    $ git show <commit_SHA>
+
+        - Shows the changes introduced by a specific commit.
+
+
 
 - Remote Repositories : 
     - Links the local repository to a remote repository.
@@ -56,13 +70,46 @@ $ cd devops/
         - used to upload local repository content to a remote repository.
         - Pushes committed changes from the local repository to the remote repository.
 
+- Branching and Merging
+
+- view branch :
+    $ git branch
+
+- Create a New Branch:
+
+    $ git branch <branch_name>
+
+        - Creates a new branch at the current commit.
+
+- Switch Branches:
+
+    $ git checkout <branch_name>
+
+        - Switches to an existing branch.
+
+- Merge Branches:
+
+    $ git merge <branch_name>
+
+        - Integrates changes from <branch_name> into the current branch.
+
+- Git merge conflicts :
+    - Conflicts generally arise when two people have changed the same lines in a file
+    
+    $ git mergetool for 
+        - It is only used when git conflictct is occure
+
+    $ git merge fix 
+        - use after solving conflict
+
+- Delete a Branch:
+    $ git branch -d <branch_name>
+
+        - Deletes the specified branch after its changes have been merged.
 
 
 fork  -  code reusability
 git fetch + git merge  = git pull
-
-
-
 
 
 
@@ -73,49 +120,6 @@ git fetch + git merge  = git pull
         - Creates a local copy of a remote repository.
 
 # Basic Workflow
-
-
-
-
-
-# Reviewing History
-View Commit History:
-
-    $ git log
-
-        - Displays a list of commits in reverse chronological order.
-
-View Changes in a Commit:
-
-    $ git show <commit_SHA>
-
-        - Shows the changes introduced by a specific commit.
-
-# Branching and Merging
-Create a New Branch:
-
-    $ git branch <branch_name>
-
-        - Creates a new branch at the current commit.
-
-Switch Branches:
-
-    $ git checkout <branch_name>
-
-        - Switches to an existing branch.
-
-Merge Branches:
-
-    $ git merge <branch_name>
-
-        - Integrates changes from <branch_name> into the current branch.
-
-Delete a Branch:
-
-    $ git branch -d <branch_name>
-
-        - Deletes the specified branch after its changes have been merged.
-
 
 Pull Changes from a Remote Repository:
 
