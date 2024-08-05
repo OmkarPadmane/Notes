@@ -1,0 +1,137 @@
+Devops :  development (dev) and operations (ops)
+
+SDLC:
+-	Waterfall model : Used for software development
+Sequential Approach: where each phase of the project is completed before moving on to the next one.
+1. Requirement Gathering 
+2. Design
+3. Implement 
+4. Test 
+5. Deploy 
+6. Maintenance
+
+
+- Agile : Design ,Implement, Test phases continue until software is properly develop.
+1. Requirement Gathering 
+2. Design
+3. Implement 
+4. Test 
+5. Deploy 
+6. Maintenance
+Devop :
+- DevOps is a methodology in the software development 
+- combination of practices and tools that increases an organization’s ability to deliver applications and services at high velocity
+- development and operations teams work together across the entire software application life cycl- teams are no longer siloed( kept in isolation in a way that hinders communication and cooperation ) 
+ 
+
+
+DevOps Phases and Tools:
+
+1. development : 
+- focuses on project planning and coding.
+- project requirements are gathered and discussed
+- tools for code maintenance : GitLab, GIT, TFS, SVN, Mercurial, Jira, BitBucket, Confluence
+
+2. integration :
+- most crucial phase in DevOps lifecycle.
+- updated code or add-on functionalities and features are developed and integrated into existing code. 
+- bugs are detected and identified in the code at every step through unit testing,
+- tools to make the project workflow smooth and more productive : Jenkin, Bamboo, GitLab CI, Buddy, TeamCity, Travis, and CircleCI 
+
+3. testing :
+- Quality analysts continuously test the software for bugs and issues
+- code is sent back to the integration phase for modification.
+-Tools Used: JUnit, Selenium, TestNG, and TestSigma
+
+- Selenium : the most popular open-source automation testing tool that supports multiple platforms and browsers. 
+- TestSigma : on the other hand, is a unified AI-driven test automation platform that eliminates the technical complexity of test automation through artificial intelligence. 
+
+4. deployment :
+-  final code is deployed on production servers 
+- Tools Used: Docker, Ansible, Puppet, and Chef  
+
+5. feedback :
+- Continuous feedback came into existence to analyze and improve the application code.
+- Tools Used: Pendo
+
+6. monitoring :
+- application’s functionality and features are monitored continuously to detect system errors such as low memory, non-reachable server
+- Tools Used: Nagios, Kibana, Splunk, PagerDuty, ELK Stack, New Relic, and Sensu
+
+7. operations :
+- continuous operation automates the process of launching the app and its updates.
+- It uses container management systems like Kubernetes and Docker to eliminate downtime.  
+- Tools Used: Kubernetes and Docker Swarm
+
+
+version control or source control :
+-	It is the practice of tracking and managing changes to software code. Version control systems are software tools that help software teams manage changes to source code over time.
+-	 A complete long-term change history of every file.
+-	Git, Helix core, Microsoft TFS
+-	Informs us about Who, What, When, Why changes have been made.
+
+-Snapshots :
+- Versions are saved in snapshot , they are store in incremental manner
+- saves only changes(changed line), not whole file
+- decreases the size of snap, lightweight
+
+
+
+
+
+
+Types :
+
+- Centralized Version Control Systems (CVCS) : 
+- makes collaboration amongst developers and providing an insight to a certain extent on what everyone else is doing on the project. It allows administrators to fine-grained control over who can do what. 
+- Disadv : it is single point of failure, if CVCS goes down you lose everything.
+ Unless and until you have backup. 
+
+- Distributed Version Control Systems (DVCS) : 
+- contain multiple repositories. Each user has their own local repository and working copy.
+- Developer commits changes to local repo and push it to central repository to make it accessible for other.
+
+Source code management (SCM) :
+-	Source code management is the process of efficiently and systematically tracking and controlling changes made to a source code throughout its development lifecycle.
+-	It is used to track modifications to a source code repository. SCM tracks a running history of changes to a code base and helps resolve conflicts when merging updates from multiple contributors. 
+-	Tools : Git, TFS (Team Foundation Server), CVS (Concurrent Versions System):
+-	
+
+-	source code management core concepts : 
+
+1.	Version Control: Version control enables developers to keep track of different versions of their source code files.
+2.	 Repository: Think of a repository as a storage space for all the source code files. It’s like an organized warehouse only for authorized team members.
+3.	 Branching and Merging: When working on features or experiments developers can create branches. This allows them to work on things simultaneously without affecting the codebase. Then when they want to incorporate their changes into the codebase they can merge the branches together.
+4.	Change Tracking: Version control systems keep a record of every change made to the source code files.
+5.	Collaboration: Version control systems enable developers to collaborate. They provide mechanisms for developers to work on same code simultaneously.
+
+
+Configuration management :
+-	IT is a systems engineering process for establishing consistency of a product’s attributes throughout its life. It is an IT management process that tracks individual configuration items of an IT system.
+-	Tools : Puppet, Chef, Saltstack, Ancble 
+
+Dark launching technique :
+
+-	Dark launching is the term for releasing features to a subset of your users, seeing how they respond, and making updates to your features accordingly.
+-	Gives teams the ability to gather user feedback, fixes bugs
+
+
+Git : is a distributed version control system that tracks versions of files. It is often used to control source code by programmers collaboratively developing software.
+
+-	Distributed : allows distributed developement of code , developer has local copy of entire code 
+-	Compitable : with every existing systems and protocols
+-	Non-linear : allows users from all over the world to perform operations on a project remotely
+-	Branching : helps to make changes in the project without affecting the original version.
+-	Lightweight 
+-	Speed : data accessing is fast
+-	Open-source : provides the flexibility to modify its source code according to the user’s needs
+-	Reliable : lost data can be recovered from any local repo 
+-	Secure : Git uses SHA1 to store all the records in the form of objects in the Hash.
+
+Repository : is storage space where your project code and data is stored, it can be local or central storage 
+
+
+
+
+
+
