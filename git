@@ -1,0 +1,142 @@
+
+GIT : 
+
+To check version
+$ git --version
+
+
+fork  -  code reusability
+
+
+git fetch + git merge  = git pull
+
+
+
+
+# Initialize a Git Repository:
+
+    $ git init
+
+        - Initializes a new Git repository in the current directory.
+
+# Clone an Existing Repository:
+
+    $ git clone <repository_URL>
+
+        - Creates a local copy of a remote repository.
+
+# Basic Workflow
+Check Status:
+
+    $ git status
+
+        - Shows the current status of the repository, including tracked, untracked, and modified files.
+
+Stage Changes:
+
+    $ git add <file_name>
+
+        - Stages changes in <file_name> for the next commit. Use git add . to stage all changes.
+
+Commit Changes:
+
+    $ git commit -m "Commit message"
+
+        - Commits staged changes to the local repository with a descriptive message.
+
+# Reviewing History
+View Commit History:
+
+    $ git log
+
+        - Displays a list of commits in reverse chronological order.
+
+View Changes in a Commit:
+
+    $ git show <commit_SHA>
+
+        - Shows the changes introduced by a specific commit.
+
+# Branching and Merging
+Create a New Branch:
+
+    $ git branch <branch_name>
+
+        - Creates a new branch at the current commit.
+
+Switch Branches:
+
+    $ git checkout <branch_name>
+
+        - Switches to an existing branch.
+
+Merge Branches:
+
+    $ git merge <branch_name>
+
+        - Integrates changes from <branch_name> into the current branch.
+
+Delete a Branch:
+
+    $ git branch -d <branch_name>
+
+        - Deletes the specified branch after its changes have been merged.
+
+# Remote Repositories
+Add a Remote Repository:
+
+    $ git remote add origin <repository_URL>
+
+        - Links the local repository to a remote repository.
+
+Push Changes to a Remote Repository:
+
+    $ git push -u origin <branch_name>
+
+        - Pushes committed changes from the local repository to the remote repository.
+
+Pull Changes from a Remote Repository:
+
+    $ git pull origin <branch_name>
+
+        - Fetches and merges changes from the remote repository into the current branch.
+
+# Undoing Changes
+Discard Changes in a File:
+
+    $ git checkout -- <file_name>
+
+        - Discards changes in <file_name> that have not been staged.
+
+Reset Staged Changes:
+
+    $ git reset HEAD <file_name>
+
+        - Unstages changes in <file_name>.
+
+Amend the Last Commit:
+
+    $ git commit --amend -m "New commit message"
+
+        - Modifies the last commit with new changes or a new message.
+
+# Miscellaneous
+Ignore Files:
+Create a .gitignore file in the root directory to specify files and directories Git should ignore.
+
+Inspect Changes:
+
+    $ git diff
+
+        - Shows changes between the working directory, staging area, and the last commit.
+
+Tagging Releases:
+
+    $ git tag <tag_name>
+
+        - Tags specific commits to mark them as releases or milestones.
+
+
+
+
+
