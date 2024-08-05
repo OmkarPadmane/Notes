@@ -130,6 +130,15 @@ Git : is a distributed version control system that tracks versions of files. It 
 
 Repository : is storage space where your project code and data is stored, it can be local or central storage 
 
+Staging area : 
+- To keep a track of modifications or changes in the file we have to add that files in staging area.
+
+git add: stages changes in the working directory, adding them to the staging area
+git status: displays the status of the repository, including changes in the staging area and working directory
+git diff --staged: shows the differences between the staging area and the last commit
+git diff: shows the differences between the working directory and the last commit
+
+
 
 
 
