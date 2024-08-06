@@ -1,0 +1,35 @@
+
+Configuration management is the process of handling changes to a system in a way that assures integrity over time,
+typically involving tools and processes that facilitate automation and observability. 
+
+
+Ansible Overview :
+  - Ansible is a agentless modern configuration management tool that facilitates the task of setting up and maintaining remote servers, storage, 
+    networking, and software with a minimalist design intended to get users up and running quickly.
+  - Users write Ansible provisioning scripts in YAML, a user-friendly data serialization standard that is not tied to 
+    any particular programming language. This enables users to create sophisticated provisioning scripts more intuitively compared to similar tools in the same category.
+  - Ansible doesn’t require any special software to be installed on the nodes that will be managed with this tool.
+    A control machine is set up with the Ansible software, which then communicates with the nodes via standard SSH on linux and vinrm on windows.
+
+Control node : where ansible is installd
+Manage node : on which action are perform by ansible
+
+install link : https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
+
+Inventory file :  it  defines the hosts and groups of hosts so you can run automation tasks on multiple hosts at the same time.
+  - you can create group of manage nodes in inventory
+      [groupname]
+      Manage node
+      Manage node
+
+ad hoc commands :
+  - An Ansible ad hoc command uses the /usr/bin/ansible command-line tool to automate a single task on one or more managed nodes.
+  - ad hoc commands are quick and easy, but they are not reusable. 
+  -  syntax : $ ansible [pattern] -m [module] -a "[module options]"
+
+
+cmd:
+-m : module
+-a : argument
+ansible-playbook -i inventory <Adhoc command or Playbook.yml>
+ansible -i inventory.ini -m shell -a "apt install openjdk" all
