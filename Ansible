@@ -25,8 +25,8 @@ Inventory file :  it  defines the hosts and groups of hosts so you can run autom
 ad hoc commands :
   - An Ansible ad hoc command uses the /usr/bin/ansible command-line tool to automate a single task on one or more managed nodes.
   - ad hoc commands are quick and easy, but they are not reusable. 
-  -  syntax : $ ansible [pattern] -m [module] -a "[module options]"
-
+  - syntax : $ ansible [pattern] -m [module] -a "[module options]"
+  - link : https://docs.ansible.com/ansible/latest/command_guide/intro_adhoc.html
 
 cmd:
 -m : module
