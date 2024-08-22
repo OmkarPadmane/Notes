@@ -18,10 +18,12 @@ Sequential Approach: where each phase of the project is completed before moving 
 4. Test 
 5. Deploy 
 6. Maintenance
-Devop :
+
+Devops :
 - DevOps is a methodology in the software development 
-- combination of practices and tools that increases an organization’s ability to deliver applications and services at high velocity
-- development and operations teams work together across the entire software application life cycl- teams are no longer siloed( kept in isolation in a way that hinders communication and cooperation ) 
+- combination of tools that increases an organization’s ability to deliver applications and services at high speed/velocity.
+- development and operations teams work together across the entire software application life cycle
+teams are no longer siloed( kept in isolation in a way that hinders communication and cooperation ) 
  
 
 
