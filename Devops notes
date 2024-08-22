@@ -46,7 +46,7 @@ DevOps Phases and Tools:
 -Tools Used: JUnit, Selenium, TestNG, and TestSigma
 
 - Selenium : the most popular open-source automation testing tool that supports multiple platforms and browsers. 
-- TestSigma : on the other hand, is a unified AI-driven test automation platform that eliminates the technical complexity of test automation through artificial intelligence. 
+- TestSigma : is a unified AI-driven test automation platform that eliminates the technical complexity of test automation through artificial intelligence. 
 
 4. deployment :
 -  final code is deployed on production servers 
@@ -67,7 +67,8 @@ DevOps Phases and Tools:
 
 
 version control or source control :
--	It is the practice of tracking and managing changes to software code. Version control systems are software tools that help software teams manage changes to source code over time.
+-	It is the practice of tracking and managing changes to software code. Version control systems are software tools that help 
+software teams manage changes to source code over time.
 -	 A complete long-term change history of every file.
 -	Git, Helix core, Microsoft TFS
 -	Informs us about Who, What, When, Why changes have been made.
@@ -81,7 +82,8 @@ version control or source control :
 Types :
 
 - Centralized Version Control Systems (CVCS) : 
-- makes collaboration amongst developers and providing an insight to a certain extent on what everyone else is doing on the project. It allows administrators to fine-grained control over who can do what. 
+- makes collaboration amongst developers and providing an insight to a certain extent on what everyone else is doing on the project.
+It allows administrators to fine-grained control over who can do what. 
 - Disadv : it is single point of failure, if CVCS goes down you lose everything.
  Unless and until you have backup. 
 
@@ -91,30 +93,34 @@ Types :
 
 Source code management (SCM) :
 -	Source code management is the process of efficiently and systematically tracking and controlling changes made to a source code throughout its development lifecycle.
--	It is used to track modifications to a source code repository. SCM tracks a running history of changes to a code base and helps resolve conflicts when merging updates from multiple contributors. 
+-	It is used to track modifications to a source code repository. SCM tracks a running history of changes to a code base and
+helps resolve conflicts when merging updates from multiple contributors. 
 -	Tools : Git, TFS (Team Foundation Server), CVS (Concurrent Versions System):
 -	
 
 -	source code management core concepts : 
 
 1.	Version Control: Version control enables developers to keep track of different versions of their source code files.
-2.	 Repository: Think of a repository as a storage space for all the source code files. It’s like an organized warehouse only for authorized team members.
-3.	 Branching and Merging: When working on features or experiments developers can create branches. This allows them to work on things simultaneously without affecting the codebase. Then when they want to incorporate their changes into the codebase they can merge the branches together.
+2.	Repository: Think of a repository as a storage space for all the source code files. It’s like an organized warehouse only for authorized team members.
+3.	Branching and Merging: When working on features or experiments developers can create branches.
+This allows them to work on things simultaneously without affecting the codebase. 
+Then when they want to incorporate their changes into the codebase they can merge the branches together.
 4.	Change Tracking: Version control systems keep a record of every change made to the source code files.
 5.	Collaboration: Version control systems enable developers to collaborate. They provide mechanisms for developers to work on same code simultaneously.
 
 
 Configuration management :
--	IT is a systems engineering process for establishing consistency of a product’s attributes throughout its life. It is an IT management process that tracks individual configuration items of an IT system.
+-	IT is a systems engineering process for establishing consistency of a product’s attributes throughout its life. 
+It is an IT management process that tracks individual configuration items of an IT system.
 -	Tools : Puppet, Chef, Saltstack, Ancble 
 
 Dark launching technique :
-
 -	Dark launching is the term for releasing features to a subset of your users, seeing how they respond, and making updates to your features accordingly.
 -	Gives teams the ability to gather user feedback, fixes bugs
 
 
-Git : is a distributed version control system that tracks versions of files. It is often used to control source code by programmers collaboratively developing software.
+Git : is a distributed version control system that tracks versions of files. It is often used to control source code by programmers 
+collaboratively developing software.
 
 -	Distributed : allows distributed developement of code , developer has local copy of entire code 
 -	Compitable : with every existing systems and protocols
