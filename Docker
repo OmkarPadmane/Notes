@@ -1,0 +1,15 @@
+Docker
+- Docker is an open-source platform for developing, shipping, and running applications.
+- It allows developers to package their applications and all their dependencies into a single container.
+- A consistent environment is provided by docker so that the software can run across multiple computing environments. 
+
+Containers:
+- A Docker container image is a lightweight, standalone, secure, executable package of software that 
+includes everything needed to run an application for ex. code, system tools, system libraries and settings.
+- These containers encapsulate the dependencies of an application and make sure that it is consistent across multiple environments. 
+- It can run on any computer, no matter how different they are, because it brings its own special environment with it.
+
+- why docker containers are lightweight?
+  -- Docker containers are lightweight because they only contain the application and its parameters,
+  and not the entire operating system. Containers share the machine's OS system kernel and therefore
+  they do not require an OS per application.
