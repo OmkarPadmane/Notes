@@ -1,9 +1,9 @@
-Docker
+1) Docker
 - Docker is an open-source platform for developing, shipping, and running applications.
 - It allows developers to package their applications and all their dependencies into a single container.
 - A consistent environment is provided by docker so that the software can run across multiple computing environments. 
 
-Containers:
+2) Containers:
 - A Docker container image is a lightweight, standalone, secure, executable package of software that 
 includes everything needed to run an application for ex. code, system tools, system libraries and settings.
 - These containers encapsulate the dependencies of an application and make sure that it is consistent across multiple environments. 
@@ -13,3 +13,59 @@ includes everything needed to run an application for ex. code, system tools, sys
   -- Docker containers are lightweight because they only contain the application and its parameters,
   and not the entire operating system. Containers share the machine's OS system kernel and therefore
   they do not require an OS per application.
+
+3) Dockerfile
+  - A Dockerfile is a text document with instructions for building a Docker image. 
+  It contains a set of commands and arguments that Docker follows to auto-generate a Docker image. 
+  Using a Dockerfile, you can create an image containing your application and all its dependencies.
+
+4) Docker Image
+  - A Docker image is a read-only template with instructions for creating a Docker container. 
+  Images are built from Dockerfiles and contain a set of predefined layers that make up an image. 
+  Images can be shared via Docker registries like Docker Hub.
+
+5) Docker Hub
+  Docker Hub is a SaaS service provided by Docker for sharing and managing Docker images. 
+  It is a public Docker registry with thousands of images that can be downloaded and used locally.
+  You can also push your own images to Docker Hub to share with others.
+
+6) Docker Registry
+  A Docker registry stores Docker images. Docker Hub is Docker's public registry service,
+  but you can also set up private registries to store and share images internally within your organization. 
+
+7) Docker Compose
+  Docker Compose is a tool for defining and running multi-container Docker applications. 
+  With Docker Compose, you use a YAML file to configure your application's services, and
+  then you can start all the services with a single command. Docker Compose is helpful for 
+  development environments where you want to combine multiple services.
+
+8) Docker Engine
+  The Docker Engine powers the Docker platform. It consists of a Docker daemon, a CLI, and a REST API. 
+  The Docker daemon is what actually builds, runs, and manages Docker containers. 
+  The Docker CLI and REST API allow you to interact with the Docker daemon.
+
+Different container states
+
+Why is Docker essential for DevOps?
+  - Docker provides a powerful platform for developing, testing and deploying containerized applications.
+  For DevOps, Docker opens up many possibilities for creating automated, scalable workflows to build, 
+  release and maintain applications. With its vast ecosystem of tools and services, 
+  Docker addresses many of the challenges DevOps teams face in standardizing and optimizing the application lifecycle.
+
+
+            Docker                                                VMs
+1 Docker containers are more lightweight than VMs.	      VMs require a full OS
+
+2 Docker can run on any system	                          VMs require a hypervisor like VirtualBox or VMware
+                                                          to run the guest VMs. 
+
+3 Docker images can be shared via registries	            VMs are not easily shareable
+
+4 Docker uses a "build once, run anywhere" philosophy	    VMs require installing and configuring a guest OS                          
+                                                          for each environment.
+
+5 Docker enables fast, iterative development workflows.   VMs are slower to boot and shut down
+  It is easy to spin up, modify, and tear down 
+  containers quickly.
+ 
+
