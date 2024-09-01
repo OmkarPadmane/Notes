@@ -20,7 +20,7 @@ Sequential Approach: where each phase of the project is completed before moving 
 6. Maintenance
 
 Devops :
-- DevOps is a methodology in the software development 
+- DevOps is a methodology in the software development .
 - combination of tools that increases an organization’s ability to deliver applications and services at high speed/velocity.
 - development and operations teams work together across the entire software application life cycle
 teams are no longer siloed( kept in isolation in a way that hinders communication and cooperation ) 
@@ -142,7 +142,10 @@ git status: displays the status of the repository, including changes in the stag
 git diff --staged: shows the differences between the staging area and the last commit
 git diff: shows the differences between the working directory and the last commit
 
-
+- Devsecops
+ DevSecOps stands for development, security, and operations.
+ It's a collaborative framework that integrates security into every stage of the software development process.
+ The goal of DevSecOps is to build secure and efficient software by making security a shared responsibility throughout the development lifecycle.
 
 
 
