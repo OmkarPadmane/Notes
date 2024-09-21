@@ -41,9 +41,13 @@ $ cd devops/
 View Commit History:
 
     $ git log
-
         - Displays a list of commits in reverse chronological order.
 
+    $ git log -1 
+        - displays latest one commit
+
+    $ git log --oneline
+        - displays all commits in one line
 View Changes in a Commit:
 
     $ git show <commit_SHA>
