@@ -130,6 +130,9 @@ View Changes in a Commit:
     $ git stash apply stash@{1}
         - This will reapply the last or specified stash onto your current working directory without removing it from the stash list.
 
+    $ git stash clear
+        - clears the stash
+
 fork  -  code reusability
 git fetch + git merge  = git pull
 
