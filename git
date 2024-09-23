@@ -111,6 +111,24 @@ View Changes in a Commit:
 
         - Deletes the specified branch after its changes have been merged.
 
+- Stashing: 
+    - Git stash acts as a version control tool and lets developers work on other activities 
+    or switch branches in Git without having to discard or commit changes that aren't ready. 
+    Developers can simply stash the changes in their working directory and index state, and work on them later.
+    
+    $ git stash  :
+        - the Stash changed files in the git working tree and save that for later use.
+
+    $ git stash list :
+        - display each stash with its corresponding identifier and description.
+        It is a quick way to review all the stashes you have created before deciding which one to apply or remove. 
+        Keep in mind that older stashes are pushed down .
+
+    o/p : stash@{0}: On BranchB: MyStash2   (latest)
+          stash@{1}: On BranchB: MyStash1   (Oldest)
+
+    $ git stash apply stash@{1}
+        - This will reapply the last or specified stash onto your current working directory without removing it from the stash list.
 
 fork  -  code reusability
 git fetch + git merge  = git pull
