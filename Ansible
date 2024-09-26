@@ -10,6 +10,7 @@ Ansible Overview :
     any particular programming language. This enables users to create sophisticated provisioning scripts more intuitively compared to similar tools in the same category.
   - Ansible doesn’t require any special software to be installed on the nodes that will be managed with this tool.
     A control machine is set up with the Ansible software, which then communicates with the nodes via standard SSH on linux and vinrm on windows.
+  - It is push based tool.
 
 Control node : where ansible is installd
 Manage node : on which action are perform by ansible
