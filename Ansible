@@ -1,7 +1,50 @@
 
-Configuration management is the process of handling changes to a system in a way that assures integrity over time,
+- Configuration management is the process of handling changes to a system in a way that assures integrity over time,
 typically involving tools and processes that facilitate automation and observability. 
 
+- Types of Configuration management Approach:
+
+-- Push Configuration Management Tools:
+    Push configuration management tools initiate and push configuration changes from a central server or control node to the target systems. 
+    The central server actively sends the updated configurations to the target systems. 
+
+    - Here are the key characteristics of push-based configuration management:
+
+    - Centralized Control: A central server or control node, often referred to as the configuration management server,
+      is responsible for initiating and distributing configuration changes to the target systems.
+    - Push Model: The configuration changes are pushed from the configuration management server to the target systems. 
+      The server actively sends the updated configuration to the target systems.
+    - Immediate Updates: The target systems receive and apply the configuration changes immediately upon receiving the push from the configuration management server.
+    - Real-Time Interaction: Push-based configuration management typically involves real-time communication between the configuration management server and the target systems.
+    - Agent-Based Approach: Push-based configuration management often relies on agents or client software installed on the target systems. 
+      These agents establish communication with the configuration management server and receive configuration updates.
+
+  -  Examples :
+
+  - Puppet: Puppet is a widely used push-based configuration management tool. It uses a client-server architecture, where a Puppet server pushes configurations (defined as Puppet manifests) to Puppet agents running on target systems.
+  - SaltStack: SaltStack is another popular push-based configuration management tool. It employs a master-minion architecture, where a Salt master pushes configurations (defined as Salt states) to Salt minions running on target systems.
+  - Ansible (with Ansible Push Jobs): While Ansible is primarily pull-based, it also offers a push-based feature called Ansible Push Jobs. It allows administrators to push configurations to target systems using the Ansible control server.
+
+-- Pull Configuration Management Tools:
+    Pull configuration management tools, on the other hand, enable target systems to independently fetch configurations from a central repository or server when needed.
+    The target systems periodically or on-demand request and retrieve the updated configurations. 
+
+  - Here are the key characteristics of pull-based configuration management:
+
+  - Decentralized Control: Configuration changes are stored in a central repository or server, but the target systems independently retrieve the changes when needed.
+  - Pull Model: The target systems periodically or on-demand pull the updated configuration from the central repository or server. They actively fetch the configuration changes.
+  - Delayed Updates: The target systems update their configuration only when they request and retrieve the updated configuration from the central server. 
+    Changes are not applied immediately upon availability.
+  - Scheduled or Triggered Retrieval: The target systems can be configured to retrieve the configuration changes periodically, 
+    based on a schedule or triggered by specific events or conditions.
+  - Agentless or Light Agents: Pull-based configuration management can be agentless, where target systems fetch 
+    configuration changes using lightweight protocols like HTTP or SSH. Alternatively, some tools may employ lightweight agents to handle the retrieval process.
+
+ -  Examples :
+
+  - Chef: Chef supports both push and pull modes. In its pull-based mode, target systems (Chef clients) periodically fetch 
+    configurations (defined as Chef cookbooks) from a central Chef server.
+--------------------------------------------------------------------------
 
 Ansible Overview :
   - Ansible is a agentless modern configuration management tool that facilitates the task of setting up and maintaining remote servers, storage, 
