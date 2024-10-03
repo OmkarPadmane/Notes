@@ -110,18 +110,17 @@ state=present    -- for installing package
 state=absent     -- for removing package
 state=latest     -- for updating package
 
-$ ansible demo -b -m apt -a "pkg=git state=present"     -- install package
-$ ansible demo -b -m apt -a "pkg=git state=absent"      -- remove package 
-$ ansible demo -b -m service -a "name=ssh state=started"    -- start service
-$ ansible demo -b -m user -a "name=jitu"                  -- create user
-$ ansible demo -b -m copy -a "src=anime dest=/home/ansible"    -- copy file/dir
+	$ ansible demo -b -m apt -a "pkg=git state=present"     -- install package
+	$ ansible demo -b -m apt -a "pkg=git state=absent"      -- remove package 
+	$ ansible demo -b -m service -a "name=ssh state=started"    -- start service
+	$ ansible demo -b -m user -a "name=jitu"                  -- create user
+	$ ansible demo -b -m copy -a "src=anime dest=/home/ansible"    -- copy file/dir
 
-$ ansible demo[0] -m setup
-$ ansible demo[0] -m setup -a "filter=*ip*"
-
-
-
-
+- setup module : The setup module fetches all the details from the remote hosts to our controller nodes
+and dumps them directly to our screen for the facts to be visible to users.
+	
+	$ ansible demo[0] -m setup
+	$ ansible demo[0] -m setup -a "filter=*ip*"     -- filter for accesssing specific info
 
 
 - Ansible Roles : 
