@@ -1,0 +1,111 @@
+AWS terminal access in putty
+
+-do this for only one time
+	copy public ip of ec2
+	open puttygen create key
+
+- open putty
+	paste public ip of ec2
+	use key created using pyttygen
+	in prompt click accept 
+
+- in terminal 
+	
+	- AWS Linux then :
+	in front of login as type : ec2-user
+	next type : sudo su
+
+	- Ubuntu then :
+	in front of login as type : ubuntu
+	next type : sudo su
+
+
+
+-----------------------------------
+Install ansible on ubuntu 
+
+    $  sudo apt-get update
+    $  sudo apt-add-repository -y ppa:ansible/ansible
+    $  sudo apt-get update
+    $  sudo apt-get install -y ansible  
+    $  sudo apt-get install python3-pip -y
+    $  sudo apt install python3-boto3 -y
+    $  sudo apt-get install python3-boto -y
+    $  pip list boto | grep boto
+    $  ansible --version
+
+In output of ansible --version if there is no path showing in "config file" use tis two command and again install package.
+
+    $ sudo apt-get purge --auto-remove ansible
+    $ sudo apt-get clean
+--------------------------------------------------------------------
+
+- ansible config path
+	/etc/ansible
+	
+- insert nodes private ip in hosts file
+	demo is group name
+	
+	$ vi /etc/ansible/hosts
+		[demo]
+		Private ip
+		Private ip
+
+- generate a fully commented-out example ansible.cfg file, for example:
+
+	$ ansible-config init --disabled > ansible.cfg
+
+- You can also have a more complete file that includes existing plugins:
+
+	$ ansible-config init --disabled -t all > ansible.cfg
+
+- create user on server and node 1,2
+	$ adduser ansible
+
+- give sudo permissions to user on server and node 1,2
+	$  visudo
+		
+		ansible ALL=(ALL:ALL) NOPASSWD: ALL
+
+- to switch to user
+	$ su - ansible
+
+
+- uncomment lines for ssh connection on server and node 1,2
+
+	$  vim /etc/ssh/sshd_config
+		
+		PermitRootLogin yes    --  type this in authentication
+		PasswordAuthentication yes     -- uncomment this
+	
+	- restart ssh service
+	$ systemctl restart ssh
+	
+- create ssh key on server and node 1,2
+
+   - on master: 
+
+	$ ssh-keygen -t rsa
+	$ cd .ssh
+	$ ls
+	$ cat id_rsa.pub
+
+  - on node 1, 2
+	$ ssh-keygen -t rsa
+	$ cd .ssh
+	$ touch authorized_keys
+
+	$ cat > authorized_keys     - copy master public key in authorized_keys
+		past key-> enter -> ctrl+d
+
+- try to connect to other node
+
+	$ ssh username@privateip  -- cmd format
+
+	$ ssh ansible@172.31.0.8     
+
+
+- command to list all hosts
+
+
+
