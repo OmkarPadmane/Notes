@@ -68,15 +68,61 @@ Inventory file :  it  defines the hosts and groups of hosts so you can run autom
 
 ad hoc commands :
   - An Ansible ad hoc command uses the /usr/bin/ansible command-line tool to automate a single task on one or more managed nodes.
-  - ad hoc commands are quick and easy, but they are not reusable. 
-  - syntax : $ ansible [pattern] -m [module] -a "[module options]"
-  - link : https://docs.ansible.com/ansible/latest/command_guide/intro_adhoc.html
+  - ad hoc commands are quick and easy, but they are not reusable.
+  - This cmd are not used for configuration management and deployment , because this are for one time use.
+  - In ad-hoc commands there is no idempotency.   (means they overwrites)
+  - ad hoc are used to reboot servers, copy files, manage packages and users,etc.
 
-cmd:
+- link : https://docs.ansible.com/ansible/latest/command_guide/intro_adhoc.html
+
+- syntax : $ ansible [pattern] -m [module] -a "[module options]"
+
+- command to list hosts
+	$ ansible all --list-hosts
+	$ ansible demo --list-hosts    -- demo is groupname
+	$ ansible demo[0] --list-hosts   --   first node is starts from 0
+
+-a : argument   (to perform cmd/task written in " " )
+-b : become   (for giving sudo permission)
+
+    $ ansible all -a "ls -a"
+    $ ansible demo -a "who"
+    $ ansible demo -a "sudo apt install git -y"
+    $ ansible demo -a "sudo apt remove git -y"
+    $ ansible demo -ba "apt remove git -y"
+
+- Ansible modules (-m):
+    - Ansible module is a small program that performs actions on a local machine or remote host.
+    - They can be executed directly from the command line or included in playbooks. 
+    Modules are the building blocks of automation and can manage system resources, 
+    install packages, manipulate files, and more.
+   - the default location for module is inventery file, path /etc/ansible/hosts.
+   - modules are writen in yaml format.
+
+link :  https://docs.ansible.com/ansible/2.8/user_guide/modules.html
+
 -m : module
--a : argument
-ansible-playbook -i inventory <Adhoc command or Playbook.yml>
-ansible -i inventory.ini -m shell -a "apt install openjdk" all
+
+pkg = httpd/git    -- package name you want to install/remove
+
+state 
+state=present    -- for installing package
+state=absent     -- for removing package
+state=latest     -- for updating package
+
+$ ansible demo -b -m apt -a "pkg=git state=present"     -- install package
+$ ansible demo -b -m apt -a "pkg=git state=absent"      -- remove package 
+$ ansible demo -b -m service -a "name=ssh state=started"    -- start service
+$ ansible demo -b -m user -a "name=jitu"                  -- create user
+$ ansible demo -b -m copy -a "src=anime dest=/home/ansible"    -- copy file/dir
+
+$ ansible demo[0] -m setup
+$ ansible demo[0] -m setup -a "filter=*ip*"
+
+
+
+
+
 
 - Ansible Roles : 
   - Ansible Roles provide a well-defined framework and structure for setting your tasks, variables, handlers, 
