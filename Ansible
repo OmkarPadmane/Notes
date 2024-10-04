@@ -168,7 +168,14 @@ and dumps them directly to our screen for the facts to be visible to users.
 	making it easier to perform the same action multiple times without manual repetition. 
 	They work similarly to other basic programming looping concepts such as for_each or while. 
 	Ansible loops can be used for installing multiple packages, creating numerous users, or modifying a set of files.
-	
+
+- Ansible conditional:
+	Conditionals are an Ansible feature that allows you to control the execution flow 
+	of playbook tasks based on declared conditions. Tasks that include the Ansible conditionals are 
+	executed only if specific criteria are met; if the condition is false, the task is skipped. 
+	This capability is particularly valuable when managing diverse environments with different operating systems or configurations.
+
+
 - Ansible Roles : 
   - Ansible Roles provide a well-defined framework and structure for setting your tasks, variables, handlers, 
     metadata, templates, and other files. They enable us to reuse and share our Ansible code efficiently.
