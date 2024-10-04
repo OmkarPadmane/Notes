@@ -117,12 +117,18 @@ state=restarted    -- for restarting service
 	$ ansible demo -b -m service -a "name=ssh state=started"    -- start service
 	$ ansible demo -b -m user -a "name=jitu"                  -- create user
 	$ ansible demo -b -m copy -a "src=anime dest=/home/ansible"    -- copy file/dir
+	$ ansible demo -b -m shell -a "ls /home/ansible"      -- run cmd
 
 - setup module : The setup module fetches all the details from the remote hosts to our controller nodes
 and dumps them directly to our screen for the facts to be visible to users.
 	
 	$ ansible demo[0] -m setup
 	$ ansible demo[0] -m setup -a "filter=*ip*"     -- filter for accesssing specific info
+
+- Check Mode (“Dry Run”):
+	dry run feature enables users to execute a playbook without making changes to the servers. 
+	It uses the built-in check mode to proof a playbook for errors before execution.
+	ex.  ansible-playbook playbook.yaml --check
 
 - Playbook :
 	- Ansible Playbooks are lists of tasks that automatically execute for your specified inventory or groups of hosts.
@@ -157,6 +163,11 @@ and dumps them directly to our screen for the facts to be visible to users.
       name: "{{ package }}"
       state: present
 
+- Ansible loops:
+	Loops in Ansible are sets of instructions that automate repeated tasks, 
+	making it easier to perform the same action multiple times without manual repetition. 
+	They work similarly to other basic programming looping concepts such as for_each or while. 
+	Ansible loops can be used for installing multiple packages, creating numerous users, or modifying a set of files.
 	
 - Ansible Roles : 
   - Ansible Roles provide a well-defined framework and structure for setting your tasks, variables, handlers, 
