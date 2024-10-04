@@ -98,6 +98,7 @@ ad hoc commands :
     install packages, manipulate files, and more.
    - the default location for module is inventery file, path /etc/ansible/hosts.
    - modules are writen in yaml format.
+   - In module commands there is idempotency, because of its setup module.
 
 link :  https://docs.ansible.com/ansible/2.8/user_guide/modules.html
 
@@ -109,6 +110,7 @@ state
 state=present    -- for installing package
 state=absent     -- for removing package
 state=latest     -- for updating package
+state=restarted    -- for restarting service
 
 	$ ansible demo -b -m apt -a "pkg=git state=present"     -- install package
 	$ ansible demo -b -m apt -a "pkg=git state=absent"      -- remove package 
@@ -122,7 +124,40 @@ and dumps them directly to our screen for the facts to be visible to users.
 	$ ansible demo[0] -m setup
 	$ ansible demo[0] -m setup -a "filter=*ip*"     -- filter for accesssing specific info
 
+- Playbook :
+	- Ansible Playbooks are lists of tasks that automatically execute for your specified inventory or groups of hosts.
+	One or more Ansible tasks can be combined to make a play and tasks are executed in the order in which they are written.
+	- playbook is written in YAML format. 
 
+	cmd to run playbook : ansible-playbook playbook.yml
+
+- vars : Ansible variables are dynamic values used within Ansible playbooks and roles 
+	to enable customization, flexibility, and reusability of configurations.
+
+	- define variablle
+		vars:
+  	 	  username: bob
+	- use/access variable
+  	    name: "{{ username }}"
+
+- handlers: A handler is the same as a normal task but will run when called by another task.
+	They are used in cases when we want a task to run only when a privious task is executed sucessfully.
+	Handlers are tasks that only run when notified. for that to work notify and handler name must match.
+
+	ex.   tasks:
+  - name: install git
+    apt:
+      name: "{{ package }}"
+      state: absent
+    notify: service absent    --|
+				|
+  handlers:		        | 
+  - name: service absent      --|
+    apt:
+      name: "{{ package }}"
+      state: present
+
+	
 - Ansible Roles : 
   - Ansible Roles provide a well-defined framework and structure for setting your tasks, variables, handlers, 
     metadata, templates, and other files. They enable us to reuse and share our Ansible code efficiently.
