@@ -16,8 +16,15 @@ includes everything needed to run an application for ex. code, system tools, sys
 
 3) Dockerfile
   - A Dockerfile is a text document with instructions for building a Docker image. 
-  It contains a set of commands and arguments that Docker follows to auto-generate a Docker image. 
-  Using a Dockerfile, you can create an image containing your application and all its dependencies.
+    It contains a set of commands and arguments that Docker follows to auto-generate a Docker image. 
+    Using a Dockerfile, you can create an image containing your application and all its dependencies.
+ex.
+FROM ubuntu
+RUN apt update -y
+RUN apt install python3 -y
+RUN mkdir /test
+COPY add.py /test
+CMD ["python3" , "/test/add.py"]
 
 4) Docker Image
   - A Docker image is a read-only template with instructions for creating a Docker container. 
