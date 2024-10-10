@@ -137,8 +137,9 @@ and dumps them directly to our screen for the facts to be visible to users.
 
 	cmd to run playbook : ansible-playbook playbook.yml
 
-- vars : Ansible variables are dynamic values used within Ansible playbooks and roles 
-	to enable customization, flexibility, and reusability of configurations.
+- vars : 
+	- Ansible variables are dynamic values used within Ansible playbooks and roles 
+	  to enable customization, flexibility, and reusability of configurations.
 
 	- define variablle
 		vars:
@@ -146,11 +147,13 @@ and dumps them directly to our screen for the facts to be visible to users.
 	- use/access variable
   	    name: "{{ username }}"
 
-- handlers: A handler is the same as a normal task but will run when called by another task.
-	They are used in cases when we want a task to run only when a privious task is executed sucessfully.
-	Handlers are tasks that only run when notified. for that to work notify and handler name must match.
+- Handlers:
+	- A handler is the same as a normal task but will run when called by another task.
+	- They are used in cases when we want a task to run only when a privious task is executed sucessfully.
+	- Handlers are tasks that only run when notified. for that to work notify and handler name must match.
 
-	ex.   tasks:
+	ex.   
+  tasks:
   - name: install git
     apt:
       name: "{{ package }}"
@@ -164,16 +167,49 @@ and dumps them directly to our screen for the facts to be visible to users.
       state: present
 
 - Ansible loops:
-	Loops in Ansible are sets of instructions that automate repeated tasks, 
-	making it easier to perform the same action multiple times without manual repetition. 
-	They work similarly to other basic programming looping concepts such as for_each or while. 
-	Ansible loops can be used for installing multiple packages, creating numerous users, or modifying a set of files.
+	- Loops in Ansible are sets of instructions that automate repeated tasks, making it easier to perform the 
+	  same action multiple times without manual repetition. 
+	- They work similarly to other basic programming looping concepts such as for_each or while. 
+	- Ansible loops can be used for installing multiple packages, creating numerous users, or modifying a set of files.
+ex.
 
-- Ansible conditional:
-	Conditionals are an Ansible feature that allows you to control the execution flow 
-	of playbook tasks based on declared conditions. Tasks that include the Ansible conditionals are 
-	executed only if specific criteria are met; if the condition is false, the task is skipped. 
-	This capability is particularly valuable when managing diverse environments with different operating systems or configurations.
+ tasks:
+  - name: create users
+    user:
+      name: "{{ item }}"
+      state: present
+
+    loop:
+      - luffy
+      - zoro
+      - sanji
+
+
+- Ansible condition:
+	- Condition are an Ansible feature that allows you to control the execution flow of playbook tasks based on declared conditions. 
+	- Tasks that include the Ansible conditionals are executed only if specific criteria are met; if the condition is false, the task is skipped. 
+	- This capability is particularly valuable when managing diverse environments with different operating systems or configurations.
+ex.
+
+  tasks:
+  - name: install apache2
+    command: apt install apache2 -y
+    when: ansible_os_family == "Debian"
+  - name: install httpd
+    command: yum install httpd -y
+    when: ansible_os_family == "RedHat"
+
+- Ansible Vault: 
+	- It is a feature of ansible that allows you to keep sensitive data such as passwords, keys, playbooks in encrypted format, rather than as plaintext in playbooks or roles. 
+
+cmd:
+	$ ansible-vault create xyz.yml     -- create new file using vault which is password protected
+	$ ansible-vault edit xyz.yml       -- open file for editing
+	$ ansible-vault rekey xyz.yml      -- change password
+	$ ansible-vault encrypt task.yml   -- encrypt existing file 
+	$ ansible-vault decrypt task.yml   -- decrypt file 
+	$ ansible-vault view xyz.yml       -- view file
+	$ ansible-playbook xyz.yml --ask-vault-pass   -- execute/run vault playbook 
 
 
 - Ansible Roles : 
@@ -213,8 +249,12 @@ and dumps them directly to our screen for the facts to be visible to users.
   - Consistency : Using roles ensures that the same setup and configuration procedures are applied 
     uniformly across multiple environments, reducing the risk of configuration drift.
 
+- Ansible Galaxy
+	- Ansible Galaxy is a galaxy website where users can share roles and to a command-line tool for installing, creating, and managing roles.
+	-Ansible Galaxy gives greater visibility to one of Ansible's most exciting features, such as application installation or reusable roles for server configuration
 
-
+cmd:
+	$ ansible-galaxy role init test    -- create role  (test is role name)
 
 
 
