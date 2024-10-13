@@ -133,19 +133,31 @@ state=restarted    -- for restarting service
 	$ ansible demo -b -m copy -a "src=anime dest=/home/ansible"    -- copy file/dir
 	$ ansible demo -b -m shell -a "ls /home/ansible"      -- run cmd
 
-- setup module : The setup module fetches all the details from the remote hosts to our controller nodes
-and dumps them directly to our screen for the facts to be visible to users.
+- setup module : 
+	- The setup module fetches all the details from the remote hosts to our controller nodes
+	 and shows them directly to our screen.
+	- Shows information like network interfaces and IP addresses, operating system and available memory,etc.
 	
 	$ ansible demo[0] -m setup
 	$ ansible demo[0] -m setup -a "filter=*ip*"     -- filter for accesssing specific info
 
+- Ansible Facts:
+	- Ansible facts are system information collected from the managed hosts. 
+	- These facts are automatically gathered at the beginning of playbook execution and can be accessed using playbook .
+	- ansible_facts dictionary is used to access facts. 
+	ex.
+	- hosts: all
+  	  tasks:
+  	  - debug:
+	      msg: "{{ ansible_facts }}"
+
 - Check Mode (“Dry Run”):
 	dry run feature enables users to execute a playbook without making changes to the servers. 
-	It uses the built-in check mode to proof a playbook for errors before execution.
+	It uses the built-in check mode to test a playbook for errors before execution.
 	ex.  ansible-playbook playbook.yaml --check
 
 - Playbook :
-	- Ansible Playbooks are lists of tasks that automatically execute for your specified inventory or groups of hosts.
+	- Ansible Playbooks is collection of plays/task which gets automatically executed on by one for specified nodes.
 	One or more Ansible tasks can be combined to make a play and tasks are executed in the order in which they are written.
 	- playbook is written in YAML format. 
 
@@ -214,7 +226,8 @@ ex.
     when: ansible_os_family == "RedHat"
 
 - Ansible Vault: 
-	- It is a feature of ansible that allows you to keep sensitive data such as passwords, keys, playbooks in encrypted format, rather than as plaintext in playbooks or roles. 
+	- It is a feature of ansible that allows you to keep sensitive data such as passwords, keys, playbooks in encrypted format, 
+	rather than as plaintext in playbooks or roles. 
 
 cmd:
 	$ ansible-vault create xyz.yml     -- create new file using vault which is password protected
@@ -231,7 +244,7 @@ cmd:
     metadata, templates, and other files. They enable us to reuse and share our Ansible code efficiently.
   - we can reference and call them in our playbooks with just a few lines of code while we can reuse the 
     same roles for many projects without the need to duplicate our code.
-  - create role syntax : ansible-galaxy init <your_role_name>
+  - create role syntax : ansible-galaxy role init <role_name>
 
 - Components of an Ansible Role:
 
@@ -270,5 +283,9 @@ cmd:
 cmd:
 	$ ansible-galaxy role init test    -- create role  (test is role name)
 
-
+-declare role in playbook
+- hosts: all
+  become: true
+  roles:
+    - webserver
 
