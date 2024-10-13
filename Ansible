@@ -1,6 +1,8 @@
 
-- Configuration management is the process of handling changes to a system in a way that assures integrity over time,
-typically involving tools and processes that facilitate automation and observability. 
+- Configuration management (CM):
+	- It is a process that ensures a system's configurations are consistent over time. 
+	- They are used to maintain the desired state of a system's components and to ensure that it performs as expected. 
+	- It help to reduce configuration time and reduces the effort required to perform repetitive tasks.
 
 - Types of Configuration management Approach:
 
@@ -14,20 +16,26 @@ typically involving tools and processes that facilitate automation and observabi
       is responsible for initiating and distributing configuration changes to the target systems.
     - Push Model: The configuration changes are pushed from the configuration management server to the target systems. 
       The server actively sends the updated configuration to the target systems.
-    - Immediate Updates: The target systems receive and apply the configuration changes immediately upon receiving the push from the configuration management server.
-    - Real-Time Interaction: Push-based configuration management typically involves real-time communication between the configuration management server and the target systems.
+    - Immediate Updates: The target systems receive and apply the configuration changes immediately 
+      upon receiving the push from the configuration management server.
+    - Real-Time Interaction: Push-based configuration management typically involves real-time communication
+      between the configuration management server and the target systems.
     - Agent-Based Approach: Push-based configuration management often relies on agents or client software installed on the target systems. 
       These agents establish communication with the configuration management server and receive configuration updates.
 
   -  Examples :
 
-  - Puppet: Puppet is a widely used push-based configuration management tool. It uses a client-server architecture, where a Puppet server pushes configurations (defined as Puppet manifests) to Puppet agents running on target systems.
-  - SaltStack: SaltStack is another popular push-based configuration management tool. It employs a master-minion architecture, where a Salt master pushes configurations (defined as Salt states) to Salt minions running on target systems.
-  - Ansible (with Ansible Push Jobs): While Ansible is primarily pull-based, it also offers a push-based feature called Ansible Push Jobs. It allows administrators to push configurations to target systems using the Ansible control server.
+  - Puppet: Puppet is a widely used push-based configuration management tool. It uses a client-server architecture, 
+    where a Puppet server pushes configurations (defined as Puppet manifests) to Puppet agents running on target systems.
+  - SaltStack: SaltStack is another popular push-based configuration management tool. It employs a master-minion architecture, 
+    where a Salt master pushes configurations (defined as Salt states) to Salt minions running on target systems.
+  - Ansible (with Ansible Push Jobs): While Ansible is primarily pull-based, it also offers a push-based feature called Ansible Push Jobs.
+    It allows administrators to push configurations to target systems using the Ansible control server.
 
 -- Pull Configuration Management Tools:
-    Pull configuration management tools, on the other hand, enable target systems to independently fetch configurations from a central repository or server when needed.
-    The target systems periodically or on-demand request and retrieve the updated configurations. 
+    - Pull configuration management tools, on the other hand, enable target systems to independently fetch configurations 
+     from a central repository or server when needed.
+    - The target systems periodically or on-demand request and retrieve the updated configurations. 
 
   - Here are the key characteristics of pull-based configuration management:
 
@@ -49,9 +57,8 @@ typically involving tools and processes that facilitate automation and observabi
 Ansible Overview :
   - Ansible is a agentless modern configuration management tool that facilitates the task of setting up and maintaining remote servers, storage, 
     networking, and software with a minimalist design intended to get users up and running quickly.
-  - Users write Ansible provisioning scripts in YAML, a user-friendly data serialization standard that is not tied to 
-    any particular programming language. This enables users to create sophisticated provisioning scripts more intuitively compared to similar tools in the same category.
-  - Ansible doesn’t require any special software to be installed on the nodes that will be managed with this tool.
+  - In Ansible scripts are write in YAML, a user-friendly programming language. 
+  - Ansible doesn’t require any special software to be installed on the nodes.
     A control machine is set up with the Ansible software, which then communicates with the nodes via standard SSH on linux and vinrm on windows.
   - It is push based tool.
 
@@ -60,27 +67,29 @@ Manage node : on which action are perform by ansible
 
 install link : https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
 
-Inventory file :  it  defines the hosts and groups of hosts so you can run automation tasks on multiple hosts at the same time.
-  - you can create group of manage nodes in inventory
-      [groupname]
-      Manage node
-      Manage node
+Hosts file :  
+	- This file contains ip address of hosts so you can run automation tasks on multiple hosts at the same time.
+	- you can create group of manage nodes in hosts file which helps you to perform tasks on specific nodes.
+   	[groupname]
+    	Manage node
+      	Manage node
 
 ad hoc commands :
-  - An Ansible ad hoc command uses the /usr/bin/ansible command-line tool to automate a single task on one or more managed nodes.
-  - ad hoc commands are quick and easy, but they are not reusable.
-  - This cmd are not used for configuration management and deployment , because this are for one time use.
-  - In ad-hoc commands there is no idempotency.   (means they overwrites)
-  - ad hoc are used to reboot servers, copy files, manage packages and users,etc.
+	- Ad hoc commands are one line commands that are executed on Ansible control node, without the need for a playbook. 
+	- These commands are used to quickly perform tasks on one or more managed nodes, such as checking the status of a service or installing a package.
+	- ad hoc command uses the /usr/bin/ansible command-line tool to automate task.
+  	- ad hoc commands are quick and easy, but they are not reusable.
+  	- In ad-hoc commands there is no idempotency.   (means they overwrites)
+  	- ad hoc are used to reboot servers, copy files, manage packages and users,etc.
 
 - Idempotency:
 	- It is built-in feature which allows a task to be repeated without doing any changes because they are skipped.
-	- Ansible modules check if the desired state/task has already been achieved, and if so, 
-	 they exit without performing any actions. This means that repeating the task will not change the final state
+	- Ansible modules check if the desired state/task has already been achieved or not, and if so, 
+	 they exit without performing any actions. This means that repeating the task will not change the final state.
 
 - link : https://docs.ansible.com/ansible/latest/command_guide/intro_adhoc.html
 
-- syntax : $ ansible [pattern] -m [module] -a "[module options]"
+ad-hoc command:
 
 - command to list hosts
 	$ ansible all --list-hosts
