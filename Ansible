@@ -73,6 +73,11 @@ ad hoc commands :
   - In ad-hoc commands there is no idempotency.   (means they overwrites)
   - ad hoc are used to reboot servers, copy files, manage packages and users,etc.
 
+- Idempotency:
+	- It is built-in feature which allows a task to be repeated without doing any changes because they are skipped.
+	- Ansible modules check if the desired state/task has already been achieved, and if so, 
+	 they exit without performing any actions. This means that repeating the task will not change the final state
+
 - link : https://docs.ansible.com/ansible/latest/command_guide/intro_adhoc.html
 
 - syntax : $ ansible [pattern] -m [module] -a "[module options]"
