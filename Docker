@@ -5,12 +5,32 @@
   - Docker is written in 'go' language.
   - It is Platform as a service.
 
-- Why docker is used ?
-  - Before Docker, developers were facing the problem when deploying applications to different environments 
-    because difference in configurations, dependencies, and libraries. 
-  - To solve this problem  Docker introduced a containerization technology that isolates applications and their dependencies 
-    within a standardized environment. 
-  - This ensures that an application runs consistently across various machines, regardless of their underlying hardware or software setup.
+  - Why docker is used ?
+    - Before Docker, developers were facing the problem when deploying applications to different environments 
+      because difference in configurations, dependencies, and libraries. 
+    - To solve this problem  Docker introduced a containerization technology that isolates applications and their dependencies 
+      within a standardized environment. 
+    - This ensures that an application runs consistently across various machines, regardless of their underlying hardware or software setup.
+  
+  - Why is Docker essential for DevOps?
+    - Docker provides a powerful platform for developing, testing and deploying containerized applications.
+    - For DevOps, Docker opens up many possibilities for creating automated, scalable workflows to build, 
+      release and maintain applications. 
+    - With its vast ecosystem of tools and services, Docker addresses many of the challenges DevOps teams face in 
+      standardizing and optimizing the application lifecycle.
+
+- Advntages:
+  - Light weight containers
+  - No pre-allocation of RAM
+  - containers can run in any environment
+  - images are resuable
+  - less time to create container
+
+- Limitations/Disadvantage:
+  - No Cross-platform compatibility: if an application designed to run in a Docker container on Windows, then it can’t run on Linux.
+    if an application designed to run in a Docker container on Debian, then it can’t run on Ubuntu.
+  - Docker is not a good solution for Applications that require rich GUI.
+  - Complex for managing Large no of containers,requiring tools like Kubernetes or Docker Swarm for orchestration and management.
 
 - Docker engine:
   - Docker Engine is the core component of the Docker platform, responsible for creating, running, and managing Docker containers. 
@@ -25,15 +45,19 @@
 - Containers:
   - A Docker container is a lightweight, standalone, secure, executable package of software that 
    includes everything needed to run an application for ex. code, system tools, system libraries and settings.
-  - These containers encapsulate the dependencies of an application and make sure that it is consistent across multiple environments. 
+  - These containers encapsulate the dependencies of an application and make sure that it is consistent. 
   - It can run on any computer, no matter how different they are, because it brings its own special environment with it.
 
-- why docker containers are lightweight?
-  -- Docker containers are lightweight because they only contain the application and its parameters,
-  and not the entire operating system. Containers share the machine's OS system kernel and therefore
-  they do not require an OS per application.
+  - why docker containers are lightweight?
+    -- Docker containers are lightweight because they only contain the application and its parameters,
+    and not the entire operating system. Containers share the machine's OS system kernel and therefore
+    they do not require an OS per application.
 
-- Dockerfile
+-  Layered file system:
+  - Also known as a Union File System (UnionFS)for efficient management of images an containers by optimising 
+    image distribution and minimising storage space.
+
+- Dockerfile:
   - A Dockerfile is a text document with instructions for building a Docker image. 
     It contains a set of commands and arguments that Docker follows to auto-generate a Docker image. 
     Using a Dockerfile, you can create an image containing your application and all its dependencies.
@@ -45,32 +69,44 @@ RUN mkdir /test
 COPY add.py /test
 CMD ["python3" , "/test/add.py"]
 
-- Docker Image
+- Docker Image:
   - A Docker image is a read-only template with instructions for creating a Docker container. 
-  Images are built from Dockerfiles and contain a set of predefined layers that make up an image. 
-  Images can be shared via Docker registries like Docker Hub.
+  - Images are built from Dockerfiles and contain a set of predefined layers that make up an image. 
+  - Images can be shared via Docker registries like Docker Hub.
 
-- Docker Hub
+- Docker Engine:
+  - The Docker Engine powers the Docker platform. It consists of a Docker daemon, a CLI, and a REST API. 
+  - The Docker daemon is what actually builds, runs, and manages Docker containers. 
+  - The Docker Client allow you to interact with the Docker daemon.
+
+  - Ways to create docker image:
+    - Pull image form docker hub
+    - Create image using dockerfile
+    - Create image from existing docker container
+
+- Docker Client:
+- It is an interface that allows users to interact with the Docker daemon, which is the background service 
+  responsible for managing container lifecycle, network, and storage. 
+- The Docker client provides a command-line interface (CLI) that you can use to execute commands and manage Docker 
+  containers, images, and networks.
+
+- Docker Hub:
   - Docker Hub is a SaaS service provided by Docker for sharing and managing Docker images. 
   - It is a public Docker registry with thousands of images that can be downloaded and used locally.
   - You can also push your own images to Docker Hub to share with others.
 
-- Docker Registry
+- Docker Registry:
   - A Docker registry stores Docker images. Docker Hub is Docker's public registry service,
    but you can also set up private registries to store and share images internally within your organization. 
 
-- Docker Compose
+- Docker Compose:
   - Docker Compose is a tool for defining and running multi-container Docker applications. 
   - With Docker Compose, you use a YAML file to configure your application's services, and
    then you can start all the services with a single command. 
   - Docker Compose is helpful for development environments where you want to combine multiple services.
 
-8) Docker Engine
-  The Docker Engine powers the Docker platform. It consists of a Docker daemon, a CLI, and a REST API. 
-  The Docker daemon is what actually builds, runs, and manages Docker containers. 
-  The Docker CLI and REST API allow you to interact with the Docker daemon.
 
-Different container states
+Different container states?
 
 Why is Docker essential for DevOps?
   - Docker provides a powerful platform for developing, testing and deploying containerized applications.
@@ -95,4 +131,11 @@ Why is Docker essential for DevOps?
   containers quickly.
  
 6 Docker is OS level virtualization                       VMs are hardware level virtualization 
+
+
+question 
+
+how to create image from container?
+
+
 
