@@ -139,5 +139,42 @@ question
 
 how to create image from container?
 
+- Basic cmds:
+
+  $ docker --version     -- Display the installed Docker version.
+  $ docker info images-name    -- Display system-wide information about Docker.
+  $ docker search images-name      -- Search for images on Docker Hub.
+
+
+- Image Management:
+  $ docker images
+  $ docker pull <image>       -- Download an image from Docker Hub.
+  $ docker push <image>      -- Upload an image to Docker Hub
+
+
+- Containers Management:
+  $ docker ps       -- view running images
+  $ docker ps -a     -- view all images
+  $ docker run -ti images-name    -- Create container without specifying name
+  $ docker run --name cont-name -it images-name     -- Create container with given name
+    When you exit the container it gets stopped
+  $ docker start cont-name    -- Start a stopped container
+  $ docker attach cont-name    -- Attach/go inside to a running container's console.
+  $ docker stop cont-name      -- Stop a running container
+  $ docker rm cont-name     -- Delete a stopped container (but will not delete running container)
+  $ docker rm -f cont-name     -- Delete a running container
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
