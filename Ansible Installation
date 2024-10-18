@@ -1,28 +1,5 @@
-AWS terminal access in putty
-
--do this for only one time
-	copy public ip of ec2
-	open puttygen create key
-
-- open putty
-	paste public ip of ec2
-	use key created using pyttygen
-	in prompt click accept 
-
-- in terminal 
-	
-	- AWS Linux then :
-	in front of login as type : ec2-user
-	next type : sudo su
-
-	- Ubuntu then :
-	in front of login as type : ubuntu
-	next type : sudo su
-
-
-
------------------------------------
 Install ansible on ubuntu 
+Control node:
 
     $  sudo apt-get update
     $  sudo apt-add-repository -y ppa:ansible/ansible
@@ -39,6 +16,7 @@ In output of ansible --version if there is no path showing in "config file" use 
     $ sudo apt-get purge --auto-remove ansible
     $ sudo apt-get clean
 --------------------------------------------------------------------
+Control node:
 
 - ansible config path
 	/etc/ansible
@@ -58,6 +36,8 @@ In output of ansible --version if there is no path showing in "config file" use 
 - You can also have a more complete file that includes existing plugins:
 
 	$ ansible-config init --disabled -t all > ansible.cfg
+--------------------------------------------------------------
+on manage node:
 
 - create user on server and node 1,2
 	$ adduser ansible
@@ -69,7 +49,8 @@ In output of ansible --version if there is no path showing in "config file" use 
 
 - to switch to user
 	$ su - ansible
-
+-------------------------------------
+Control server and node:
 
 - uncomment lines for ssh connection on server and node 1,2
 
@@ -106,6 +87,4 @@ In output of ansible --version if there is no path showing in "config file" use 
 
 
 - command to list all hosts
-
-
-
+	$ ansible all --list-hosts
