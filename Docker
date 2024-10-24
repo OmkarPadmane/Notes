@@ -65,7 +65,7 @@ Docker installation : https://docs.docker.com/engine/install/
   - Using a Dockerfile, you can create an image containing your application and all its dependencies.
   - Name of file is always 'Dockerfile' and instructions must be always in capital.
 
-  - FROM: This instruction sets the base image on which the new image is going to be built upon. 
+  - FROM: This instruction downloads image on which the new image is going to be built upon. 
     It is the first instruction in a Dockerfile.
     ex. FROM ubuntu
   - RUN: This will be an instruction that will be executed for running the commands inside the container while building. 
@@ -100,21 +100,21 @@ CMD ["python3" , "/test/add.py"]
   - Images are built from Dockerfiles and contain a set of predefined layers that make up an image. 
   - Images can be shared via Docker registries like Docker Hub.
 
-- Docker Engine:
-  - The Docker Engine powers the Docker platform. It consists of a Docker daemon, a CLI, and a REST API. 
-  - The Docker daemon is what actually builds, runs, and manages Docker containers. 
-  - The Docker Client allow you to interact with the Docker daemon.
-
   - Ways to create docker image:
     - Pull image form docker hub   : docker pull image-name
     - Create image using dockerfile  : dockerfile
     - Create image from existing docker container :  use docker commit cont-name image-name
 
+- Docker Engine:
+  - The Docker Engine powers the Docker platform. It consists of a Docker daemon, a CLI, and a REST API. 
+  - The Docker daemon is what actually builds, runs, and manages Docker containers. 
+  - The Docker Client allow you to interact with the Docker daemon.
+
 - Docker Client:
-- It is an interface that allows users to interact with the Docker daemon, which is the background service 
-  responsible for managing container lifecycle, network, and storage. 
-- The Docker client provides a command-line interface (CLI) that you can use to execute commands and manage Docker 
-  containers, images, and networks.
+  - It is an interface that allows users to interact with the Docker daemon, which is the background service 
+    responsible for managing container lifecycle, network, and storage. 
+  - The Docker client provides a command-line interface (CLI) that you can use to execute commands and manage Docker 
+    containers, images, and networks.
 
 - Docker Hub:
   - Docker Hub is a SaaS service provided by Docker for sharing and managing Docker images. 
