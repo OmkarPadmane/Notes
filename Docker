@@ -9,7 +9,7 @@ Docker installation : https://docs.docker.com/engine/install/
 
   - Why docker is used ?
     - Before Docker, developers were facing the problem when deploying applications to different environments 
-      because difference in configurations, dependencies, and libraries. 
+      because of difference in configurations, dependencies, and libraries. 
     - To solve this problem  Docker introduced a containerization technology that isolates applications and their dependencies 
       within a standardized environment. 
     - This ensures that an application runs consistently across various machines, regardless of their underlying hardware or software setup.
@@ -134,12 +134,6 @@ CMD ["python3" , "/test/add.py"]
 
 Different container states?
 
-Why is Docker essential for DevOps?
-  - Docker provides a powerful platform for developing, testing and deploying containerized applications.
-  For DevOps, Docker opens up many possibilities for creating automated, scalable workflows to build, 
-  release and maintain applications. With its vast ecosystem of tools and services, 
-  Docker addresses many of the challenges DevOps teams face in standardizing and optimizing the application lifecycle.
-
 
             Docker                                                VMs
 1 Docker containers are more lightweight than VMs.	      VMs require a full OS
@@ -159,9 +153,6 @@ Why is Docker essential for DevOps?
 6 Docker is OS level virtualization                       VMs are hardware level virtualization 
 
 
-question 
-
-how to create image from container?
 
 - Basic cmds:
 
@@ -170,7 +161,7 @@ how to create image from container?
   $ docker search image-name      -- Search for images on Docker Hub.
 
 - Image Management:
-  $ docker images
+  $ docker images             -- shows images 
   $ docker pull <image>       -- Download an image from Docker Hub.
   $ docker push <image>      -- Upload an image to Docker Hub
 
@@ -179,8 +170,8 @@ how to create image from container?
   -it : Interactive terminal
   -d : Detached mode
 
-  $ docker ps       -- view running images
-  $ docker ps -a     -- view all images
+  $ docker ps       -- view running container
+  $ docker ps -a     -- view all container
   $ docker run -ti image-name    -- Create container without specifying name
   $ docker run --name cont-name -it images-name     -- Create container with given name
     When you exit the container it gets stopped
