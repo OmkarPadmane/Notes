@@ -44,6 +44,8 @@ Docker installation : https://docs.docker.com/engine/install/
     - Docker Client: An interface that allows users to interact with the Docker daemon using command-line interface (CLI) or other tools.
     - Docker Registry: A centralized repository for storing Docker images.
 
+- all Docker-related data, including images, containers, volumes, and networks is stored within /var/lib/docker directory.
+
 - Containers:
   - A Docker container is a lightweight, standalone, secure, executable package of software that 
    includes everything needed to run an application for ex. code, system tools, system libraries and settings.
@@ -84,6 +86,7 @@ Docker installation : https://docs.docker.com/engine/install/
     There can only be one CMD instruction in a Dockerfile. If you list more than one CMD, then only the last CMD will take effect.
     ex, CMD ["python3", "main.py"]
   - ENTRYPOINT: Similar to CMD, but has higher priority over CMD, first command wiil be executed by ENTRYPOINT only
+    ex. ENTRYPOINT ["echo", "Welcome to container"]
   - MAINTAINER:	Specify the author of an image.
 
 
@@ -180,7 +183,7 @@ Different container states?
   $ docker stop cont-name      -- Stop a running container
   $ docker rm cont-name     -- Delete a stopped container (but will not delete running container)
   $ docker rm -f cont-name     -- Delete a running container
-  
+  $ docker exec -it cont-name command    -- Execute a command in a running container.
   $ docker diff cont-name    --  shows the difference between the container's filesystem and its base image.
       A	: file or directory was added
       D	: file or directory was deleted
@@ -188,12 +191,25 @@ Different container states?
 
   $ docker commit cont-name image-name     -- Create a new image from a container's changes.
 
+- how to exit container without stopping it
+    - use the CTRL + P followed by CTRL + Q
+
+
 - Dockerfile:
+  $ vim Dockerfile
+      FROM ubuntu
+      RUN apt update -y
+      RUN apt install python3 -y
+      RUN mkdir /test
+      COPY add.py /test
+      CMD ["python3" , "/test/add.py"]
+  
+  $ docker build -t test:1 .     -- (.) indicates that the Dockerfile is in the current directory
+  $ dicker images
+  $ docker run --name t2 -it test:1
 
-
-
-
-
+  - to display a messages each time you enter in a container
+    ENTRYPOINT ["echo", "Welcome to container"]
 
 
 
