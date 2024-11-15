@@ -84,11 +84,12 @@ Docker installation : https://docs.docker.com/engine/install/
     ex. WORKDIR /app
   - CMD : execute when a Docker container is started up 
     There can only be one CMD instruction in a Dockerfile. If you list more than one CMD, then only the last CMD will take effect.
-    ex, CMD ["python3", "main.py"]
+    ex. CMD ["python3", "main.py"]
   - ENTRYPOINT: Similar to CMD, but has higher priority over CMD, first command wiil be executed by ENTRYPOINT only
     ex. ENTRYPOINT ["echo", "Welcome to container"]
   - MAINTAINER:	Specify the author of an image.
-
+  - VOLUME : Declares that a specific path of the container must be mounted to a Docker volume.
+    ex. VOLUME /mountpoint
 
 ex.
 FROM ubuntu
@@ -175,8 +176,9 @@ Different container states?
 
   $ docker ps       -- view running container
   $ docker ps -a     -- view all container
-  $ docker run -ti image-name    -- Create container without specifying name
-  $ docker run --name cont-name -it images-name     -- Create container with given name
+  $ docker create -it --name cont-name image-name      -- Create container (not run) 
+  $ docker run -ti image-name    -- Create and run container without specifying name
+  $ docker run --name cont-name -it images-name     -- Create and run container with given name
     When you exit the container it gets stopped
   $ docker start cont-name    -- Start a stopped container
   $ docker attach cont-name    -- Attach/go inside to a running container's console.
@@ -211,9 +213,15 @@ Different container states?
   - to display a messages each time you enter in a container
     ENTRYPOINT ["echo", "Welcome to container"]
 
-
-
-
-
-
+- Docker Volumes:
+    - Volumes are a mechanism for storing data outside containers.
+    - All volumes are managed by Docker and stored in a dedicated directory on your host, usually /var/lib/docker/volumes for Linux systems.
+    - volume are used when a container requires persistent storage to permanently save new and modified files.
+    - Docker volumes can be shared/mounted to multiple containers simultaneously. 
+    - we can only declare a directory as a volume only while creating container.
+    - we can't create valume form existing container.
+    - you can mapped volume in two ways:
+      - container to container
+      - host to container
+    - On deleting container volume does not get deleted.
 
