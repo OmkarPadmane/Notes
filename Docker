@@ -186,6 +186,7 @@ Different container states?
   $ docker rm cont-name     -- Delete a stopped container (but will not delete running container)
   $ docker rm -f cont-name     -- Delete a running container
   $ docker exec -it cont-name command    -- Execute a command in a running container.
+  $ docker rename old-cont-name new-cont-name     -- Rename a container.
   $ docker diff cont-name    --  shows the difference between the container's filesystem and its base image.
       A	: file or directory was added
       D	: file or directory was deleted
@@ -224,4 +225,37 @@ Different container states?
       - container to container
       - host to container
     - On deleting container volume does not get deleted.
+
+- Create volume using cmd
+  1) Create volume in container
+    $ docker run -it --name  con1  -v /vol ubuntu 
+
+  2) Share volume with container 
+    $ docker run -it --name con2 --privileged=true --volumes-from con1 ubuntu 
+
+- Create volume using Dockerfile
+  1) Dockerfile  
+      FROM ubuntu
+      VOLUME ["/myvolume"]
+
+  2) Create image 
+    $ docker build -t myvol .
+  
+  3) Create Container 
+    $ docker run --name vol.1 -it myvol
+  
+  4) Share volume with container 
+    $ docker run -it --name vol.2 --privileged=true --volumes-from vol.1 ubuntu
+
+
+
+
+
+
+
+
+
+
+
+
 
