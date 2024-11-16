@@ -193,6 +193,7 @@ Different container states?
       C	: file or directory was changed
 
   $ docker commit cont-name image-name     -- Create a new image from a container's changes.
+  $ docker inspect cont-name    -- showes container details
 
 - how to exit container without stopping it
     - use the CTRL + P followed by CTRL + Q
@@ -226,28 +227,40 @@ Different container states?
       - host to container
     - On deleting container volume does not get deleted.
 
-- Create volume using cmd
-  1) Create volume in container
-    $ docker run -it --name  con1  -v /vol ubuntu 
-
-  2) Share volume with container 
-    $ docker run -it --name con2 --privileged=true --volumes-from con1 ubuntu 
-
-- Create volume using Dockerfile
-  1) Dockerfile  
-      FROM ubuntu
-      VOLUME ["/myvolume"]
-
-  2) Create image 
-    $ docker build -t myvol .
+- Container to container
+  - Create volume using cmd
+    1) Create volume in container
+      $ docker run -it --name  con1  -v /vol ubuntu 
   
-  3) Create Container 
-    $ docker run --name vol.1 -it myvol
+    2) Share volume with container 
+      $ docker run -it --name con2 --volumes-from con1 ubuntu 
   
-  4) Share volume with container 
-    $ docker run -it --name vol.2 --privileged=true --volumes-from vol.1 ubuntu
+  - Create volume using Dockerfile
+    1) Dockerfile  
+        FROM ubuntu
+        VOLUME ["/myvolume"]
+  
+    2) Create image 
+      $ docker build -t myvol .
+    
+    3) Create Container 
+      $ docker run --name vol.1 -it myvol
+    
+    4) Share volume with container 
+      $ docker run -it --name vol.2  --volumes-from vol.1 ubuntu
 
 
+$ docker volume ls     -- List all Docker volumes.
+$ docker volume create volume-name     -- Create a new Docker volume.
+$ docker volume rm volume-name     -- Remove a Docker volume.
+$ docker volume prune    -- Removes all unused volumes.
+$ docker volume inspect volume-name     -- Display detailed information about a volume.
+$ docker run -it --name con-name -v /localdir_path:/vol-name  image-name  --Mount local dir to container volume 
+
+- Host to container
+  - Mount local dir to container volume 
+    $ docker run -it --name test2 -v /home/osboxes/test:/vol ubuntu
+  
 
 
 
