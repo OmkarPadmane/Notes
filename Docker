@@ -227,6 +227,14 @@ Different container states?
       - host to container
     - On deleting container volume does not get deleted.
 
+$ docker volume ls     -- List all Docker volumes.
+$ docker volume create volume-name     -- Create a new Docker volume.
+$ docker run -it --name con-name -v /vol-name image-name  --Mount local dir to container volume 
+$ docker volume rm volume-name     -- Remove a Docker volume.
+$ docker volume prune    -- Removes all unused volumes.
+$ docker volume inspect volume-name     -- Display detailed information about a volume.
+
+
 - Container to container
   - Create volume using cmd
     1) Create volume in container
@@ -250,18 +258,12 @@ Different container states?
       $ docker run -it --name vol.2  --volumes-from vol.1 ubuntu
 
 
-$ docker volume ls     -- List all Docker volumes.
-$ docker volume create volume-name     -- Create a new Docker volume.
-$ docker volume rm volume-name     -- Remove a Docker volume.
-$ docker volume prune    -- Removes all unused volumes.
-$ docker volume inspect volume-name     -- Display detailed information about a volume.
-$ docker run -it --name con-name -v /localdir_path:/vol-name  image-name  --Mount local dir to container volume 
-
 - Host to container
   - Mount local dir to container volume 
     $ docker run -it --name test2 -v /home/osboxes/test:/vol ubuntu
   
-
+Expose Port[expose]: It only access the service inside the docker container. It helps to communicate with other containers in docker.
+Publish[-p] : It lets you access service present in the container from outside like from internet.
 
 
 
