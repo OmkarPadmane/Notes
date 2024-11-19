@@ -1,4 +1,4 @@
-Docker installation : https://docs.docker.com/engine/install/
+ Docker installation : https://docs.docker.com/engine/install/
 
 -  Docker
   - Docker is an open-source platform for developing, deploying, and running applications.
@@ -194,6 +194,8 @@ Different container states?
 
   $ docker commit cont-name image-name     -- Create a new image from a container's changes.
   $ docker inspect cont-name    -- showes container details
+  $ docker port cont-name    -- shows open ports 
+
 
 - how to exit container without stopping it
     - use the CTRL + P followed by CTRL + Q
@@ -265,7 +267,14 @@ $ docker volume inspect volume-name     -- Display detailed information about a 
 Expose Port[expose]: It only access the service inside the docker container. It helps to communicate with other containers in docker.
 Publish[-p] : It lets you access service present in the container from outside like from internet.
 
-
+$ 
+$ docker exec -it p1 /bin/bash
+in container:
+$ apt install apache2 -y
+$ service apache2 start
+$ cd /var/www/html/
+$ echo "Bleach" > index.html
+on browser ip:80
 
 
 
