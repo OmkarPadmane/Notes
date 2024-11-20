@@ -196,6 +196,9 @@ Different container states?
   $ docker inspect cont-name    -- showes container details
   $ docker port cont-name    -- shows open ports 
 
+  $ docker stop $( docker ps -a -q)  -- Stop all running container
+  $ docker rm $(docker -a -q)   -- Delete all stop container
+  $ docker rmi $(docker images -q)   -- Delete all images
 
 - how to exit container without stopping it
     - use the CTRL + P followed by CTRL + Q
@@ -267,16 +270,63 @@ $ docker volume inspect volume-name     -- Display detailed information about a 
 Expose Port[expose]: It only access the service inside the docker container. It helps to communicate with other containers in docker.
 Publish[-p] : It lets you access service present in the container from outside like from internet.
 
-$ 
-$ docker exec -it p1 /bin/bash
-in container:
-$ apt install apache2 -y
-$ service apache2 start
-$ cd /var/www/html/
-$ echo "Bleach" > index.html
-on browser ip:80
+- Port mapping:
+  $ docker run -td --name p2 -p 80:80 ubuntu
+  $ docker exec -it p1 /bin/bash
+  in container:
+  $ apt install apache2 -y
+  $ service apache2 start
+  $ cd /var/www/html/
+  $ echo "Bleach" > index.html
+  on browser ip:80
 
+- Share image in Docker Hub:
 
+  $ docker run -it --name im1 ubuntu   -- create container 
+    create some files in container
+  $ docker login -u omkarpadmane   -- login in docker hub
+  $ docker tag im1 omkarpadmane/im1   -- create tag/image to push image in hub
+  $ docker images
+  $ docker push omkarpadmane/im1    -- push image
+     delete image after pushing
+  $ docker pull omkarpadmane/im1   -- pull image
+  $ docker run -it omkarpadmane/im1   -- create container using omkarpadmane/im1
+     check files exits or not
+
+- Docker network:
+ - The Docker network is a virtual network created by Docker to enable communication between Docker containers.
+ - Containers inside the Docker Network can talk to each other by sharing packets of information. 
+ - If two containers are running on the same host they can communicate with each other without the
+   need for ports to be exposed to the host machine.
+
+- Diff types of network:
+  - bridge: Bridge networks create a software-based bridge between your host and the container. 
+    Containers connected to the network can communicate with each other, but they’re isolated from those outside the network.
+
+  - host: Containers that use the host network mode share your host’s network stack without any isolation. 
+    They aren’t allocated their own IP addresses.
+
+  - overlay: Overlay network will enable the connection between multiple Docker demons.
+    The network allows all the containers running on any of the hosts to communicate with each other.
+
+  - IPvLAN: It offers precise control over the IPv4 and IPv6 addresses assigned to your container.
+    Useful when you’re integrating containerized services with an existing physical network.
+
+  - macvlan: macvlan is another advanced option that allows containers to appear as physical devices on your network. 
+    It works by assigning each container in the network a unique MAC address.
+
+  - none: IP addresses won’t be assigned to containers. These containments are not accessible to us from the outside or from any other container.
+
+$ docker network ls - List all Docker networks.
+$ docker network create <network-name> - Create a new Docker network.
+$ docker network rm <network-name> - Remove a Docker network.
+$ docker network inspect <network-name> - Display detailed information about a network.
+$ docker network connect <network-name> <container> - Connect a container to a network.
+$ docker network disconnect <network> <container> - Disconnect a container from a network.
+
+$ docker network create work
+$ docker run -it --network work --name n1 ubuntu   -- use specific network for container
+$ docker network connect work d1
 
 
 
