@@ -14,3 +14,31 @@ Amazon IAM (Identity and Access Management):
   - Amazon IAM allows users to securely access and manage resources. To achieve complete access to the tools and resources provided by AWS.
   - It gives you the right to have control over who has authorization (signed in) and authentication (has permissions) access to the resources. 
   - It comes with attribute-based access control which helps you to create separate permissions on the basis of the user’s attributes such as job role, department, etc.
+
+Amazon EBS (Elastic Block Store):
+  - Amazon EBS helps to securely manage transactions. You can handle diverse workloads, be it relational, non-relational, or business applications. 
+  - It helps to resize workloads for big data analytics engines such as Hadoop and Spark.
+
+Amazon CloudFront:
+  - Amazon CloudFront is an AWS service for content delivery networks, it delivers content globally, 
+  offering high performance and security and also at high transfer speeds and low latency(rate of time).
+  - It uses automated network mapping and intelligent routing mechanisms for delivering content to the destination.
+
+Amazon VPC (Virtual Private Cloud)
+  - it enables you to set up an isolated section where you can deploy AWS resources at scale in a virtual environment. 
+  - This service is responsible to control the virtual networking environment such as resource placement, security, and connectivity.
+  - Using VPC, you get complete access to control the environment, such as choosing IP address, subset creation, and route table arrangement. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
