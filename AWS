@@ -1,3 +1,16 @@
 EC2 : Elastic Compute Cloud
   - Amazon Elastic Compute Cloud provides on-demand, scalable computing capacity in the Amazon Web Services (AWS) Cloud. 
   - Amazon EC2 reduces hardware costs so you can develop and deploy applications faster.
+
+Amazon RDS (Relational Database Services) :
+  - Amazon RDS (Relational Database Service) is another service provided by AWS which is a managed database for PostgreSQL, MariaDB, MySQL, and Oracle.
+
+Amazon S3 (Simple Storage Service):
+  - With Amazon, it has become easy to store data anytime, anywhere. Amazon S3 (Simple Storage Service), 
+  It is an object storage service offering scalability, availability, security, and high-performing. 
+  - Amazon S3 is the perfect fit for big businesses where a large amount of data is managed for varied purposes.
+
+Amazon IAM (Identity and Access Management):
+  - Amazon IAM allows users to securely access and manage resources. To achieve complete access to the tools and resources provided by AWS.
+  - It gives you the right to have control over who has authorization (signed in) and authentication (has permissions) access to the resources. 
+  - It comes with attribute-based access control which helps you to create separate permissions on the basis of the user’s attributes such as job role, department, etc.
