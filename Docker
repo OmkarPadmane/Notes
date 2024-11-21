@@ -329,7 +329,9 @@ $ docker run -it --network work --name n1 ubuntu   -- use specific network for c
 $ docker network connect work d1
 
 
-
-
+- Docker Compose:
+  - Docker Compose is a tool that makes it easier to create and run multi-container applications. 
+  It automates the process of managing several Docker containers simultaneously, such as a website frontend, API, and database service.
+  - It is tool that allows you to define and run multiple services and application that belong together in 1 isolated environment.
 
 
