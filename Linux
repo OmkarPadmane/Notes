@@ -1,0 +1,256 @@
+
+Absolute path is defined as specifying the location of a file or directory from the root directory(/).   ex.   /home/osbpxes/Download
+Relative path is defined as the path related to the present working directly.(because we are already in /home/osbpxes)  ex.   /download
+
+
+1) Ls : Lists Directory
+
+$ ls -l
+
+ex : drwxr-xr-x 2 osboxes osboxes 4096 Apr 22  2022 Desktop
+
+– normal file
+d : directory
+s : socket file
+l : link file
+c : CHaracter special file
+b : Binary file
+
+Field 1 – File Permissions
+Field 2 – Number of links: the number of links for that file. In this example, 2 indicates link to this file.
+Field 3 – Owner of the file. this file is owned by username ‘osboxes’.
+Field 4 – Group: this file belongs to "osboxes" group.
+Field 5 – Size of file in bytes. 
+Field 6 – Last modified date and time
+Field 7 – File name: The last field is the name of the file.
+
+ls -a : shows all files along with hidden files.
+ls -i : shows file inode no
+
+2) pwd :Present Working Directory 
+
+ Displays the full pathname of the current directory	
+	
+3) cd : Change Directory
+
+options:
+
+$ cd [directory_name]
+$ cd ..    		:go one dir back
+$ cd / cd ~   		:go to home dir
+$ cd -    		:go to privious dir
+$ cd 'hi by' 		:to change dir with space in name
+
+4) sudo su
+ go to the superuser/root user
+
+5) sudo [cmd]   :  sudo rm
+ lets you excute cmd as root
+
+6) to save cmd o/p in file
+
+# stdout: cmd 1> filename    if cmd is wrong then it will not save o/p  ex. pwd > p1.txt
+# stderr: cmd 2> filename    if cmd is right then it will not save o/p   ex. pwd 2> p1.txt
+# for both : cmd &> filename    cmd right/wrong it will save o/p        ex.  pwd &> p1.txt
+
+7) make directory 
+$ mkdir dir_name
+$ mkdir dir_name1  dir_name2    : make multiple dir
+$ mkdir dir_name/dir_name        : make dir in dir  parent-child
+$ mkdir "hi by"   : make dir with space in name  & cd 'hi by' to change dir
+ 
+
+8) cat : Concatenation
+ use to view, concatenate, create, copy, merge, and manipulate file contents.
+
+$ cat file_name    			: View the Content of a Single File
+$ cat file_name1 file_name2    		: View the Content of a multiple Files
+$ cat -n file_name     			: Shows line number with data
+$ cat > newfile_name  			: Create a file and add content
+$ cat file1.txt > file2.txt    		: Copy content of file1 into file2
+$ cat file_name1 >> file_name2    	: Append the Contents of One File to the End of Another File
+$ tac file_name1   			: ‘tac’ command is the reverse of ‘cat’ and display the content of a file in revers
+
+video : 1:17
+
+9) whoami : Display the current username  , who : displays information about users who are currently logged into the system   
+   hostname  : displays hostname
+
+10) grep : Global Regular Expression Print
+ - used for searching and manipulating text patterns within files.
+syntax : grep [options] pattern [files]
+
+ex . grep -c an anime.txt   (for string)
+     ls | grep .txt  (for extension)
+
+-c : This prints only a count of the lines that match a pattern
+–i : Ignores, case for matching
+-n : Display the matched lines and their line numbers.
+-v : This prints out all the lines that do not matches the pattern
+-o : Print only the matched parts of a matching line
+
+grep -n ^s anime.txt :  Matching the Lines that Start with a String.
+grep -ni s$ anime.txt : Matching the Lines that End with a String 
+
+
+
+11) sort : SORT command is used to sort a file either alphabetically or numerically, arranging the records in a particular order.
+
+sort -r example.txt
+
+-r : Sorts data in reverse order (descending).
+
+-u : Sorts and removes duplicate lines, providing a unique sorted list.
+
+-n : Sorts a file numerically.
+
+-k : Sorts a table based on a specific column number.
+
+12) cp : copy files/dir
+syntax : cp source_file destination
+ex. : cp anime.txt /home/osboxes/Documents/
+      cp -r hi /home/osboxes/Documents/
+      cp *.txt /home/osboxex/hi/    (copy all .txt files)
+
+-r or -R : Copies directory structure recursively.    
+-i : Interactive copying with a warning before overwriting file.
+-n : Does not overwrite the file
+
+13) mv : move files / dir  or change name of file/dir
+move:
+syntax : mv source_file/dir  destination
+ex. mv  hi /home/osboxes/Documents/
+
+rename:
+syntax : mv filename new_filename 
+ex. : mv b.txt by.txt
+
+14) mkdir : make dir/folder
+mkdir ab  
+mkdir -p q/w/e/r  make dir in dir
+mkdir p{1..10}  make multiple dir  
+
+15) rm : remove/delete
+rm dir_name/filename  
+rm -r om/     -r for to delete non empty dir
+
+rmdir : deletes only empty dir
+
+rmdir -p q/w/e/   : -p delete dir with all data
+rmdir -v p{1..10}
+
+
+16) uname : used to display the krnel name
+
+17) du : used to display disk consumption of a specific directory
+
+18)  wc : word count of file
+$ wc b.txt 
+o/p : 2  2 14 b.txt     (number of lines, words, bytes, file_name)
+
+19) chmod : used to change the permissions of a file
+syntax : chmod [options] [mode] [File_name] 
+ex. : chmod u=rwx,g=rw,o=r anime.txt 
+
+-R : Apply the permission change recursively to all the files and directories within the specified directory.
+-h : Change the permissions of symbolic links instead of the files they point to.
+
++ : Add permissions |  - : Remove permissions |  = : Set the permissions to the specified values
+
+r(4) : Read permission | w(2) : Write permission  |  x(1) : Execute permission
+
+u : Owner |  g : Group  |  o : Others  |  a : All (owner, groups, others)
+
+20) chown : change owner
+syntax : chown [options] new_owner[:new_group] file(s)
+ex. : chown master file1.txt     and     chown master:group1 file1.txt
+
+-c/-v : receive notifications about ownership alterations.
+-f : forcefully or silently change ownership
+
+21) install cmd : 
+
+syntax : sudo yum install package-name
+ 
+yum : Yellow Dog Updater, Modified  | fro REHL , Linux
+apt : Advanced Packaging Tool  | for Debian, centos
+dnf : Dandified YUM | fro fedora , Rocky Linux
+
+22) update : used to synchronize package lists from repositories and update information about available packages.
+
+23) bashrc : bash read command
+ configuration file for the Bash shell environment.  |  
+
+24) tar 
+tar [options] [tar-file-name] [file or directory to be tar]
+ex. tar -czvf anime.tar anime.txt (compress)
+    tar -xzvf anime.tar (extract)
+
+-c : Creates an archive by bundling files and directories together.
+
+-x : Extracts files and directories from an existing archive.
+
+-z : Uses gzip compression when creating a tar file, resulting in a compressed archive with the ‘.tar.gz’ extension.
+
+-v : Displays verbose information
+
+25) head : shows first 10 lines |  head filename or head -n 3 fname  (first 3 lines)
+
+25) tail : shows last 10 lines |  tail filename  or tail -n 5 fname (last 5 lines)
+
+26) tty : terminal id
+
+27) cat /etc/os-release :  displays information about your operating system, including the distribution name, version, and ID. 
+
+28) echo "string" :  echo is cmd that outputs the string that are passed to it as arguments. 
+
+29) cmd used to create file : touch, vi, vim, nano
+    
+    cmd used to view file  :   less, more, cat
+
+30) how to search string in file :  grep string file     or     less filename  (enter  after that /string )  
+
+31) egrep 
+
+32) ip addr , ifconfig   : check ip address
+
+33) find , locate : for finding files
+
+34) diff : finde difference two files
+
+35) shred :  permenantely delete file so that we can not recover it
+
+36) lscpu and dmidecode  : check system architecture info
+
+37) file : to finde file type , ex. file fname    , stat filename  : shoes statistics
+
+38) cmd > fname : writes the output of cmd into file  ,ex. ls -l > ls.txt
+
+39) 2> : to redirect error into file  ,  &1 : to redirecct output into file  , &12>  : both output and error into file
+     cd /root 2> error.txt      ,      cd / &1> out.txt       ,   cd / &12> erou.txt
+
+40) crontab and at : used to allow users to schedule tasks or commands that help to run automatically at specified times and intervals.m
+	* * * * * cmd  ,  min hour dom mon week cmd
+     crontab -e : used to edit crontab
+     crontab -l : use to view crontab entries
+     crontab -r : use to remove current crontab file
+     crontab -i : showes prompt before removing a user's crontab
+
+41) echo $0 : tells in which shell we are in
+42) /home/uername : location of home directory of a user 
+43) free : displays how much RAM is used and how much is available
+
+44) dhclient : it give dynamic ip 
+45) nmcli   : used to setup static ip
+46) epel-release   :   Extra Packages for Enterprise Linux
+
+47) apt remove   :  removes package
+48) apt --auto-remove  :  removes package and all its dependencies from system
+	ex.  $ sudo apt purge --auto-remove ansible
+
+49) apt-get clean  :  The command sudo apt-get clean removes downloaded package files from the local repository, 
+freeing up disk space. It removes everything from /var/cache/apt/archives/ except for the lock file and partials folder.
+	ex.    sudo apt clean
+
+Links ,hard limk ,soft link
+ls | grep .txt | awk -F[\w] '{print "cp " $1 " /home/osboxes/Documents"}' | bash
