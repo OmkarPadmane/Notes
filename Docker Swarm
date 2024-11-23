@@ -1,0 +1,26 @@
+- Container orchestration:
+  - It is a software solution that helps you deploy, scale and manage your container infrastructure.
+  - provide an easy way to create, update and remove applications without worrying about the underlying infrastructure.
+  - It is easier to orchestrate services, including deployment, storage, networking, and security. 
+  - It is used for:
+    - Deployment of container
+    - Scaling
+    - Resource allocation
+    - Load Balancing
+
+- Docker Swarm:
+- Docker Swarm is a container orchestration tool for clustering and scheduling Docker containers.
+- Docker Swarm includes multiple worker nodes and at least one manager node to control the cluster's activities.
+- With Docker Swarm, containers can connect to multiple hosts. Each node in the cluster can then easily deploy and access any containers within that swarm.
+- Manageer node: 
+    - Accepting cmd 
+    - Assign and instruct a worker to run tasks
+- worker node:
+    - receive and execute the tasks that are allocated 
+
+
+
+
+
+
+
