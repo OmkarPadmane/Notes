@@ -18,6 +18,35 @@
 - worker node:
     - receive and execute the tasks that are allocated 
 
+  $ docker swarm init --advertise-addr <ip-address>    -- Initialize a Docker Swarm.
+ 
+  $ docker swarm join --token SWMTKN-1-<token_string> <MANAGER_IP>:2377    -- Join a node to Swarm as a worker.
+  2377 port is used for communication between the nodes of a Docker Swarm or cluster.
+  $ docker swarm join-token worker    -- gives token cmd for worker
+
+  $ docker info    -- shows details
+  $ docker node ls    --  list all the nodes joined to the cluster.
+  $ docker swarm leave --force     -- Remove a node from a Swarm.
+  $ docker node rm  id    -- remove node 
+
+  $ docker service create --name <service-name> --replicas <no> service     -- Create a new service in a Swarm.
+  ex.  docker service create --name service1 --replicas 3 -p 80:80 nginx:latest
+  - Basically it creates containers on nodes of nginx image.depending on replicas
+  - it will create new container if service goes down on any node automatically.
+  - it reduces down time.
+
+  $ docker service ls    -- list service.
+  $ docker service ps    -- Lists the tasks that are running as part of the specified services.
+  $ docker service inspect --pretty <service-name>    -- Prints details of service
+  $ docker service rm id    -- Removes the specified services from the swarm.
+  $ docker service scale service-name=REPLICAS    -- It scales services either up or down to the desired number of replicas.
+  $ docker service update --image image-name:version service-name     -- Updates a service as described by the specified parameters.
+  
+
+  $ docker node update --availability active/pause/drain node-id    -- It is used to perform maintaince on node.
+  $ docker node promote <NODE_NAME>    -- promote worker nodes to manager status for redundancy.
+  $ docker node demote <NODE_NAME>    -- demote manager nodes to worker status for redundancy.
+
 
 
 
