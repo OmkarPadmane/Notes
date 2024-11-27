@@ -4,7 +4,7 @@ This made merging code changes difficult and time-consuming, and also resulted i
 To solve this problem CI come in picture.where developers regularly merge their code changes into a central repository, 
 after which automated builds and tests are run.
 
-- Build stage: the CI/CD pipeline takes the source code from a version control system and compiles it into executable code.
+- Build stage: n DevOps, a build is the process of compiling and packaging source code into an executable form
 
 - Continuous delivery 
 It is a software development practice where code changes are automatically prepared for a release to production.
@@ -13,3 +13,8 @@ These tests may include UI testing, load testing, integration testing.
 
 - Continuous deployment (CD)
 It is a software release process where code changes are automatically deployed to a production environment where feedback is collected from user for improvement.
+
+Jenkins:
+  - Jenkins is a open-source tool that is used for automation. It allows all the developers to build, test and deploy software. 
+  - It automates the entire software developement life cycle.
+  - It is written in Java and runs on java only. It is platform independent.
