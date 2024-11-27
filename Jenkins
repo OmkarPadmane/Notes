@@ -14,7 +14,17 @@ These tests may include UI testing, load testing, integration testing.
 - Continuous deployment (CD)
 It is a software release process where code changes are automatically deployed to a production environment where feedback is collected from user for improvement.
 
-Jenkins:
-  - Jenkins is a open-source tool that is used for automation. It allows all the developers to build, test and deploy software. 
-  - It automates the entire software developement life cycle.
-  - It is written in Java and runs on java only. It is platform independent.
+- Jenkins:
+    - Jenkins is a open-source tool that is used for automation. It allows all the developers to build, test and deploy software. 
+    - It automates the entire software developement life cycle.
+    - It is written in Java and runs on java only. It is platform independent.
+    - Jenkins has a large plugin ecosystem that supports many tools which helps in enhancing the functionality of a Jenkins.
+    - three stages: Build, Test and Deploy.
+
+- Jenkins pipeline:
+    - It is a set of plug-ins to create automated, recurring workflows of CI/CD pipelines.
+    - A Jenkins pipeline includes all the tools you need to orchestrate testing, merging, packaging, shipping, and code deployment.
+    - A pipeline is typically divided into multiple stages and steps, with each step representing a single task.
+
+
+
