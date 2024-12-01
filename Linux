@@ -5,7 +5,7 @@ Relative path is defined as the path related to the present working directly.(be
 
 1) Ls : Lists Directory
 
-$ ls -l
+$ ls -l, ls ltr [l= long list, t= Sort files time, r= reverse]
 
 ex : drwxr-xr-x 2 osboxes osboxes 4096 Apr 22  2022 Desktop
 
