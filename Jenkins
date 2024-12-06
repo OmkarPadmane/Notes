@@ -60,8 +60,7 @@ Cronjob: https://crontab.cronhub.io/
         - Post-build Actions --> Email notification
         - Recipients --> email id
 
-
-
+5) Perform job/task on remote servver
 
 
 
