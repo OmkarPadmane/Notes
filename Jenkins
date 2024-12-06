@@ -45,12 +45,20 @@ Cronjob: https://crontab.cronhub.io/
     ( It will only build/execute when changes are made in code )
     - new item --> free style
     - Source Code Management --> Git --> repo link
-    - Build Steps --> Execute shell: cmd for executing code
     - Build Triggers --> Poll SCM --> Schedule
+    - Build Steps --> Execute shell: cmd for executing code
+    
+4) Email notification (for personal mail)
+    - manage jenkins --> setting --> Email notification 
+    - SMTP server --> smtp.gmail.com         
+    - Advance --> Use SMTP Authentication
+    - username --> gmail ,  password --> generate it in google account(security->app password) 
+    - use ssl -->save 
 
-
-
-
+    to use it in pipeline
+    - in build at bottom select
+        - Post-build Actions --> Email notification
+        - Recipients --> email id
 
 
 
