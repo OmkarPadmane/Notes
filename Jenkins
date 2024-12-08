@@ -36,7 +36,7 @@ Cronjob: https://crontab.cronhub.io/
     - Build Steps --> Execute shell: write script to get executed  
 
 2) Fetch code from github and executing it
-    (install git in OS)
+    (install plugin in jenkins and install git in OS)
     - new item --> free style
     - Source Code Management --> Git --> repo link
     - Build Steps --> Execute shell: cmd for executing code
@@ -61,6 +61,22 @@ Cronjob: https://crontab.cronhub.io/
         - Recipients --> email id
 
 5) Perform job/task on remote servver
+    (Install ssh plugin )
+    - manage jenkins --> setting --> Publish over SSH
+    - key --> paste private key
+    - ssh server --> fill ditails(hostname[ip],username]
+    - new item --> free style
+    - Build steps --> send files ...ssh
+    - transfer --> soursefile --> give path of file  --> save   
+        (default path from where file will be transfer: /var/lib/jenkins/workspace/remote-job)
+        (for multiple file: path/* 
+
+6) Ansible with jenkins
+     (Install Ansible plugin )
+    - manage jenkins --> setting --> ansible
+
+
+
 
 
 
