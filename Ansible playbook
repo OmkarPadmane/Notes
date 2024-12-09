@@ -1,0 +1,148 @@
+
+1)  see nodes info
+
+--- # my first playbook
+- hosts: demo
+  user: ansible
+  become: yes
+  gather_facts: yes
+
+
+
+2) install service
+
+--- # first task install service
+- hosts: demo
+  user: ansible
+  become: yes
+
+  tasks:
+  - name: install git
+    apt:
+      name: git
+      state: absent
+
+3)use variable
+
+--- # using variable
+- hosts: demo
+  user: ansible
+  become: yes
+  vars:
+    package: git
+
+  tasks:
+  - name: install git
+    apt:
+      name: "{{ package }}"
+      state: present
+
+
+4) handler
+
+
+--- # using handler
+- hosts: demo
+  user: ansible
+  become: yes
+
+  vars:
+    package: git
+
+  tasks:
+  - name: install git
+    apt:
+      name: "{{ package }}"
+      state: absent
+    notify: service absent
+
+  handlers:
+  - name: service absent
+    apt:
+      name: "{{ package }}"
+      state: present
+
+5) Loop : 
+
+--- # creating users using loop
+- hosts: demo
+  user: ansible
+  become: yes
+
+  tasks:
+  - name: create users
+    user:
+      name: "{{ item }}"
+      state: present
+
+    loop:
+      - luffy
+      - zoro
+      - sanji
+
+  - name: view /etc/passwd
+    shell: |
+      cat /etc/passwd
+    register: file_content
+
+  - name: Print the file content to a console
+    debug:
+      msg: "{{ file_content.stdout }}"
+
+
+
+- Ansible shell module?
+	The Ansible shell module is used to execute shell commands in the remote target machines. 
+	The shell module takes the command name followed by a list of space-delimited arguments. 
+
+	The shell module does not execute directly on the target but in a shell environment (/bin/sh) on the target.
+	This makes it possible to use shell-specific features and functions such as pipe |, redirection <, >, >>, and so forth.
+ex.
+6.1) cat any file
+
+
+--- # view file
+- hosts: demo
+  user: ansible
+  become: yes
+
+  tasks:
+  - name: view /etc/passwd
+    shell: |
+      cat /etc/passwd
+    register: file_content
+
+  - name: Print the file content to a console
+    debug:
+      msg: "{{ file_content.stdout }}"
+
+
+6.2)  to run Linux cmd on node and print the output to control node
+
+- hosts: demo
+  user: ansible
+  become: yes
+
+  tasks:
+  - name: run debian cmd
+    command: cat /etc/passwd
+    register: file_content
+
+  - name: print output
+    debug:
+      msg: "{{ file_content.stdout }}"
+
+
+7) Ansible condition
+
+--- # using condition
+- hosts: demo
+  user: ansible
+  become: yes
+  tasks:
+  - name: install apache2
+    command: apt install apache2 -y
+    when: ansible_os_family == "Debian"
+  - name: install httpd
+    command: yum install httpd -y
+    when: ansible_os_family == "RedHat"
