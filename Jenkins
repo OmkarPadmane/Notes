@@ -72,11 +72,13 @@ Cronjob: https://crontab.cronhub.io/
         (for multiple file: path/* 
 
 6) Ansible with jenkins
-     (Install Ansible plugin )
-    - manage jenkins --> setting --> ansible
+     (Install Ansible plugin and also in OS )
+    - manage jenkins --> setting --> plugin --> ansible
+    - write playbook 
+    - new item --> free style --> Build Steps --> Invoke Ansible Playbook
+    - Playbook path  --> /etc/ansible/playbook/first.yml --> save
 
-
-
+7) Remote webserver changes
 
 
 
