@@ -78,9 +78,15 @@ Cronjob: https://crontab.cronhub.io/
     - new item --> free style --> Build Steps --> Invoke Ansible Playbook
     - Playbook path  --> /etc/ansible/playbook/first.yml --> save
 
-7) Remote webserver changes
-
-
+7) User Management in jenkins
+    Giving permission to user for using jenkins
+    - Manage Jenkins --> users --> create user
+    - manage jenkins --> setting --> plugin --> Role-based Authorization StrategyVersion
+    - manage jenkins --> security --> authentication --> Authorization --> Role-Based Strategy
+        (for managing access for user)
+    - manage jenkins --> Manage and Assign Roles --> Gloable Roles -> save
+        (create role & select permission which you want to give)
+        - Assign roles --> add user -> select role ->save
 
 
 
