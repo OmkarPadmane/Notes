@@ -4,15 +4,16 @@ This made merging code changes difficult and time-consuming, and also resulted i
 To solve this problem CI come in picture.where developers regularly merge their code changes into a central repository, 
 after which automated builds and tests are run.
 
-- Build stage: n DevOps, a build is the process of compiling and packaging source code into an executable form
-
-- Continuous delivery 
-It is a software development practice where code changes are automatically prepared for a release to production.
-It lets developers automate testing beyond just unit tests so they can verify application updates across multiple dimensions before deploying to customers.
-These tests may include UI testing, load testing, integration testing.
+- Build stage: In DevOps, a build is the process of compiling and packaging source code into an executable form. 
 
 - Continuous deployment (CD)
-It is a software release process where code changes are automatically deployed to a production environment where feedback is collected from user for improvement.
+    - It is a software release process where code changes are automatically deployed to a production environment
+      where feedback is collected from user for improvement.
+
+- Continuous delivery:
+    - It is a software development practice where code changes are automatically prepared for a release to production.
+    - It lets developers automate testing beyond just unit tests so they can verify application updates across multiple dimensions before deploying to customers.
+      These tests may include UI testing, load testing, integration testing.
 
 - Jenkins:
     - Jenkins is a open-source tool that is used for automation. It allows all the developers to build, test and deploy software. 
@@ -88,12 +89,23 @@ Cronjob: https://crontab.cronhub.io/
         (create role & select permission which you want to give)
         - Assign roles --> add user -> select role ->save
 
+- Environmental variables:
+    - Environment variables are key-value pairs that contain information about the system environment.
+    - In Jenkins, those variables may be configured globally or at the job level, providing us with a way to customize and parameterize our builds.
+    - Environment variables play important roles in Jenkins providing a flexible and dynamic manner to manage configurations, parameters,
+      and settings across different stages of the of (CI/CD) pipeline.
+    - ex. BUILD_ID, WORKSPACE, JOB_NAME
 
+   - diff between parameters and variables
+    - Parameters: Allow users to pass dynamic values to Jenkins jobs, such as file paths. 
+    - These values are job specific and accessed as environment variables. 
+    - Parameters can be used to create reusable jobs, streamline processes, and manage workflows.
 
+    - Environment Variables: Values that are gloable and used during code execution. 
+       - This variables are used in any jobs, providing us with a way to customize and parameterize our builds.
 
-
-
-
+8) user define Environmental variables
+    - Manage Jenkins --> System --> Global properties -> Environment variables
 
 
 
