@@ -24,10 +24,37 @@ after which automated builds and tests are run.
 
 - Jenkins path: /var/lib/jenkins/
 
-- Jenkins pipeline:
-    - It is a set of plug-ins to create automated, recurring workflows of CI/CD pipelines.
-    - A Jenkins pipeline includes all the tools you need to orchestrate testing, merging, packaging, shipping, and code deployment.
-    - A pipeline is typically divided into multiple stages and steps, with each step representing a single task.
+- Jenkins job:
+    - A job in Jenkins is a user-specified description of work, typically divided into sequential steps. 
+    For example, a job may fetch source code from a Git repository, compile it using the configured compiler, 
+    run it inside a staging environment, examine the output for any errors, and send an email notification to the user.
+
+-  Job types:
+    - Freestyle project: This type is a primary component of the Jenkins ecosystem. 
+        - It’s highly flexible and includes both build steps and post-build actions. 
+        - For example, execute a shell script, start/stop Docker containers, and more.
+
+    - Jenkins pipeline:
+        - A pipeline is a series of events or jobs that can be used to set up CI/CD workflows. 
+        - A Jenkins pipeline includes all the tools you need to orchestrate testing, merging, packaging, shipping, and code deployment.
+        - A pipeline is typically divided into multiple stages and steps, with each step representing a single task.
+
+    - Multi-configuration project: 
+        - This job type is suitable for projects that contain various configuration sets. 
+        - For example, you may need to compile code for different architectures or test code on different environments.
+
+- Stages in a Jenkins pipeline:
+    - Build: Defines the steps to compile code
+    - Test: Defines the steps to test the code
+    - Deploy: Defines the steps to deploy the code 
+    Each stage can contain scripted code that performs the required operations.
+
+- Credentials in Jenkins:
+    - It is a secure way to store sensitive information like usernames, passwords, API tokens, SSH keys, and certificates. 
+    - This prevents hardcoding sensitive data directly into your Jenkins jobs or pipelines.
+    - It increase security and making it easier to manage access to external resources.   
+
+
 
 Cronjob: https://crontab.cronhub.io/
 
