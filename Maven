@@ -1,2 +1,42 @@
 Maven is a popular open-source powerful project management tool that is based on POM (project object model).
 It is used for project build, dependency, and documentation of Java-based project.
+
+- POM Files: Project Object Model 
+  - It is a XML file that contains information related to the project and configuration information such as dependencies, source directory, plugin, etc.
+  - Maven reads pom.xml file to accomplish its configuration and operations.
+  - Every project have different pom file.
+
+- Components of a POM File:
+
+  - Project Coordinates:
+    <groupId>: Defines the group or organization to which the project belongs.
+    <artifactId>: The unique name of the project.
+    <version>: The specific version of the project.
+  
+  - Build Configuration:
+    - Contains the build configuration for the project, such as the source directory, test source directory, and output directory.
+  
+  - Dependencies:
+    - Contains the list of dependencies required by the project. 
+  
+  - Plugins:
+    - Defines the list of plugins that are used in the build process.
+  
+  - Repositories:
+    - Defines the list of remote repositories from which dependencies and plugins can be downloaded.
+  
+  - Profiles:
+    - Allows the definition of different configurations for different environments, such as development, testing, and production.
+
+- Maven Repository: A maven repository is a directory of packaged JAR file with pom.xml file. Maven searches for dependencies in the repositories. 
+
+  - Local Repository: 
+      It reffers to the machine of the developeers whhere all the project material is stored.
+  - Remote Repository: 
+      It is a repository on a web server from which Maven can download dependencies.
+      It often used for hosting projects internal to the organization.
+  - Central Repository: 
+      The central Maven repository is created by Maven community. 
+      Maven looks in this central repository for any dependencies needed when not found in your local repository.
+
+
