@@ -2,6 +2,9 @@
 Absolute path is defined as specifying the location of a file or directory from the root directory(/).   ex.   /home/osbpxes/Download
 Relative path is defined as the path related to the present working directly.(because we are already in /home/osbpxes)  ex.   /download
 
+apt: Advanced Packaging Tool
+yum: Yellowdog Updater, Modified
+sudo: super user do
 
 1) Ls : Lists Directory
 
@@ -41,8 +44,7 @@ $ cd / cd ~   		:go to home dir
 $ cd -    		:go to privious dir
 $ cd 'hi by' 		:to change dir with space in name
 
-4) sudo: super user do
-sudo su: go to the superuser/root user
+4) sudo su: go to the superuser/root user
 
 5) sudo [cmd]   :  sudo rm
  lets you excute cmd as root
