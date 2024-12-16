@@ -54,7 +54,32 @@ after which automated builds and tests are run.
     - This prevents hardcoding sensitive data directly into your Jenkins jobs or pipelines.
     - It increase security and making it easier to manage access to external resources.   
 
+- Upstream and Downstream Pipeline/job in Jenkins
+    upstream and downstream pipelines represent a dependency relationship between different pipeline jobs. 
+    This concept is fundamental to creating efficient and automated CI/CD workflows.   
 
+    Upstream Pipeline:
+        - It is the first job in a sequence.
+        - Upon successful completion, it triggers one or more downstream jobs.   
+   
+    - Job A -> Post-build Actions -> Build other projects(job B) -> save
+
+    Downstream Pipeline:
+        - It is triggered by the successful completion of an upstream job.   
+        - It executes tasks that rely on the output of the upstream job.   
+
+       - Job B -> Build Triggers -> Build after other projects are built(job A) -> save
+
+- Master-Slave Architecture :
+    - In Jenkins, the master-slave architecture is a hierarchical model that distributes workload across multiple nodes to improve efficiency and scalability.
+    - the master node is the central controller that manages the system, while the slave nodes execute the tasks assigned to them. 
+
+- Master node:
+    - Manages the system, stores configurations, and handles user interactions. The master node also schedules jobs, 
+      assigns them to slaves, and monitors the state of the slaves. 
+- Slave nodes:
+    - These nodes execute the jobs assigned to them by the master. 
+    - Slave nodes can run jobs in different environments like Linux, Windows, MacOS, etc.
 
 Cronjob: https://crontab.cronhub.io/
 
