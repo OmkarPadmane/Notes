@@ -41,8 +41,8 @@ $ cd / cd ~   		:go to home dir
 $ cd -    		:go to privious dir
 $ cd 'hi by' 		:to change dir with space in name
 
-4) sudo su
- go to the superuser/root user
+4) sudo: super user do
+sudo su: go to the superuser/root user
 
 5) sudo [cmd]   :  sudo rm
  lets you excute cmd as root
