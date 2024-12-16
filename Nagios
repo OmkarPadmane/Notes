@@ -1,0 +1,20 @@
+- Nagios is an open-source monitoring and alerting tool designed to oversee IT infrastructure components like servers, networks, applications, and services. 
+- It was designed to run on the Linux operating system and can monitor devices running Linux, Windows etc.
+- Helps to ensure the availability, performance, and security of critical systems.
+- It offers flexibility with both command-line and web-based interfaces, allowing administrators to monitor systems efficiently.
+- Nagios can monitor memory use, disk use and microprocessor load, network protocols, currently running processes and log files.
+- Port no: 80, 443
+
+
+
+
+
+
+
+
+
+
+
+
+
+
