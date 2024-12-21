@@ -1,0 +1,51 @@
+for learning k8:
+- https://killercoda.com/playgrounds/scenario/kubernetes
+- https://labs.play-with-k8s.com/
+
+orchestration : clustering of any no. of containers running on different network.
+
+- Kubernetes is an open source container orchestration platform that automates many of the manual processes 
+  involved in deploying, managing, and scaling containerized applications.
+- Kubernetes is also known as "k8s", with the 8 standing for the number of letters between the “K” and the “s”.
+- It is a platform for managing containers, which bundle the code, configuration, and dependencies of an application, 
+  allowing it to run as an isolated process. 
+- Each application gets its own containers, which are grouped into Kubernetes pods.
+- Kubernetes can run on bare metal servers, virtual machines, public cloud providers, private clouds, and hybrid cloud environments.
+
+- Google developed the k8 and later they made it open source. Now Kubernetes is a project of the Cloud Native Computing Foundation (CNCF).
+- All the cloud provider supports k8.
+
+- problems before k8 for managing container:
+  - Containers can't communicate with each other.
+  - Auto scalling and load balancing was not possible.
+
+- features of k8:
+
+1) Auto-scaling. Automatically scale containerized applications and their resources verically or horizontally based on usage.
+   - vertical: Assigns more resources, like CPU or memory, to the pods that are already running.   
+   - Horizontal: Adds or removes pods to scale capacity.
+
+2) Load balancing: the process of distributing network traffic across multiple servers or pods to ensure workload.
+3) Platform Independent
+4) Fault Tolerance: the ability of a cluster to continue operating when some of its components fails, ex. pod
+5) Rollback: the concept of maintaining multiple versions of your application. 
+6) Health monitoring of containers
+7) Batch execution: the process of running tasks without user intervention. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
