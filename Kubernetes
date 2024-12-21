@@ -12,6 +12,8 @@ orchestration : clustering of any no. of containers running on different network
 - Each application gets its own containers, which are grouped into Kubernetes pods.
 - Kubernetes can run on bare metal servers, virtual machines, public cloud providers, private clouds, and hybrid cloud environments.
 
+- Kubernetes controls Pods not container.
+- Kubernetes uses master-slave / Client-servver architecture. 
 - Google developed the k8 and later they made it open source. Now Kubernetes is a project of the Cloud Native Computing Foundation (CNCF).
 - All the cloud provider supports k8.
 
@@ -33,13 +35,44 @@ orchestration : clustering of any no. of containers running on different network
 7) Batch execution: the process of running tasks without user intervention. 
 
 
+Pod:
+- A pod is the smallest execution unit in Kubernetes. Which runs container inside it.
+- Kubernetes pod can have multiple containers, but the most common use case is to have one container per pod.
+- In kuberbetes an IP address is assign to Pod not to container.
+- If pod gets destroyed then it can't be restrated, new pod with new ip is get created.
 
+- Why one container per pod?
+  when there are multiple container they are tightly coupled. in that case if any container fails it affects the other containers and it can led to pod destruction.
+  (tightly coupled: two or more components are depend on each other to function properly)
 
+- Control plane: It manages clusters and resources such as worker nodes and pods. 
+  The control plane receives information such as cluster activity, internal and external requests, and more. 
+  Based on these factors, the control plane moves the cluster resources from their current state to the desired state. 
 
+- Control plane components:
+1) Master
 
+  - API server: The application programming interface (API) server in K8 is the interface used to manage, create and 
+    configure Kubernetes clusters and serves as the entry point for all commands and queries.
+    - Every component communicate with other components through AP-server 
 
+  - etcd (key-value): A key-value store where all data relating to the Kubernetes cluster is stored.
+    - etcd manages the configuration data, state data and metadata.
+    - etc: folder in Linux that contains configuration files for a single system
+    - d: Stands for "distributed"
+  
+  - Controller-manager (actual state = desired): A set of built-in controllers that monitors the shared state of the cluster and 
+    communicates with the API server to manage resources, pods or service endpoints. 
+    - If you are using Cloud platform for k8 then Cloud-controller-manager is their. 
 
+  - Scheduler (action): It creates pods and selects nodes for them to run on. 
+    - The scheduler considers resource availability and allocation restraints, hardware and software requirements, and more. 
 
+2) Node
+
+  - Kubelet: Kubelet is a software agent that receives and runs orders from the master node and helps to ensure that containers are running in a pod. 
+  - Kube-proxy:  A network proxy that runs on each node in a cluster to maintain network rules and allow communication.
+  - Container manager: Service used for containerization, ex. Docker
 
 
 
