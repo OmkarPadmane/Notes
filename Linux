@@ -73,7 +73,6 @@ $ cat file1.txt > file2.txt    		: Copy content of file1 into file2
 $ cat file_name1 >> file_name2    	: Append the Contents of One File to the End of Another File
 $ tac file_name1   			: ‘tac’ command is the reverse of ‘cat’ and display the content of a file in revers
 
-video : 1:17
 
 9) whoami : Display the current username  , who : displays information about users who are currently logged into the system   
    hostname  : displays hostname
