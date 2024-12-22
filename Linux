@@ -58,7 +58,7 @@ $ cd 'hi by' 		:to change dir with space in name
 7) make directory 
 $ mkdir dir_name
 $ mkdir dir_name1  dir_name2    : make multiple dir
-$ mkdir dir_name/dir_name        : make dir in dir  parent-child
+$ mkdir -p dir_name/dir_name        : make dir in dir  parent-child
 $ mkdir "hi by"   : make dir with space in name  & cd 'hi by' to change dir
  
 
