@@ -173,14 +173,14 @@ ex. : chown master file1.txt     and     chown master:group1 file1.txt
 
 syntax : sudo yum install package-name
  
-yum : Yellow Dog Updater, Modified  | fro REHL , Linux
-apt : Advanced Packaging Tool  | for Debian, centos
+yum : Yellow Dog Updater, Modified  | fro REHL , centos
+apt : Advanced Packaging Tool  | for Debian, ubuntu
 dnf : Dandified YUM | fro fedora , Rocky Linux
 
 22) update : used to synchronize package lists from repositories and update information about available packages.
 
 23) bashrc : bash read command
- configuration file for the Bash shell environment.  |  
+ configuration file for the Bash shell environment.  
 
 24) tar 
 tar [options] [tar-file-name] [file or directory to be tar]
@@ -230,7 +230,7 @@ ex. tar -czvf anime.tar anime.txt (compress)
 39) 2> : to redirect error into file  ,  &1 : to redirecct output into file  , &12>  : both output and error into file
      cd /root 2> error.txt      ,      cd / &1> out.txt       ,   cd / &12> erou.txt
 
-40) crontab and at : used to allow users to schedule tasks or commands that help to run automatically at specified times and intervals.m
+40) crontab and at : used to allow users to schedule tasks or commands that help to run automatically at specified times and intervals.
 	* * * * * cmd  ,  min hour dom mon week cmd
      crontab -e : used to edit crontab
      crontab -l : use to view crontab entries
