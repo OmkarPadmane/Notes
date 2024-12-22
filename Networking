@@ -1,0 +1,18 @@
+OSI model: https://www.cloudflare.com/learning/ddos/glossary/open-systems-interconnection-model-osi/
+
+FTP: 20/21 File transfer Protocol
+   21: build a connection with the server 
+   20: for uploading and downloading files
+SSH: 22 Secure Shell
+Telnet: 23
+SMTP: 25 Simple Mail Transfer Protocol
+DNS: 53 Domain Name System
+HTTP: 80 Hyper Text Transfer Protocol
+POP: 110 Post Office Protocol
+NTP: 123 Network Time Protocol
+IMAP: 143 Internet Message ACcess Protocol
+SNMP: 161 Simple Network Management Protocol
+HTTP: 443 Hyper Text Transfer Protocol Secure
+Jenkins: 8080 / 8443, HTTP/HTTPS 
+
+
