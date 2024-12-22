@@ -3,10 +3,15 @@ OSI model: https://www.cloudflare.com/learning/ddos/glossary/open-systems-interc
 FTP: 20/21 File transfer Protocol
    21: build a connection with the server 
    20: for uploading and downloading files
+
 SSH: 22 Secure Shell
 Telnet: 23
 SMTP: 25 Simple Mail Transfer Protocol
 DNS: 53 Domain Name System
+
+DHCP: 67/68 Dynamic Host Configuration Protocol
+   67 for the server and 68 for the client
+
 HTTP: 80 Hyper Text Transfer Protocol
 POP: 110 Post Office Protocol
 NTP: 123 Network Time Protocol
