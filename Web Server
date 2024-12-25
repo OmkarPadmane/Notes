@@ -1,0 +1,7 @@
+Web Server: 
+  Web server is a program which processes the network requests of the users and 
+  serves them with files that create web pages. This exchange takes place using Hypertext Transfer Protocol (HTTP).
+- web servers are computers used to store HTTP files which makes a website and 
+  when a client requests a certain website, it delivers the requested website to the client.
+
+
