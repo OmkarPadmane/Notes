@@ -197,7 +197,7 @@ Different container states?
   $ docker port cont-name    -- shows open ports 
 
   $ docker stop $( docker ps -a -q)  -- Stop all running container
-  $ docker rm $(docker -a -q)   -- Delete all stop container
+  $ docker rm $(docker ps -a -q)   -- Delete all stop container
   $ docker rmi $(docker images -q)   -- Delete all images
 
 - how to exit container without stopping it
