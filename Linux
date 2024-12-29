@@ -253,5 +253,16 @@ ex. tar -czvf anime.tar anime.txt (compress)
 freeing up disk space. It removes everything from /var/cache/apt/archives/ except for the lock file and partials folder.
 	ex.    sudo apt clean
 
+50) User management
+
+useradd uname  or adduser uname : create user  
+passwd uname : set password
+usermod -a -G gname uname :  add user in specific group
+
+groupadd gname : create group
+groups uname : showes group names in ehich user is present
+gpasswd -d uname gname : remove user from group
+gpasswd -M uname,uname gname : add multiple user to group
+
 Links ,hard limk ,soft link
 ls | grep .txt | awk -F[\w] '{print "cp " $1 " /home/osboxes/Documents"}' | bash
