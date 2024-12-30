@@ -1,4 +1,7 @@
 OSI model: https://www.cloudflare.com/learning/ddos/glossary/open-systems-interconnection-model-osi/
+- The OSI Model is widely used as a reference to understand how network systems function.
+- OSI Model provides a clear structure for data transmission and managing network issues. 
+
 
 FTP: 20/21 File transfer Protocol
    21: build a connection with the server 
