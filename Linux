@@ -2,7 +2,7 @@
 Absolute path is defined as specifying the location of a file or directory from the root directory(/).   ex.   /home/osbpxes/Download
 Relative path is defined as the path related to the present working directly.(because we are already in /home/osbpxes)  ex.   /download
 
-- Package Manager: They handle the installation, updating, rollback and removal of software in Linux distributions.
+- Package Manager: It is tool for installation, updating, rollback and removal of software/services in Linux distributions.
 
 DEB: Debian Package
 - Used by Debian, Ubuntu, Linux Mint, and other Debian-based distributions. 
