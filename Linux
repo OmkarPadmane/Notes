@@ -2,7 +2,7 @@
 Absolute path is defined as specifying the location of a file or directory from the root directory(/).   ex.   /home/osbpxes/Download
 Relative path is defined as the path related to the present working directly.(because we are already in /home/osbpxes)  ex.   /download
 
-- Package Manager: They handle the installation, updating, rollback and removal of software used in different Linux distributions.
+- Package Manager: They handle the installation, updating, rollback and removal of software in Linux distributions.
 
 DEB: Debian Package
 - Used by Debian, Ubuntu, Linux Mint, and other Debian-based distributions. 
@@ -11,15 +11,20 @@ apt: Advanced Packaging Tool
 - A higher-level tool that handles dependencies and interacts with software repositories.	
 - apt relies on software repositories listed in /etc/apt/sources.list and files within /etc/apt/sources.list.d/. 
   These files tell apt where to find software packages.
-	
+
+deb vs apt:
+ deb is the package format used by Debian-based systems to distribute software. 
+ apt works on top of dpkg to provide a more user-friendly and efficient way to manage software.
+
 RPM: RedHat Package Manager
 - RPM packages contain compiled software, metadata (like dependencies and version information), and installation scripts. 
-- rpm can install these packages, but it doesn't automatically resolve dependencies.
+- rpm is a command-line tool that can install packages, but it doesn't automatically resolve dependencies.
 - yum and dnf solve this by fetching and installing required dependencies from repositories.
 
 yum: Yellowdog Updater, Modified
-- yum and dnf relies on software repositories defined in .repo files usually located in /etc/yum.repos.d/. 
+- yum and dnf relies on software repositories defined in .repo files usually located in /etc/yum.repos.d/ for handling dependencies automatically. 
   These files tell yum where to find software packages.
+
 
 dnf: Dandified YUM
 - DNF is a software package manager that installs, updates, and removes packages on Red Hat Linux and is the successor to YUM .
