@@ -33,7 +33,9 @@ dnf: Dandified YUM
 diff update vs upgrade
 - update: Updates the local package list, fetching the latest information from the repositories. 
   It's crucial to run this before installing or upgrading packages.
+- update will keep old packages , and install updated packages which helps in rollback.
 - upgrade: Upgrades all upgradable packages to their latest versions.
+- upgrade will delete old packages.
 
 yum vs dnf:
 yum uses its own dependency resolution algorithm, which can sometimes be slower and less accurate.
