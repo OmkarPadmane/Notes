@@ -2,10 +2,35 @@
 Absolute path is defined as specifying the location of a file or directory from the root directory(/).   ex.   /home/osbpxes/Download
 Relative path is defined as the path related to the present working directly.(because we are already in /home/osbpxes)  ex.   /download
 
-apt: Advanced Packaging Tool
-yum: Yellowdog Updater, Modified
-sudo: super user do
+- Package Manager: They handle the installation, updating, rollback and removal of software used in different Linux distributions.
 
+DEB: Debian Package
+- Used by Debian, Ubuntu, Linux Mint, and other Debian-based distributions. 
+
+apt: Advanced Packaging Tool
+- A higher-level tool that handles dependencies and interacts with software repositories.	
+- apt relies on software repositories listed in /etc/apt/sources.list and files within /etc/apt/sources.list.d/. 
+  These files tell apt where to find software packages.
+	
+RPM: RedHat Package Manager
+- RPM packages contain compiled software, metadata (like dependencies and version information), and installation scripts. 
+- rpm can install these packages, but it doesn't automatically resolve dependencies.
+- yum and dnf solve this by fetching and installing required dependencies from repositories.
+
+yum: Yellowdog Updater, Modified
+- yum and dnf relies on software repositories defined in .repo files usually located in /etc/yum.repos.d/. 
+  These files tell yum where to find software packages.
+
+dnf: Dandified YUM
+- DNF is a software package manager that installs, updates, and removes packages on Red Hat Linux and is the successor to YUM .
+- DNF makes it easy to maintain packages by automatically checking for dependencies and determines the actions required to install packages.
+
+diff update vs upgrade
+- update: Updates the local package list, fetching the latest information from the repositories. 
+  It's crucial to run this before installing or upgrading packages.
+- upgrade: Upgrades all upgradable packages to their latest versions.
+
+sudo: super user do
 1) Ls : Lists Directory
 
 $ ls -l, ls -ltr [l= long list, t= Sort files time, r= reverse]
