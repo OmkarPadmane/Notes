@@ -35,6 +35,10 @@ diff update vs upgrade
   It's crucial to run this before installing or upgrading packages.
 - upgrade: Upgrades all upgradable packages to their latest versions.
 
+yum vs dnf:
+yum uses its own dependency resolution algorithm, which can sometimes be slower and less accurate.
+dnf is aiming to address yum's limitations and provide a better user experience.
+
 sudo: super user do
 1) Ls : Lists Directory
 
