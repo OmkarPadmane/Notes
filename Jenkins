@@ -159,5 +159,33 @@ Cronjob: https://crontab.cronhub.io/
 8) user define Environmental variables
     - Manage Jenkins --> System --> Global properties -> Environment variables
 
+- Jenkins Pipeline:
+
+Pipeline Block: This block is the root block of the Jenkins pipeline and encapsulates the entire pipeline configuration.
+agent: Specify where the Jenkins build job should run. agent can be at pipeline level or stage level. 
+stages: This block constitutes different executable stage blocks.
+stage: This block contains the actual execution steps. its mandatory to name each stage block
+steps: This block contains the actual build step.
+
+ex. 
+pipeline {
+    agent any
+    stages {
+        stage('Welcome Step') {
+            steps { 
+                echo 'Welcome to LambdaTest'
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
 
 
