@@ -1,42 +1,51 @@
-EC2 : Elastic Compute Cloud
-  - Amazon Elastic Compute Cloud provides on-demand, scalable computing capacity in the Amazon Web Services (AWS) Cloud. 
+EC2 : Elastic Compute Cloud:
+  - Amazon EC2 provides on-demand, scalable computing Services Cloud. Providing opction like storage, networking, operating system. 
   - Amazon EC2 reduces hardware costs so you can develop and deploy applications faster.
 
-Amazon RDS (Relational Database Services) :
+  AWS Region: 
+  - It is a group of AWS resources in a specific geographical area.
+  - These locations are composed of AWS Regions, Availability Zones, and Local Zones.
+    Availability Zone is a single Data Center or a group of Data Centers in a region.
+  
+  In Asia (Mumbai) regian there is  ap-south-1  is availability zone. there can be many availability zone in one regian.
+  
+  Subnets:
+  - subnets are a logical partition of an Internet Protocol (IP) network broken into multiple, smaller network segments.
+  
+  Security Group:
+  - It act as a virtual firewall, managing the incoming and outcoming traffic for one or more Amazon EC2 instances in VPC.
+  - we can add one security group to multiple ec2, multiple security group to ec2.  
+ 
+ Public vs Elastic IP:
+  - A Public IP address associated with an instance is not static and is lost when the instance is stopped, 
+  whereas an Elastic IP address is a static public address associated with your AWS account.
+
+Amazon RDS (Relational Database Services):
   - Amazon RDS (Relational Database Service) is another service provided by AWS which is a managed database for PostgreSQL, MariaDB, MySQL, and Oracle.
 
 Amazon S3 (Simple Storage Service):
-  - With Amazon, it has become easy to store data anytime, anywhere. Amazon S3 (Simple Storage Service), 
+  - With Amazon, it has become easy to store data anytime, anywhere with Amazon S3 (Simple Storage Service), 
   It is an object storage service offering scalability, availability, security, and high-performing. 
   - Amazon S3 is the perfect fit for big businesses where a large amount of data is managed for varied purposes.
+
+Amazon EBS (Elastic Block Store):
+  - Amazon EBS helps to securely manage transactions. You can handle diverse workloads, be it relational, non-relational, or business applications. 
+  - It helps to resize workloads for big data analytics engines such as Hadoop and Spark.
 
 Amazon IAM (Identity and Access Management):
   - Amazon IAM allows users to securely access and manage resources. To achieve complete access to the tools and resources provided by AWS.
   - It gives you the right to have control over who has authorization (signed in) and authentication (has permissions) access to the resources. 
   - It comes with attribute-based access control which helps you to create separate permissions on the basis of the user’s attributes such as job role, department, etc.
 
-Amazon EBS (Elastic Block Store):
-  - Amazon EBS helps to securely manage transactions. You can handle diverse workloads, be it relational, non-relational, or business applications. 
-  - It helps to resize workloads for big data analytics engines such as Hadoop and Spark.
-
 Amazon CloudFront:
   - Amazon CloudFront is an AWS service for content delivery networks, it delivers content globally, 
   offering high performance and security and also at high transfer speeds and low latency(rate of time).
   - It uses automated network mapping and intelligent routing mechanisms for delivering content to the destination.
 
-Amazon VPC (Virtual Private Cloud)
+Amazon VPC (Virtual Private Cloud):
   - it enables you to set up an isolated section where you can deploy AWS resources at scale in a virtual environment. 
   - This service is responsible to control the virtual networking environment such as resource placement, security, and connectivity.
   - Using VPC, you get complete access to control the environment, such as choosing IP address, subset creation, and route table arrangement. 
-
-
-
-
-
-
-
-
-
 
 
 
