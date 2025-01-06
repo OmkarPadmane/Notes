@@ -91,6 +91,16 @@
   - VOLUME : Declares that a specific path of the container must be mounted to a Docker volume.
     ex. VOLUME /mountpoint
 
+- ENTRYPOINT is the deafult cmd to run when container starts. It can not be overwriten at run time.
+- CMD is used for providing default arguments to entrypoint or a default command to run if no command is passed during container execution.
+  CMD can be overwriten at runtime. 
+
+- ENTRYPOINT and CMD are used together when you want to define a the primary command with default arguments that can be easily overridden at runtime.
+- When both ENTRYPOINT and CMD used to gether.
+ FROM ubuntu
+ ENTRYPOINT ["echo"]
+ CMD ["Hi Docker"]
+
 ex.
 FROM ubuntu
 RUN apt update -y
