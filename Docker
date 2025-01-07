@@ -96,7 +96,6 @@
   CMD can be overwriten at runtime. 
 
 - ENTRYPOINT and CMD are used together when you want to define a the primary command with default arguments that can be easily overridden at runtime.
-- When both ENTRYPOINT and CMD used to gether.
  FROM ubuntu
  ENTRYPOINT ["echo"]
  CMD ["Hi Docker"]
@@ -224,7 +223,7 @@ Different container states?
       CMD ["python3" , "/test/add.py"]
   
   $ docker build -t test:1 .     -- (.) indicates that the Dockerfile is in the current directory
-  $ dicker images
+  $ docker images
   $ docker run --name t2 -it test:1
 
   - to display a messages each time you enter in a container
@@ -334,9 +333,9 @@ $ docker network inspect <network-name> - Display detailed information about a n
 $ docker network connect <network-name> <container> - Connect a container to a network.
 $ docker network disconnect <network> <container> - Disconnect a container from a network.
 
-$ docker network create work
-$ docker run -it --network work --name n1 ubuntu   -- use specific network for container
-$ docker network connect work d1
+$ docker network create net-name
+$ docker run -it --network net-name --name n1 ubuntu   -- use specific network for container
+$ docker network connect net-name con-name
 
 
 - Docker Compose:
