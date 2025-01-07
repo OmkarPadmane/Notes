@@ -300,5 +300,66 @@ groups uname : showes group names in ehich user is present
 gpasswd -d uname gname : remove user from group
 gpasswd -M uname,uname gname : add multiple user to group
 
-Links ,hard limk ,soft link
-ls | grep .txt | awk -F[\w] '{print "cp " $1 " /home/osboxes/Documents"}' | bash
+51) awk: is a scripting language used for text processing and for data extraction 
+	scans a file line by line.
+ 	uses regular expressions for text processing
+
+-F : for the input field separator ,declaring separator in between [], '', ""
+
+ex. awk -F ',' '{print $1, $2}' marks
+
+$NF: represents the last field in a record
+ex. awk -F [,] '{print $NF}' marks
+
+NR: used to print line no 
+ex. awk '{print NR, $0}' name
+
+print specific line
+awk -F ',' 'NR=="3" {print}' m
+
+print lines between 3 to 5
+awk -F ',' 'NR=="3", NR=="5" {print}' m
+
+print blank line no
+awk 'NF==0 {print NR}' m
+
+print total line no
+awk 'END { print NR }' m
+
+to sort data based on condition
+ex. awk -F ',' '{if ($2 > 80) print}' marks
+
+to change value
+awk -F ',' '{if ($1=="John"){$2==80} print}' marks 
+
+/patter/ : to use regular expressions  
+ex. awk -F ',' '/John/ {print}' m
+
+for loop
+awk 'BEGIN {for(i=0;i<=10;i++) print i;}' 
+
+addition of column
+awk -F ',' '{sum += $2}END {print sum}' marks
+
+regular expressions 
+
+^	Indicates the beginning of the line
+$	Indicates the end of a line
+.	Matches any character
+[ad]	Selects a or d
+[a-d]	Selects any character a through d (a, b, c, or d)
+[^a-d]	Selects any character except a through d (e, f, g, h…)
+
+awk '/.f/ {print }' name
+awk '/^l/ {print}' name
+awk '/k$/ {print }' name 
+
+52) netstat : network statistics
+  - is a networking tool used for troubleshooting, configuration and as a monitoring tool for connections over the network. 
+Both incoming and outgoing connections, routing tables, port listening, and usage statistics are common uses for this command.
+
+ netstat -a
+  t-tcp , u-udp, n- numerical address, l-listen , p-PID/Program name for sockets, r-rounting table
+  i-interface, s- statistics
+
+  
