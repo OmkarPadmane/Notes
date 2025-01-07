@@ -113,7 +113,7 @@ Cronjob: https://crontab.cronhub.io/
         - Post-build Actions --> Email notification
         - Recipients --> email id
 
-5) Perform job/task on remote servver
+5) Perform job/task on remote server
     (Install ssh plugin )
     - manage jenkins --> setting --> Publish over SSH
     - key --> paste private key
@@ -122,7 +122,7 @@ Cronjob: https://crontab.cronhub.io/
     - Build steps --> send files ...ssh
     - transfer --> soursefile --> give path of file  --> save   
         (default path from where file will be transfer: /var/lib/jenkins/workspace/remote-job)
-        (for multiple file: path/* 
+        (for multiple file: path/* )
 
 6) Ansible with jenkins
      (Install Ansible plugin and also in OS )
