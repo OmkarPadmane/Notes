@@ -363,3 +363,32 @@ Both incoming and outgoing connections, routing tables, port listening, and usag
   i-interface, s- statistics
 
   
+53) Process Management:
+Process is a running instance of a program.
+ps : process status
+ - List all ruining processes
+
+nohup : no hang up
+ - It allows you to run a command or shell script in such a way that it continues to run even after you log out or close the terminal. 
+ - It is used managing tasks that take long time to complete.  ex. data backups
+ - It creates nohub.out file which stores output of the process.
+ex. nohup bash geekfile.sh
+
+jobs: Jobs command is used to list the jobs that you are running or stopped.
+
+bg: bg is a process control command that resumes suspended process while keeping them running in the background.
+	bg %job-id, bg %2
+fg Command : fg command moves a background job in the current shell environment into the foreground.
+	fg %job-id,  fg %4
+
+
+
+
+
+
+
+
+
+
+
+
