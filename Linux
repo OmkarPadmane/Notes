@@ -234,6 +234,7 @@ ex. tar -czvf anime.tar anime.txt (compress)
 25) head : shows first 10 lines |  head filename or head -n 3 fname  (first 3 lines)
 
 25) tail : shows last 10 lines |  tail filename  or tail -n 5 fname (last 5 lines)
+	tail -f : allows a file to be monitored. checking logs, -f : follow
 
 26) tty : terminal id
 
@@ -382,6 +383,28 @@ fg Command : fg command moves a background job in the current shell environment 
 	fg %job-id,  fg %4
 
 
+54) Log file:
+what is log : 
+- Log are records that stores events, processes, messages from applications, operating systems, or devices.in system
+- Log files helps to identify problems, troubleshoot when encountering an error by providing a detailed record of what has happened within a system. 
+
+syslog configuration file: /etc/rsyslog.conf
+Log dir: /var/log
+
+log files: 
+
+- boot: A boot log is a record of all the events that occur when a computer or server starts up.
+- cron: Cron logs are records of scheduled tasks that are executed by the crontab  
+- secure: Security logs contain events related to security, such as login attempts, object access, and file deletion
+- maillog: Mail logs are records of email data, including the sender and recipient details, timestamps, and any errors that occur. 
+- httpd: HTTP logs are records of requests and responses made to an HTTP server
+- message: Message logs is text files that record a system's operations
+
+- journalctl: command is part of the systemd suite of utilities and is used to query and display log messages from the systemd journal. 
+  - The systemd journal is a centralized logging system that collects and stores log data from various sources, 
+  including system services, kernel events, and user applications.
+
+software suite: is a collection of computer programs that work together to solve a variety of tasks and applications. ex. systemd
 
 
 
