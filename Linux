@@ -179,8 +179,23 @@ rmdir -v p{1..10}
 
 16) uname : used to display the krnel name
 
-17) du : used to display disk consumption of a specific directory
+17) file system (hdd,ssd)
 
+inode: store information about files and directories, such as file ownership, access mode and file type,
+	which is identified by an integer known as “inode number”. 
+	
+- du : used to display disk consumption of a specific directory
+- df -Th : displays information about the disk space usage on a file system
+	T: file system type , h: human redable
+- cat /etc/fstab : File System Table, is a configuration file in Linux that controls how file systems are mounted and unmounted.
+- lsblk: List Block, it is used to list out all block devices in a tree-like format
+	Block device in Linux is a piece of hardware that stores data in fixed-size blocks
+
+RAM:
+- free: used to check the amount of free and used memory 
+
+top: displays info of RAM, CPU and process of system. It helps in monitoring system usage and performances.
+ 
 18)  wc : word count of file
 $ wc b.txt 
 o/p : 2  2 14 b.txt     (number of lines, words, bytes, file_name)
