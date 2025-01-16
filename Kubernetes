@@ -236,10 +236,11 @@ Labels: Labels are metadata that can be attached to Kubernetes objects like pods
 Selectors:
   - Label selectors allow you to select and manage groups of objects.
 
-
-
-
-
+Namespace:
+  - Namespace is a way to logically partition a single physical Kubernetes cluster into multiple virtual clusters. 
+  - Names of resources need to be unique within a namespace, but not across namespaces.
+  - Namespaces provide logical isolation between different teams, projects, or environments within the same cluster.
+  - Namespace provides the scope for Pods, Services, and Deployments in the cluster.
 
 
 
