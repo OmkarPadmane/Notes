@@ -63,7 +63,8 @@ Pod:
     - etcd manages the configuration data, state data and metadata.
     - etc: folder in Linux that contains configuration files for a single system
     - d: Stands for "distributed"
-  
+    - The configuration for etcd itself is typically found in /etc/kubernetes/manifests/etcd.yaml, and its data is stored in a directory /var/lib/etcd
+
   - Controller-manager (actual state = desired): 
     - It manages resources, pods or service in kubernetes. Communicates with the API server and maintains the the desired state of the cluster.
     - If you are using Cloud platform for k8 then Cloud-controller-manager is their. 
@@ -78,24 +79,49 @@ Pod:
   - Container manager: Service used for containerization, ex. Docker
 
 
-Installation:
-http: The Kubernetes API is a programmatic interface that uses HTTP to allow users,
-  cluster parts, and external components to communicate with each other. 
-docker: Containerization
-gpg key: A GPG key is used for secure communication and data encryption in Kubernetes.
-kubernetes pacakges: 
-  kubeadm:  Kubeadm is a tool used to build Kubernetes (K8s) clusters.
-  kubectl: allows you to run commands to create and run a new pod with a container
-  kubernetes-cli: a command-line tool that allows users to interact with Kubernetes clusters
+- Installation:
+  http: The Kubernetes API is a programmatic interface that uses HTTP to allow users,
+    cluster parts, and external components to communicate with each other. 
+  docker: Containerization
+  gpg key: A GPG key is used for secure communication and data encryption in Kubernetes.
+  kubernetes pacakges: 
+    kubeadm:  Kubeadm is a tool used to build Kubernetes (K8s) clusters.
+    kubectl: allows you to run commands to create and run a new pod with a container
+    kubernetes-cli: a command-line tool that allows users to interact with Kubernetes clusters
+  
+  Bootstrapping is the process of creating a new Kubernetes cluster from scratch and getting it up and running.
+  kubeadm init: initializes a Kubernetes control-plane node
 
-Bootstrapping is the process of creating a new Kubernetes cluster from scratch and getting it up and running.
-kubeadm init: initializes a Kubernetes control-plane node
+Services:
+- Service defines a logical set of Pods and a policy by which to access them over the network, either within the Kubernetes cluster or externally to the outside world.
+- A Kubernetes Service provides a virtual static IP address (ClusterIP) that enables communication with a Pods within the Kubernetes cluster's network.
 
+Types:
+- ClusterIP service:
+  - ClusterIP is the default type of service, Kubernetes assigns a cluster-internal IP address to ClusterIP service.
+    This makes the service only reachable within the cluster.
+  - You cannot make requests to service (pods) from outside the cluster.
+  - ex. communication between the front-end and back-end components of your app.
+
+- NodePort:
+  - A NodePort is a type of service that lets you expose the pod to outside the cluster. 
+  - This is one of the most basic ways to publicly expose a pod. 
+  - NodePort service opens a port from the range of port 30,000 to 32,767 where the pod can be accessed.
+    It means any request to your cluster on that port gets forwarded to the service.
+
+- LoadBalancer:
+  - LoadBalancer service is an extension of NodePort service. 
+  - LoadBalancer service distributes the traffic between the pods that are targeted by the service. 
+  - It integrates NodePort with cloud-based load balancers.
+  - LoadBalancer is the Service type you should normally use when you need an application to be accessible outside Kubernetes.
+
+ 
 Commands:
 
-- kubectl get nodes
-- kubectl describe node nodename
+- kubectl get nodes    -- list nodes
+- kubectl describe node node-name    -- detailed information about a specific node
 
+- create pod and container in it using yml
 -  vim pod1.yml
     kind: Pod                              
     apiVersion: v1                     
@@ -108,6 +134,14 @@ Commands:
           command: ["/bin/bash", "-c", "while true; do echo Hello-Bhupinder; sleep 5 ; done"]
       restartPolicy: Never         # Defaults to Always
 
+- kind: specifies the type of Kubernetes object you are defining
+- apiVersion: v1 
+    - tells Kubernetes how to interpret the YAML file.
+  - Why is apiVersion is mention ?
+    - Kubernetes is constantly evolving, and new features and changes are introduced over time. 
+      These changes can sometimes involve modifications to the structure or behavior of Kubernetes objects. 
+      To ensure backward compatibility and prevent unexpected behavior, Kubernetes uses API versioning.   
+
 - restartPolicy: Pods have an optional field called restartPolicy, where you can define the Pod’s behavior if it fails. 
     three options:
     - Always: is the default setting, and tells Kubernetes to restart the Pod after its containers stop, 
@@ -116,12 +150,12 @@ Commands:
     - OnFailure: only restart a container only if the container process exits with an error.
 
 
-- kubectl apply -f pod1.yml 
-- kubectl get pods 
-- kubectl describe pod pod-name
-- kubectl get pods -o wide
+- kubectl apply -f pod1.yml   -- create pod using manifest
+- kubectl get pods   -- list pods
+- kubectl describe pod pod-name    -- detailed information about a specific pod
+- kubectl get pods -o wide    --  tabular overview of Pods
 - kubectl logs -f pod-name   -- to see what is going in container  
-  or  kubectl logs -f pod-name -c con-name
+  or  kubectl logs -f pod-name -c con-name    -- -f: follow, -c: container
 
 - kubectl delete pod pod-name
 
@@ -140,7 +174,7 @@ Commands:
           command: ["/bin/bash", "-c", "while true; do echo Hello-Bhupinder; sleep 5 ; done"]
       restartPolicy: Never         # Defaults to Always
 
-- kubectl logs testpod --all-containers    -- to see what is going in mtuliple containers  
+- kubectl logs pod-name --all-containers    -- to see what is going in mtuliple containers  
 - kubectl exec pod-name -it -c con-name -- /bin/bash    -- to go inside container
 
 - environment variable:
@@ -170,6 +204,37 @@ Commands:
             - containerPort: 80
  
     - to access it curl pod-ip:80
+
+
+Labels: Labels are metadata that can be attached to Kubernetes objects like pods, nodes, and deployments. 
+  - It is key-value pairs that is used to identify and organize these objects in large clusters. 
+  - Labels allow users to quickly and efficiently select and manage groups of objects that share specific characteristics.
+  - ex. a label might be used to specify the environment that a particular pod is running in (e.g., test, stage, or prod). 
+  
+
+    kind: Pod                              
+    apiVersion: v1                     
+    metadata:                           
+      name: testpod 
+      Labels:
+        env: development
+    spec:                                    
+      containers:                      
+        - name: c1                     
+          image: ubuntu              
+          command: ["/bin/bash", "-c", "while true; do echo Hello-Bhupinder; sleep 5 ; done"]
+      restartPolicy: Never         # Defaults to Always
+
+  cmd: 
+- kubectl label object obj-name key=value    -- set label to objects[ pods, nodes, and deployments]
+- kubectl label pods pod-name env=development  -- set label to pod
+- kubectl get pods --show-labels    -- view labels
+- kubectl get pods -l env=development    -- list pod matching a label
+- kubectl get pods -l env!=development    -- list pod not matching a given label
+- kubectl delete pod -l env=development    -- delete pod matching a label
+
+Selectors:
+  - Label selectors allow you to select and manage groups of objects.
 
 
 
