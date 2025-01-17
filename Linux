@@ -387,7 +387,7 @@ ps : process status
 nohup : no hang up
  - It allows you to run a command or shell script in such a way that it continues to run even after you log out or close the terminal. 
  - It is used managing tasks that take long time to complete.  ex. data backups
- - It creates nohub.out file which stores output of the process.
+ - It creates nohup.out file which stores output of the process.
 ex. nohup bash geekfile.sh
 
 jobs: Jobs command is used to list the jobs that you are running or stopped.
