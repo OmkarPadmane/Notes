@@ -16,8 +16,10 @@ DHCP: 67/68 Dynamic Host Configuration Protocol
    67 for the server and 68 for the client
 
 HTTP: 80 Hyper Text Transfer Protocol
-POP: 110 Post Office Protocol
-NTP: 123 Network Time Protocol
+POP: 110 Post Office Protocol is a standard internet protocol that allows email clients to retrieve emails from a mail server.
+
+NTP: 123 Network Time Protocol synchronizes the clocks of computers over the internet.
+
 IMAP: 143 Internet Message ACcess Protocol
 SNMP: 161 Simple Network Management Protocol
 HTTP: 443 Hyper Text Transfer Protocol Secure
