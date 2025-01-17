@@ -21,8 +21,12 @@ POP: 110 Post Office Protocol is a standard internet protocol that allows email 
 NTP: 123 Network Time Protocol synchronizes the clocks of computers over the internet.
 
 IMAP: 143 Internet Message ACcess Protocol
+
 SNMP: 161 Simple Network Management Protocol
-HTTP: 443 Hyper Text Transfer Protocol Secure
+Simple Network Management Protocol (SNMP) is a standard protocol used to monitor and manage devices connected to a network.
+It allows communication between devices like routers, firewalls, and servers.
+
+HTTPS: 443 Hyper Text Transfer Protocol Secure
 Jenkins: 8080 / 8443, HTTP/HTTPS 
 
 
