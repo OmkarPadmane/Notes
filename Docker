@@ -186,9 +186,13 @@ Different container states?
   $ docker ps       -- view running container
   $ docker ps -a     -- view all container
   $ docker create -it --name cont-name image-name      -- Create container (not run) 
+     ex.  docker create --name c1 -it ubuntu /bin/bash
+  - /bin/bash is used to get an interactive shell inside a Docker container, making it easy to interact with the container's environment.
+
   $ docker run -ti image-name    -- Create and run container without specifying name
   $ docker run --name cont-name -it images-name     -- Create and run container with given name
     When you exit the container it gets stopped
+ 
   $ docker start cont-name    -- Start a stopped container
   $ docker attach cont-name    -- Attach/go inside to a running container's console.
   $ docker stop cont-name      -- Stop a running container
