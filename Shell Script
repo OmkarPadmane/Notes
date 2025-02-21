@@ -1,0 +1,84 @@
+- Shell:
+The shell in Linux is a command-line interface that allows users to interact with the operating system. 
+It acts as an intermediary between the user and the kernel. 
+
+- Types of shells
+Bash: The default shell for most Linux systems 
+Korn shell (ksh): An interactive shell with built-in arithmetic functions 
+C shell (csh): Uses a language of commands similar to the C programming language 
+Z Shell (zsh): A modern shell with many customization features 
+
+- Kernel
+A kernel is a core program in a computer's operating system (OS) that manages the interactions between hardware and software.
+It's the main layer between the OS and the computer's hardware
+
+- What is Shell Scripting?
+  - Shell scripting is a text file with a list of commands that instruct an operating system to perform certain tasks.
+  - Shell scripting is primarily used to automate repetitive system tasks, such as backing up files, monitoring system resources, and managing user accounts.
+  - It’s important to note that in shell scripting, everything is treated as a string.
+  ex. my_number=123, Bash sees it as the string "123" not as number.
+
+
+- How to check which shell we are using ?
+cmd: echo $0
+
+- cat /etc/shells  -- shows which diff shells are present
+
+- #!/bin/sh
+The shebang is a special character sequence in a script file that instruct the OS to use bash as a command interpreter/shell.
+
+- Ways to execute script
+  - ./script.sh   -- when you use ./ script file must have execute permission
+  - bash script.sh  -- it dont't matter script have execute permission or not.
+  - /home/om/scrip/1.sh   -- full path
+
+  - ./ tells the operating system to execute a file directly.
+  - bash explicitly calls the Bash interpreter to execute a file.
+
+- Comments:
+
+  - Single-line comments:
+    Start with the # (hash) 
+  
+  - multiple lines comments
+    <<comment     it can be any word
+    ..
+    ..
+    comment
+
+- variable:
+  - variable is a word/key that stores data values.
+  - There should be no spaces around the = sign.
+  ex. age=10, name="zoro"
+  - to access the value $var_name
+
+  - to save cmd o/p in var
+  ex. cmd=$(pwd)
+
+  - Constant var/Readonly Var:
+  Helps you protect your variable from any further modification and improves code readability
+  Value of an var can't be changed.
+  ex. readonly name="sabo"
+
+- Array:
+  - Array is a variable that holds multiple values, whether they are of the same type or different types.
+  ex. cars= ( a b c d ),  echo " array elements are: ${values[*]}"
+  
+  - Accessing values:  
+  all values : ${cars[*]},  specific index : ${cars[2]}
+
+  - length of array: add # before array name
+  echo "Length of array is ${#values[*]}"
+  
+  - print specific values from array:
+  echo "element from 1-3 ${values[*]:1:3}"
+
+
+
+
+
+
+
+
+
+
