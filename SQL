@@ -20,5 +20,22 @@ Third Normal Form (3NF):
 - In other words, non-key attributes should not depend on other non-key attributes.
   Any such dependency should be removed by creating separate tables.
 
+SQL Commands:
+- DDL, Data Definition Language: CREATE,ALTER,DROP,RENAME,TRUNCATE
+- DML, Data Manipulation Language: INSERT,UPDATE,DELETE
+- DQL, Data Query Language: SELECT
+- DCL, Data Control Language: GRANT,REVOKE
+- TCL, Transaction Control Language: COMMIT,ROLLBACK,SAVEPOINT
+
+
+
+
+
+
+
+
+
+
+
 
 
