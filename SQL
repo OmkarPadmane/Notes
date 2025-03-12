@@ -27,15 +27,71 @@ SQL Commands:
 - DCL, Data Control Language: GRANT,REVOKE
 - TCL, Transaction Control Language: COMMIT,ROLLBACK,SAVEPOINT
 
+- Constraints: 
+  - SQL constraints are rules applied to columns or tables in a RDBMS 
+  to limit the type of data that is inserted, updated, or deleted.
+  - These rules ensure the data is valid, consistent, 
+
+  - NOT NULL - Ensures that a column cannot have a NULL value
+  - UNIQUE - Ensures that all values in a column are different
+  - CHECK - Ensures that the values in a column satisfies a specific condition
+  - DEFAULT - Sets a default value for a column if no value is specified
+  - PRIMARY KEY - A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table
+    ex. create table emp1
+        ( emp_id int primary key,
+        f_name varchar(20) not null,
+        l_name varchar(20) Not NULL ) ;  
+
+- FOREIGN KEY - A foreign key is a column in a table that refers to the primary key of another table.
+      It ensures that values in a foreign key column exist in the primary key column of another table.
+
+- Types of keys:
+
+  - Super: It is a group of single or multiple columns that uniquely identifies rows in a table. It supports NULL values in rows.
+  - Candidate: It is a minimal super key, meaning it can uniquely identify a record with single column. 
+    Table can have multiple candidate keys and can be NULL.
+  
+  - Primary: It is a unique key, meaning it can uniquely identify each record (tuple) in a table. Don't contain any duplicate and NULL values.
+    ex. create table emp1
+        ( emp_id int ,
+          ...,
+        constraint emp_id_pk primary key (emp_id) ) ;
+
+  - Alternate: It is any candidate key in a table that is not chosen as the primary key.
+  
+  - Foreign: It is an column in one table that refers to the primary key in another table.
+    - foreign keys impose restrictions:
+      - Preventing Orphan Records: ensures that values in the child table exist in the primary key of the parent table.
+        - orphan records are records in the child table that non-existent in the parent table.
+        
+      - Restricting Insertions of new record into the child table.
+      
+      - Restrict deletions in the parent table
+        - this behavior can be modified using options like [ON DELETE CASCADE or ON DELETE SET NULL].
+ 
+
+- Alter [column]: add, modify, rename, drop
+  ex.  alter table emp1 add constraint empid_pk primary key(emp_id) ;
+
+- Alias:
+Cloumn:  SELECT column_name AS alias_name FROM table_name;
+Table:  SELECT column_name(s) FROM table_name AS alias_name;
+
+- Drop: Completely removes a table from the database, including its structure (definition) and all its data.
+  drop table t_name;
+
+- TRUNCATE: Removes all rows from a table, but retains the table's structure.
+  TRUNCATE TABLE t_name;
+
+- DELETE: Removes specific rows from a table based on a specified condition
+  DELETE FROM t_name WHERE condition;
 
 
-
-
-
-
-
-
-
-
-
-
+- view: It is a virtual table based on the result-set of an SQL statement.
+  - A view contains rows and columns, just like a real table. The fields in a view are fields from one or more real tables in the database.
+  - A view always shows up-to-date data. The database engine recreates the view, every time a user queries it [select * from view_name].
+ 
+  ex. CREATE VIEW view_name AS
+      SELECT column1, column2, ...
+      FROM table_name
+      WHERE condition; 
