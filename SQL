@@ -1,3 +1,12 @@
+SELECT *
+FROM table_name
+JOIN 
+WHERE condition
+GROUP BY
+HAVING
+ORDER BY column_name ASC/DESC;
+
+
 Normalization:
 - Database normalization is an process used to organize and structure relational databases. 
 - This process ensures that data is stored in a way that minimizes redundancy, simplifies querying, and improves data integrity.
@@ -74,8 +83,8 @@ SQL Commands:
   ex.  alter table emp1 add constraint empid_pk primary key(emp_id) ;
 
 - Alias:
-Cloumn:  SELECT column_name AS alias_name FROM table_name;
-Table:  SELECT column_name(s) FROM table_name AS alias_name;
+  Cloumn:  SELECT column_name AS alias_name FROM table_name;
+  Table:  SELECT column_name(s) FROM table_name AS alias_name;
 
 - Drop: Completely removes a table from the database, including its structure (definition) and all its data.
   drop table t_name;
@@ -83,7 +92,7 @@ Table:  SELECT column_name(s) FROM table_name AS alias_name;
 - TRUNCATE: Removes all rows from a table, but retains the table's structure.
   TRUNCATE TABLE t_name;
 
-- DELETE: Removes specific rows from a table based on a specified condition
+- DELETE: Removes specific rows from a table based on a specified condition.
   DELETE FROM t_name WHERE condition;
 
 
@@ -118,21 +127,24 @@ Table:  SELECT column_name(s) FROM table_name AS alias_name;
 - UPDATE: Used to modify the existing records in a table.
     UPDATE table_name SET column1 = value1, column2 = value2, ...
     WHERE condition;
+   - if you don't give condition whole colume will get updated.
+
+- DELETE: delete existing records from a table.
+    DELETE FROM table_name WHERE condition;
+   - if you don't give condition all the records will be deleted.
 
 
 
+- Clause: It is a part of a query that specifies a particular action or set of conditions. 
+     Its a building blocks that you combine to construct your SQL statements. 
 
+    - WHERE clause: Used to extract only those records that fulfill a specified condition.
 
+- COUNT() function:  Returns the number of rows that match a specified condition.
+  select count(city) from customers;
 
-
-
-
-
-
-
-
-
-
+- SELECT DISTINCT:  Used to retrieve unique values from a specified column or combination of columns in a table.
+  select distinct city , country from customers;
 
 - Top Clause ( SQL Server and MS Access): Use to limit the number of rows in o/p.
   SELECT TOP 10 * FROM employees;
