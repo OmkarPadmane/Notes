@@ -139,6 +139,17 @@ SQL Commands:
      Its a building blocks that you combine to construct your SQL statements. 
 
     - WHERE clause: Used to extract only those records that fulfill a specified condition.
+    - ORDER BY clause: Used to sort the result-set in ascending or descending order.
+
+
+- Operator:
+    - AND operator displays a record if all the conditions are TRUE.   WHERE Country = 'Germany' AND City = 'Berlin';
+    - OR operator displays a record if any of the conditions are TRUE.  WHERE Country = 'Germany' OR Country = 'Spain';
+    - NOT operator is used in combination with other operators to give the opposite result.  WHERE NOT Country = 'Spain';
+    - LIKE operator is used for pattern matching within strings. %   where country like 'u%' ;
+
+
+
 
 - COUNT() function:  Returns the number of rows that match a specified condition.
   select count(city) from customers;
