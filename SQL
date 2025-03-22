@@ -141,6 +141,8 @@ SQL Commands:
     - WHERE clause: Used to extract only those records that fulfill a specified condition.
     - GROUP BY : It groups rows that have the same values into summary rows.
         - All the columns should be in group by clause which are in select, other than aggregate cloumn.
+    - Having :  Used to filter groups of rows based on aggregate function results.              
+        WHERE keyword cannot be used with aggregate functions.
     - ORDER BY clause: Used to sort the result-set in ascending or descending order.
 
 
@@ -192,10 +194,16 @@ SQL Commands:
   - Does not use an ON clause to specify a join condition.
   - ex.   select * from emp1 cross join employee;
   
+- Stored Procedure:
+    - It is a prepared SQL code that you can save, so the code can be reused over and over again.
+    - SQL query that you write over and over again, save it as a stored procedure, and then just call it to execute it.
+    - used to save SQL querys and execute it to use. 
 
-
-
-
-
-
+        CREATE PROCEDURE procedure_name
+        AS
+        sql_statement
+        GO;
+      
+    - Execute a Stored Procedure
+        EXEC procedure_name;
 
