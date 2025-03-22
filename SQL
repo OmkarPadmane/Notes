@@ -199,11 +199,38 @@ SQL Commands:
     - SQL query that you write over and over again, save it as a stored procedure, and then just call it to execute it.
     - used to save SQL querys and execute it to use. 
 
-        CREATE PROCEDURE procedure_name
-        AS
-        sql_statement
-        GO;
+    DELIMITER //
+    CREATE PROCEDURE procedure_name (parameter_list)
+    BEGIN
+        -- SQL statements
+    END //
+    DELIMITER ;
+
+  - DELIMITER: Used to change the standard statement delimiter (;) to something else (// in this case) to allow the procedure definition to contain semicolons.
+  
+  - Execute a Stored Procedure
+    call procedure_name;
+
+- Triggers:  It is feature in DBMS that provide automatic execution of a set of SQL statements when specific database events,
+      such as INSERT, UPDATE, or DELETE operations, occur.
+
+      create trigger [trigger_name] 
+      [before | after]  
+      {insert | update | delete}  
+      on [table_name]  
+      FOR EACH ROW
+      BEGIN
+      END;
+
+- Grant: GRANT command is used to give users or roles specific permissions on database objects.
+    - These permissions determine what actions a user can perform. such as selecting, inserting, updating, or deleting data.
+
+   - Privileges : selecting, inserting, updating, or deleting data.
+   - object: table name
       
-    - Execute a Stored Procedure
-        EXEC procedure_name;
+    GRANT privileges_names ON object TO user;
+
+- REVOKE: is used to remove granted permissions from users. 
+    REVOKE privileges ON object FROM user;
+
 
