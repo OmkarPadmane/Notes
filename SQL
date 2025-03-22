@@ -139,6 +139,8 @@ SQL Commands:
      Its a building blocks that you combine to construct your SQL statements. 
 
     - WHERE clause: Used to extract only those records that fulfill a specified condition.
+    - GROUP BY : It groups rows that have the same values into summary rows.
+        - All the columns should be in group by clause which are in select, other than aggregate cloumn.
     - ORDER BY clause: Used to sort the result-set in ascending or descending order.
 
 
@@ -164,12 +166,32 @@ SQL Commands:
   Example: SELECT * FROM employees LIMIT 10
 
 
+- JOIN: A JOIN clause is used to combine fetch data from two or more tables, based on a related column between them.
+  - It is not mandatory to tables have primary key and forgain key.
 
+  - Self-join: Useful when you need to compare rows within the same table.
+    - We have to use alias to diff betn the table because we can not have same table name when comparing. Helps to remove ambiguity and errors.
 
+  - INNER JOIN: Returns records that have matching values in both tables
+    - It requires a common column to determine which rows to combine, it doesn't only retrieve those common columns. 
+    - It retrieves any columns you specify in the SELECT clause.
 
+      ex.   select *
+            from emp1 inner join employee
+            on emp1.emp_id = employee.emp_id;
 
+  - LEFT JOIN: Returns all records from the left table, and the matched records from the right table, if no match returns null.
+  - RIGHT JOIN: Returns all records from the right table, and the matched records from the left table, if no match returns null.
+  
+  - FULL JOIN: Returns all records when there is a match in either left or right table.
+    - MySQL does not fully support the FULL JOIN.
+    - we have to simulate a FULL JOIN using a  LEFT JOIN UNION RIGHT JOIN.
 
-
+  - CROSS JOIN : Also known as Cartesian product. 
+    - It combines each row from the first table with every row from the second table.
+  - Does not use an ON clause to specify a join condition.
+  - ex.   select * from emp1 cross join employee;
+  
 
 
 
