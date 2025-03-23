@@ -1,1 +1,33 @@
 Object-oriented programming (OOP) is a computer programming model that organizes software design around data, or objects.
+
+class is a user-defined data type for creating objects, defining their properties (attributes) and behaviors.
+
+Objects are the fundamental building blocks of OOP. They represent real-world entities.
+Object is an instance of a Class.
+
+Constructor is a special type of function called to create an object.
+  __init__ method in Python is used to initialize objects of a class. It is also called a constructor.
+
+self parameter is a reference to the current instance of class and used to access variable which blongs to class.
+
+Abstraction is used to hide unnecessary information and display only necessary information to the users interacting.
+
+Encapsulation bundles data (attributes) and the methods (functions) that operate on that data into a single unit, called a class,
+
+static method is a method associated with a class, not an instance of the class, and is defined using the @staticmethod decorator.
+
+Access Modifier
+Public: public methods and fields can be accessed directly by any class.
+Protected ( _ ) : protected methods and fields can be accessed within the same class it is declared and its subclass.
+Private ( __ ): private methods and fields can be only accessed within the same class it is declared.
+
+Inheritance allows a class (child class) to acquire/derive properties and methods of another class (parent class).
+
+Single Inheritance: A child class inherits from a single parent class.
+Multiple Inheritance: A child class inherits from more than one parent class.
+Multilevel Inheritance: A child class inherits from a parent class, which in turn inherits from another class.
+Hierarchical Inheritance: Multiple child classes inherit from a single parent class.
+Hybrid Inheritance: A combination of two or more types of inheritance.
+
+super() function is used to call methods from a parent class (or superclass) within a child class (or subclass).
+
