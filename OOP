@@ -31,3 +31,28 @@ Hybrid Inheritance: A combination of two or more types of inheritance.
 
 super() function is used to call methods from a parent class (or superclass) within a child class (or subclass).
 
+Polymorphism:  the ability of something to have more than one form.
+In  programming it means the same function with the same name but used in different ways.
+The difference is primarily in the data types and number of arguments used in a function. 
+
+ Compile-time polymorphism [overloading] : the compiler determines how the function or operator will work depending on the context. 
+    It is achieved by function overloading or operator overloading.
+
+  Function overloading : two or more functions can have the same name but different parameters.
+  operator overloading: operator behave differently depending on the data type they are operating on.
+   ex. addition operator (+) for string to concatenate two strings and for integer to add two integers.
+
+
+ Runtime Polymorphism [Overriding] : 
+    same function with the same name in diff class [inherited from its base class].
+    depending on which class we call function is called.
+
+
+
+
+
+
+
+
+
+
