@@ -2,6 +2,10 @@ EC2 : Elastic Compute Cloud:
   - Amazon EC2 provides on-demand, scalable computing Services Cloud. Providing opction like storage, networking, operating system. 
   - Amazon EC2 reduces hardware costs so you can develop and deploy applications faster.
 
+  Amazon Machine Image (AMI):
+  - This is a template that contains the software configuration needed to launch an EC2 instance.
+  - Users can create their own AMIs by customizing existing EC2 instances.
+
   AWS Region: 
   - It is a group of AWS resources in a specific geographical area.
   - These locations are composed of AWS Regions, Availability Zones, and Local Zones.
@@ -21,20 +25,20 @@ EC2 : Elastic Compute Cloud:
   whereas an Elastic IP address is a static public address associated with your AWS account.
 
 Amazon RDS (Relational Database Services):
-  - Amazon RDS (Relational Database Service) is another service provided by AWS which is a managed database for PostgreSQL, MariaDB, MySQL, and Oracle.
+  - It is used to managed database for PostgreSQL, MariaDB, MySQL, and Oracle.
 
 Amazon S3 (Simple Storage Service):
   - With Amazon, it has become easy to store data anytime, anywhere with Amazon S3 (Simple Storage Service), 
   It is an object storage service offering scalability, availability, security, and high-performing. 
-  - Amazon S3 is the perfect fit for big businesses where a large amount of data is managed for varied purposes.
+  - Amazon S3 is the perfect fit for big businesses where a large amount of data is managed for diff purposes.
 
 Amazon EBS (Elastic Block Store):
   - Amazon EBS helps to securely manage transactions. You can handle diverse workloads, be it relational, non-relational, or business applications. 
-  - It helps to resize workloads for big data analytics engines such as Hadoop and Spark.
+  - It's providing block-level storage helps to resize workloads for big data analytics engines such as Hadoop and Spark.
 
 Amazon IAM (Identity and Access Management):
   - Amazon IAM allows users to securely access and manage resources. To achieve complete access to the tools and resources provided by AWS.
-  - It gives you the right to have control over who has authorization (signed in) and authentication (has permissions) access to the resources. 
+  - It gives you the right to have control over who has authorization (signed in) and authentication (has permissions) to access the resources. 
   - It comes with attribute-based access control which helps you to create separate permissions on the basis of the user’s attributes such as job role, department, etc.
 
 Amazon CloudFront:
