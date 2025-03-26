@@ -52,8 +52,8 @@
 - all Docker-related data, including images, containers, volumes, and networks is stored within /var/lib/docker directory.
 
 - Containers:
-  - A Docker container is a lightweight, standalone, secure, executable package of software that 
-   includes everything needed to run an application for ex. code, system tools, system libraries and settings.
+  - A Docker container is a lightweight, standalone, secure environmet for executable package of software that 
+   includes everything needed to runnin an application for ex. code, system tools, system libraries and settings.
   - These containers encapsulate the dependencies of an application and make sure that it is consistent. 
   - It can run on any computer, no matter how different they are, because it brings its own special environment with it.
 
@@ -67,9 +67,11 @@
     image distribution and minimising storage space.
 
 - Docker Image:
-  - A Docker image is a read-only template with instructions for creating a Docker container. 
-  - Images are built from Dockerfiles and contain a set of predefined layers that make up an image. 
-  - Images can be shared via Docker registries like Docker Hub.
+  - A Docker image is an read only and executable package of software that includes everything needed 
+    to build a Docker container.
+  - It contains code, system tools, system libraries and settings that's used to build a Docker container.
+  - Predefine Images can be pull from Docker registries or Docker Hub.
+  - Customized image can be created using dockerfile according to our need.
 
   - Ways to create docker image:
     - Pull image form docker hub   : docker pull image-name
