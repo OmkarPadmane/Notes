@@ -48,13 +48,11 @@ View Commit History:
 
     $ git log --oneline
         - displays all commits in one line
+
 View Changes in a Commit:
 
     $ git show <commit_SHA>
-
         - Shows the changes introduced by a specific commit.
-
-
 
 - Remote Repositories : 
     - Links the local repository to a remote repository.
@@ -101,7 +99,7 @@ View Changes in a Commit:
     - Conflicts generally arise when two people have changed the same lines in a file
     
     $ git mergetool for 
-        - It is only used when git conflictct is occure
+        - It is only used when git conflict is occure
 
     $ git merge fix 
         - use after solving conflict
@@ -133,9 +131,14 @@ View Changes in a Commit:
     $ git stash clear
         - clears the stash
 
+- Git Fetch:
+    - git fetch is a command that retrieves updates from a remote repository but does not merge them with your local branch.
+    - It’s like downloading the latest changes without applying them directly to your working directory.
+
+    git fetch <remote> <branch>
+
 fork  -  code reusability
 git fetch + git merge  = git pull
-
 
 
 # Clone an Existing Repository:
@@ -148,9 +151,9 @@ git fetch + git merge  = git pull
 
 Pull Changes from a Remote Repository:
 
-    $ git pull origin <branch_name>
+    $ git pull repo <branch_name>
 
-        - Fetches and merges changes from the remote repository into the current branch.
+        - Fetches and merges changes from the remote repository into the local repo.
 
 # Undoing Changes
 Discard Changes in a File:
