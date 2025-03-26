@@ -38,11 +38,16 @@
   - Docker Engine is the core component of the Docker platform, responsible for creating, running, and managing Docker containers. 
   - We can install Docker on any os but Docker Engine only runs on Linux distribution for creating containers.
 
-  - Docker is client-server application that consists of:
+- Docker Client:
+  - It is an interface that allows users to interact with the Docker daemon, which is the background service 
+    responsible for managing container lifecycle, network, and storage. 
+  - The Docker client provides a command-line interface (CLI) that you can use to execute commands and manage Docker 
+    containers, images, and networks.
 
-    - Docker Daemon: A background service that runs on the host machine and manages container lifecycle, network, and storage.
-    - Docker Client: An interface that allows users to interact with the Docker daemon using command-line interface (CLI) or other tools.
-    - Docker Registry: A centralized repository for storing Docker images.
+ - Docker is client-server application that consists of:
+   - Docker Daemon: A background service that runs on the host machine and manages container lifecycle, network, and storage.
+   - Docker Client: An interface that allows users to interact with the Docker daemon using command-line interface (CLI) or other tools.
+   - Docker Registry: A centralized repository for storing Docker images.
 
 - all Docker-related data, including images, containers, volumes, and networks is stored within /var/lib/docker directory.
 
@@ -60,6 +65,16 @@
 -  Layered file system:
   - Also known as a Union File System (UnionFS)for efficient management of images an containers by optimising 
     image distribution and minimising storage space.
+
+- Docker Image:
+  - A Docker image is a read-only template with instructions for creating a Docker container. 
+  - Images are built from Dockerfiles and contain a set of predefined layers that make up an image. 
+  - Images can be shared via Docker registries like Docker Hub.
+
+  - Ways to create docker image:
+    - Pull image form docker hub   : docker pull image-name
+    - Create image using dockerfile  : dockerfile
+    - Create image from existing docker container :  use docker commit cont-name image-name
 
 - Dockerfile:
   - A Dockerfile is a text document with instructions for building a Docker image. 
@@ -108,26 +123,6 @@ RUN mkdir /test
 COPY add.py /test
 CMD ["python3" , "/test/add.py"]
 
-- Docker Image:
-  - A Docker image is a read-only template with instructions for creating a Docker container. 
-  - Images are built from Dockerfiles and contain a set of predefined layers that make up an image. 
-  - Images can be shared via Docker registries like Docker Hub.
-
-  - Ways to create docker image:
-    - Pull image form docker hub   : docker pull image-name
-    - Create image using dockerfile  : dockerfile
-    - Create image from existing docker container :  use docker commit cont-name image-name
-
-- Docker Engine:
-  - The Docker Engine powers the Docker platform. It consists of a Docker daemon, a CLI, and a REST API. 
-  - The Docker daemon is what actually builds, runs, and manages Docker containers. 
-  - The Docker Client allow you to interact with the Docker daemon.
-
-- Docker Client:
-  - It is an interface that allows users to interact with the Docker daemon, which is the background service 
-    responsible for managing container lifecycle, network, and storage. 
-  - The Docker client provides a command-line interface (CLI) that you can use to execute commands and manage Docker 
-    containers, images, and networks.
 
 - Docker Hub:
   - Docker Hub is a SaaS service provided by Docker for sharing and managing Docker images. 
