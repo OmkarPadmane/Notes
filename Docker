@@ -244,7 +244,7 @@ Different container states?
 
 $ docker volume ls     -- List all Docker volumes.
 $ docker volume create volume-name     -- Create a new Docker volume.
-$ docker run -it --name con-name -v /vol-name image-name  --Mount local dir to container volume 
+$ docker run -it --name con-name -v /path/on/your/host:/path/in/container image-name  --Mount local dir to container volume 
 $ docker volume rm volume-name     -- Remove a Docker volume.
 $ docker volume prune    -- Removes all unused volumes.
 $ docker volume inspect volume-name     -- Display detailed information about a volume.
@@ -253,7 +253,7 @@ $ docker volume inspect volume-name     -- Display detailed information about a 
 - Container to container
   - Create volume using cmd
     1) Create volume in container
-      $ docker run -it --name  con1  -v /vol ubuntu 
+      $ docker run -it --name  con1  -v /vol:/convol ubuntu 
   
     2) Share volume with container 
       $ docker run -it --name con2 --volumes-from con1 ubuntu 
