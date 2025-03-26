@@ -88,19 +88,19 @@ Source code management (SCM) :
    helps resolve conflicts when merging updates from multiple contributors. 
  - Tools : Git, TFS (Team Foundation Server), CVS (Concurrent Versions System):
 
--	source code management core concepts : 
+- Source code management core concepts :
 
  1.	Version Control: Version control enables developers to keep track of different versions of their source code files.
  2.	Repository: Think of a repository as a storage space for all the source code files. It’s like an organized warehouse only for authorized team members.
  3.	Branching and Merging: When working on features or experiments developers can create branches.
- This allows them to work on things simultaneously without affecting the codebase. 
- Then when they want to incorporate their changes into the codebase they can merge the branches together.
+    This allows them to work on things simultaneously without affecting the codebase. 
+    Then when they want to incorporate their changes into the codebase they can merge the branches together.
  4.	Change Tracking: Version control systems keep a record of every change made to the source code files.
  5.	Collaboration: Version control systems enable developers to collaborate. They provide mechanisms for developers to work on same code simultaneously.
 
 version control or source control :
 -	It is the practice of tracking and managing changes to software code. Version control systems are software tools that help 
-software teams manage changes to source code over time.
+  software teams manage changes to source code over time.
 -	 A complete long-term change history of every file.
 -	Git, Helix core, Microsoft TFS
 -	Informs us about Who, What, When, Why changes have been made.
