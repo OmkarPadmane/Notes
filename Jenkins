@@ -1,9 +1,10 @@
 - Continuous integration:
-Before CI developers on a team might work in isolation and only merge their changes to the master branch once their work was completed.
-This made merging code changes difficult and time-consuming, and also resulted in bugs accumulating for a long time without correction.
-To solve this problem CI come in picture.where developers regularly merge their code changes into a central repository, 
-after which automated builds and tests are run.
+    - It is a software development practice where developers regularly merge their code changes into a central repository, 
+    triggering automated builds and tests to ensure code quality and stability. 
 
+    - Before CI developers on a team might work in isolation and only merge their changes to the master branch once their work was completed.
+    This made merging code changes difficult and time-consuming, and also resulted in bugs accumulating for a long time without correction.
+    
 - Build stage: In DevOps, a build is the process of compiling and packaging source code into an executable form. 
 
 - Continuous deployment (CD)
