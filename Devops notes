@@ -75,12 +75,12 @@ DevOps Phases and Tools:
 - Build stage: the CI/CD pipeline takes the source code from a version control system and compiles it into executable code.
 
 - Continuous delivery 
- - It is a software development practice where code changes are automatically prepared for a release to production.
- - It lets developers automate testing beyond just unit tests so they can verify application updates across multiple dimensions before deploying to customers.
- - These tests may include UI testing, load testing, integration testing.
+   - It is a software development practice where code changes are release to production environment manually after approval.
+   - It lets developers automate testing to ensure that the software is ready for deployment to production at any time. 
 
 - Continuous deployment (CD)
- - It is a software release process where code changes are automatically deployed to a production environment where feedback is collected from user for improvement.
+ - It is a software release process where code changes are automatically deployed to a production environment 
+  where feedback is collected from user for improvement.
 
 - Source code management (SCM) :
  - Source code management is the process of efficiently and systematically tracking and controlling changes made
