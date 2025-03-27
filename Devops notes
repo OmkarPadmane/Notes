@@ -66,10 +66,11 @@ DevOps Phases and Tools:
 - Tools Used: Kubernetes and Docker Swarm
 
 - Continuous integration:
-Before CI developers on a team might work in isolation and only merge their changes to the master branch once their work was completed.
-This made merging code changes difficult and time-consuming, and also resulted in bugs accumulating for a long time without correction.
-To solve this problem CI come in picture.where developers regularly merge their code changes into a central repository, 
-after which automated builds and tests are run.
+   - It is a software development practice where developers regularly merge their code changes into a central repository, 
+   triggering automated builds and tests to ensure code quality and stability. 
+
+   - Before CI developers on a team might work in isolation and only merge their changes to the master branch once their work was completed.
+   This made merging code changes difficult and time-consuming, and also resulted in bugs accumulating for a long time without correction.
 
 - Build stage: the CI/CD pipeline takes the source code from a version control system and compiles it into executable code.
 
@@ -81,7 +82,7 @@ after which automated builds and tests are run.
 - Continuous deployment (CD)
  - It is a software release process where code changes are automatically deployed to a production environment where feedback is collected from user for improvement.
 
-Source code management (SCM) :
+- Source code management (SCM) :
  - Source code management is the process of efficiently and systematically tracking and controlling changes made
    to a source code throughout its development lifecycle.
  - It is used to track modifications to a source code repository. SCM tracks a running history of changes to a code base and
