@@ -48,9 +48,8 @@ Pod:
   when there are multiple container they are tightly coupled. in that case if any container fails it affects the other containers and it can led to pod destruction.
   (tightly coupled: two or more components are depend on each other to function properly)
 
-- Control plane: It manages clusters and resources such as worker nodes and pods. 
-  The control plane receives information such as cluster activity, internal and external requests, and more. 
-  Based on these factors, the control plane moves the cluster resources from their current state to the desired state. 
+- Control plane: It is set of components that manage the cluster's state and coordinate the nodes, ensuring applications run as intended.
+  - It manages clusters and resources such as worker nodes and pods. 
 
 - Control plane components:
 1) Master
@@ -71,7 +70,7 @@ Pod:
 
   - Scheduler (action): It creates pods and selects nodes for them to run on. 
     - The scheduler considers resource availability and allocation restraints, hardware and software requirements, and more. 
-
+ 
 2) Node
 
   - Kubelet: Kubelet is a software agent that receives and runs orders from the master node and helps to ensure that containers are running in a pod. 
