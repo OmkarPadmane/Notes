@@ -1,6 +1,26 @@
-EC2 : Elastic Compute Cloud:
+- EC2 : Elastic Compute Cloud:
   - Amazon EC2 provides on-demand, scalable computing Services Cloud. Providing opction like storage, networking, operating system. 
   - Amazon EC2 reduces hardware costs so you can develop and deploy applications faster.
+
+  - EC2 types:
+    - General purpose:  Offer a balanced balance of compute, memory, and networking resources, 
+    suitable for a wide range of workloads. 
+    - Compute Optimized:  designed for CPU-intensive workloads, providing high-performance compute capabilities. 
+    - Memory Optimized: Offer a high amount of memory per vCPU, suitable for workloads that require large datasets or in-memory processing.
+    - Storage Optimized: Offer high storage throughput and capacity, suitable for workloads that require a large amount of storage.
+  
+  - EC2 pricing:
+    - On-Demand
+    - Reserved Instances
+    - EC2 Instance Savings Plans
+    - Spot Instances
+    - Dedicated Hosts
+  
+  - EC2 Scalability: It involves beginning with only the resources you need and designing your architecture to automatically respond to 
+    changing demand by scaling out or in. 
+
+- Elastic Load Balancing: Is a AWS service that automatically distributes incoming application traffic across multiple resources.
+  - A load balancer acts as a single point of contact for all incoming or outgoing web traffic to your Auto Scaling group. 
 
   Amazon Machine Image (AMI):
   - This is a template that contains the software configuration needed to launch an EC2 instance.
