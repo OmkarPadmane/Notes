@@ -1,3 +1,7 @@
+Cloud computing is the delivery of computing resources, like servers, storage, databases, networking, software, over the internet (the "cloud").
+Allowing users to access and utilize them without needing to manage the underlying infrastructure. 
+
+
 - EC2 : Elastic Compute Cloud:
   - Amazon EC2 provides on-demand, scalable computing Services Cloud. Providing opction like storage, networking, operating system. 
   - Amazon EC2 reduces hardware costs so you can develop and deploy applications faster.
@@ -18,6 +22,20 @@
   
   - EC2 Scalability: It involves beginning with only the resources you need and designing your architecture to automatically respond to 
     changing demand by scaling out or in. 
+
+- Serverless computing: your code runs on servers, but you do not need to provision or manage these servers.
+  - With serverless computing, you can focus more on innovating new products and features instead of maintaining servers.
+
+  - AWS Lambda: is a serverless compute service that runs your code in response to events and automatically manages the underlying compute resources for you.
+    - You pay only for the compute time you consume.
+
+- Amazon Elastic Container Service (ECS): is a service from Amazon Web Services (AWS) that manages containerized applications. 
+  It allows users to run, stop, and scale containers without having to manage the underlying infrastructure. 
+
+- Amazon Elastic Kubernetes Service (EKS): is a fully managed Kubernetes service that simplifies the process of running Kubernetes clusters on AWS, 
+  allowing you to focus on building and deploying applications without managing the underlying infrastructure. 
+
+- AWS Fargate: is a technology that you can use with Amazon ECS to run containers without having to manage servers or clusters of Amazon EC2 instances.
 
 - Elastic Load Balancing: Is a AWS service that automatically distributes incoming application traffic across multiple resources.
   - A load balancer acts as a single point of contact for all incoming or outgoing web traffic to your Auto Scaling group. 
