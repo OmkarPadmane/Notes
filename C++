@@ -1,0 +1,36 @@
+
+- STL: Standard Template Library. 
+  - STL is a set of general-purpose classes and functions mainly for storing and processing data.
+  - STL can be defined as a library of container classes, algorithms, and iterators, and vectors in C++ is part of STL. 
+  - The main idea behind STL is to reuse codes already written and tested. 
+
+STL has four components:
+- Algorithms: It defines a collection of functions specially designed to be used on ranges of elements. Examples are sorting, searching, etc.
+- Containers: Containers store objects and data. There are in total seven standard “first-class” container classes 
+  and three container adaptor classes and only seven header files that provide access to these  container adaptors.
+- Functions: STL includes classes which overload the function call operator. Instances of such classes are called functors.
+- Iterators: It is used for working upon a sequence of values.It provides generiality in STL.
+
+- Vectors:
+  - Vectors are the dynamic arrays that are used to store data.It is different from arrays which store sequential data and are static in nature, 
+  - Vectors provide more flexibility to the program. Vectors can adjust their size automatically when an element is inserted or deleted from it.
+  - #include<vector> library for using vectors.
+
+  - Declaration of Vectors:
+    - vector<int> v1 ;
+    - vector<int> v1 = {1,2,3};
+    - vector<int> v2(size,element) ;  -- vector<int> v2(5,2)
+
+- Function in Vector:
+    size() – It returns the number of elements currently present in the vector.
+    push_back() – It pushes the element from back in the vector.
+    pop_back() – It removes elements from the back of the vector.
+    at(index): It returns the element at "index" in the vector.
+    front(): It returns a reference to the first element in the vector.
+    back(): It returns a reference to the last element in the vector.
+
+
+
+
+
+
