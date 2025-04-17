@@ -1,3 +1,12 @@
+- Pass by Value: 
+  - A copy of the variable's data is created and passed to the function.
+  - The function works with this copy, and any modifications made to the parameter within the function do not affect the original variable.
+  
+- Pass by Reference: 
+  - A reference (or pointer) to the original variable's memory address is passed to the function. 
+  - The function directly accesses and modifies the original variable in memory. 
+  - Any changes made to the parameter within the function are reflected in the original variable. 
+
 
 - STL: Standard Template Library. 
   - STL is a set of general-purpose classes and functions mainly for storing and processing data.
@@ -23,6 +32,7 @@ STL has four components:
 
 - Function in Vector:
     size() – It returns the number of elements currently present in the vector.
+    capacity() - check the overall size of a vector
     push_back() – It pushes the element from back in the vector.
     pop_back() – It removes elements from the back of the vector.
     at(index): It returns the element at "index" in the vector.
