@@ -38,9 +38,13 @@ STL has four components:
     at(index): It returns the element at "index" in the vector.
     front(): It returns a reference to the first element in the vector.
     back(): It returns a reference to the last element in the vector.
+    begin() : returns an iterator that points to the first element of the vector
+    end(): points to the theoretical element that comes after the final element of the vector.
+      due to the nature of the end(), we have used  
+      iter.end() - 1 :  points to last element
 
+    erase():	delete elements 
 
-
-
-
-
+- List
+  - Lists are sequence containers that allow constant time insert and erase operations anywhere within the sequence, and iteration in both directions.
+  - List containers are implemented as doubly-linked lists.
