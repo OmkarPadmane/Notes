@@ -9,10 +9,10 @@ and is known for its flexibility, security, and customization options.
 	Hardware
 
 
-- What is a Shell:
+- What is a Shell: 
  - The shell is a command-line interface that allows the user to enter commands to interact with the operating system. 
  - It acts as an intermediary between the user and the kernel, interpreting commands entered by the user and
-   translating them into instructions that the kernel can execute.
+   translating them into instructions that the kernel can execute.  Ex. BASH
 
 - What is Kernel:
  - The kernel is the core component of the operating system that manages system resources and provides services to other programs running on the system.
@@ -329,10 +329,14 @@ freeing up disk space. It removes everything from /var/cache/apt/archives/ excep
 
 useradd uname  or adduser uname : create user  
 passwd uname : set password
+
+useradd -u uid -G gid uname : create user with specific uid ,add it to specific group
+
 usermod -a -G gname uname :  add user in specific group
 
 groupadd gname : create group
 groups uname : showes group names in ehich user is present
+gpaswd uname gname:  add user in group
 gpasswd -d uname gname : remove user from group
 gpasswd -M uname,uname gname : add multiple user to group
 
