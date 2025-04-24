@@ -52,23 +52,23 @@
 - all Docker-related data, including images, containers, volumes, and networks is stored within /var/lib/docker directory.
 
 - Containers:
-  - A Docker container is a lightweight, standalone, secure environmet for executable package of software that 
-   includes everything needed to runnin an application for ex. code, system tools, system libraries and settings.
+  - A Docker container is a lightweight, standalone, secure environmet where an application runs without 
+    affecting the rest of the system because they are isolated.
   - These containers encapsulate the dependencies of an application and make sure that it is consistent. 
   - It can run on any computer, no matter how different they are, because it brings its own special environment with it.
+  - Containers can be created and started in seconds.
 
   - why docker containers are lightweight?
     -- Docker containers are lightweight because they only contain the application and its parameters,
-    and not the entire operating system. Containers share the machine's OS system kernel and therefore
-    they do not require an OS per application.
+    and not the entire operating system. Containers uses the machine's OS system kernel and therefore
+    they do not require an OS per container.
 
 -  Layered file system:
   - Also known as a Union File System (UnionFS)for efficient management of images an containers by optimising 
     image distribution and minimising storage space.
 
 - Docker Image:
-  - A Docker image is an read only and executable package of software that includes everything needed 
-    to build a Docker container.
+  - Images are read-only templates and executable package of software that contains instructions for creating a container.
   - It contains code, system tools, system libraries and settings that's used to build a Docker container.
   - Predefine Images can be pull from Docker registries or Docker Hub.
   - Customized image can be created using dockerfile according to our need.
@@ -80,15 +80,15 @@
 
 - Dockerfile:
   - A Dockerfile is a text document with instructions for building a Docker image. 
-  - It contains a set of commands and arguments that Docker follows to auto-generate a Docker image. 
+  - It contains a set of commands and arguments that Docker follows to generate a Docker image. 
   - Using a Dockerfile, you can create an image containing your application and all its dependencies.
   - Name of file is always 'Dockerfile' and instructions must be always in capital.
 
-  - FROM: This instruction downloads image on which the new image is going to be built upon. 
+  - FROM: This instruction downloads base image on which the new image is going to be built upon. 
     It is the first instruction in a Dockerfile.
     ex. FROM ubuntu
-  - RUN: This will be an instruction that will be executed for running the commands inside the container while building. 
-    It typically can be utilized to install an application, update libraries or do general setup.
+  - RUN: This instruction will be executed for running the commands inside the container while building. 
+    It typically can be utilized to install an services, package, update libraries or do general setup.
     ex. RUN apt install git -y
   - COPY: This instruction copies files and directories from the host machine into the image.
     ex. COPY add.py /test
