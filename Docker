@@ -309,7 +309,7 @@ Publish[-p] : It lets you access service present in the container from outside l
  - If two containers are running on the same host they can communicate with each other without the
    need for ports to be exposed to the host machine.
 
-- Diff types of network:
+- Diff types of network driver:
   - bridge: Bridge networks create a software-based bridge between your host and the container. 
     Containers connected to the network can communicate with each other, but they’re isolated from those outside the network.
 
@@ -329,6 +329,7 @@ Publish[-p] : It lets you access service present in the container from outside l
 
 $ docker network ls - List all Docker networks.
 $ docker network create <network-name> - Create a new Docker network.
+$ docker network create -d <network_driver> <network_name>  - Create a new Docker network using network_driver
 $ docker network rm <network-name> - Remove a Docker network.
 $ docker network inspect <network-name> - Display detailed information about a network.
 $ docker network connect <network-name> <container> - Connect a container to a network.
