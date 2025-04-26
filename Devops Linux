@@ -1,0 +1,15 @@
+- Ways for Remote access:
+
+  - RDP: Remote Desktop Protocol. It's a network communication protocol developed by Microsoft 
+    that allows users to remotely control and view another computer's desktop environment. port is 3389.
+  - SSH: Secure Shell, is a cryptographic network protocol that provides a secure way to access 
+    a remote computer over an unsecured network. port is 22.
+  - FTP: File Transfer Protocol, is a standard communication protocol used to transfer computer files 
+    from a server to a client on a network, typically the internet. Port 21: request/Command, Port 20: Data Transfer
+  - TLS: Transport Layer Security, is a cryptographic protocol that provides communication security over a network.
+    It's widely used for securing web browsing (HTTPS), email, and other applications requiring secure data transmission. 
+    port 443, HTTPS and uses the TLS/SSL certificates to keep the port connections secure
+
+
+
+
