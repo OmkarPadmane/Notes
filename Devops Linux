@@ -3,7 +3,7 @@
   - Its primary job is to initialize the system's hardware and then load and start the operating system (OS). 
   - Think of it as the program that gets everything ready in computer system to run.
   Bootloader Name: Linux Loader (LILO) and Grand Unified Bootloader (GRUB)
-  
+
 
 - Ways for Remote access:
 
@@ -18,5 +18,6 @@
     port 443, HTTPS and uses the TLS/SSL certificates to keep the port connections secure
 
 
-
+Process States: Running, Sleeping, killed
+Zombi process
 
