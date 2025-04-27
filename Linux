@@ -330,6 +330,7 @@ freeing up disk space. It removes everything from /var/cache/apt/archives/ excep
 useradd uname  or adduser uname : create user  
 passwd uname : set password
 
+sudo usermod -aG sudo username : Add user to the sudoers file
 useradd -u uid -G gid uname : create user with specific uid ,add it to specific group
 
 usermod -a -G gname uname :  add user in specific group
