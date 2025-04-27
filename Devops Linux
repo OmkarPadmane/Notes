@@ -1,3 +1,10 @@
+- Bootloader: 
+  - It is a small piece of software that runs when a computer system is powered on. 
+  - Its primary job is to initialize the system's hardware and then load and start the operating system (OS). 
+  - Think of it as the program that gets everything ready in computer system to run.
+  Bootloader Name: Linux Loader (LILO) and Grand Unified Bootloader (GRUB)
+  
+
 - Ways for Remote access:
 
   - RDP: Remote Desktop Protocol. It's a network communication protocol developed by Microsoft 
