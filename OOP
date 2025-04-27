@@ -1,3 +1,6 @@
+A compiler translates the entire source code into machine code before execution, generating an executable file.
+An interpreter translates and executes code line by line during runtime, without creating a separate executable file.
+
 Object-oriented programming (OOP) is a computer programming model that organizes software design around data, or objects.
 
 class is a user-defined data type for creating objects, defining their properties (attributes) and behaviors.
