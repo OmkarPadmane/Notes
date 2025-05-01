@@ -79,6 +79,12 @@ Amazon IAM (Identity and Access Management):
   - It gives you the right to have control over who has authorization (signed in) and authentication (has permissions) to access the resources. 
   - It comes with attribute-based access control which helps you to create separate permissions on the basis of the user’s attributes such as job role, department, etc.
 
+- IAM Identities: 
+ - Users:  Create users to give access the AWS services and define permissions and if we can keep track of their login information.
+ - Groups: is a collection of users, and a single person can be a member of several groups. we can manage permissions for many users quickly and efficiently.
+ - Roles: Roles are often used by AWS services or applications running on AWS to access other AWS resources securely. Provides temporary access to AWS resources.
+ - Policies: policies are attached to users, groups, or roles and specify what actions they are allowed or denied to perform on which AWS resources.
+
 Amazon CloudFront:
   - Amazon CloudFront is an AWS service for content delivery networks, it delivers content globally, 
   offering high performance and security and also at high transfer speeds and low latency(rate of time).
