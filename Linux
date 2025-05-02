@@ -298,6 +298,9 @@ ex. tar -czvf anime.tar anime.txt (compress)
 37) file : to finde file type , ex. file fname    , stat filename  : shoes statistics
 
 38) cmd > fname : writes the output of cmd into file  ,ex. ls -l > ls.txt
+	or
+   tee :  writes the output of cmd into file and on screen
+	ls -l | tee ls.txt
 
 39) 2> : to redirect error into file  ,  &1 : to redirecct output into file  , &12>  : both output and error into file
      cd /root 2> error.txt      ,      cd / &1> out.txt       ,   cd / &12> erou.txt
@@ -452,6 +455,18 @@ log files:
  - Enable/Disable a service to start at boot.
 	ex. sudo systemctl start <service_name>
 
+55) link : Use to create shotcut for accessing files/dir.
+
+- Hard Links: creates a new file that points directly to the same inode (index node) as the original file.
+   - can have multiple hard links, cannot create hard links to directories, if original file moved or deleted will not affect link
+   - Changes made to file through any links will be reflected in all other hard links because they all point to the same data.
+	ex.  ln a/b/c/d/hl.txt h1.txt
+
+- Symbolic Links (Soft Links):
+   - It's points to the target file or directory.
+   - If target file or directory is moved or deleted or renamed, link will not work.
+   - can create links to directories
+	ex.  ln -s a/b/c/sl.txt s1.txt
 
 
 
