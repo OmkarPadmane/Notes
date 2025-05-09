@@ -130,8 +130,10 @@ $ cat file_name1 >> file_name2    	: Append the Contents of One File to the End 
 $ tac file_name1   			: ‘tac’ command is the reverse of ‘cat’ and display the content of a file in revers
 
 
-9) whoami : Display the current username  , who : displays information about users who are currently logged into the system   
-   hostname  : displays hostname
+9) whoami : Display the current username  ,
+   who : displays information about users who are currently logged into the system   
+   which: helps users locate the executable file associated with a given command including binaries, scripts, and aliases
+   hostname : displays hostname, is a human-readable label or name assigned to a device connected to a network.
 
 10) grep : Global Regular Expression Print
  - used for searching and manipulating text patterns within files.
@@ -329,7 +331,7 @@ freeing up disk space. It removes everything from /var/cache/apt/archives/ excep
 	ex.    sudo apt clean
 
 50) User management
-
+id: Print user and group information for each specified USER
 useradd uname  or adduser uname : create user  
 passwd uname : set password
 
@@ -468,7 +470,7 @@ log files:
    - can create links to directories
 	ex.  ln -s a/b/c/sl.txt s1.txt
 
-
+56) shoutdown : turn off the system,  reboot: restart the system
 
 
 
