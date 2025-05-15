@@ -222,25 +222,47 @@ top: displays info of RAM, CPU and process of system. It helps in monitoring sys
 $ wc b.txt 
 o/p : 2  2 14 b.txt     (number of lines, words, bytes, file_name)
 
-19) chmod : used to change the permissions of a file
-syntax : chmod [options] [mode] [File_name] 
-ex. : chmod u=rwx,g=rw,o=r anime.txt 
+19) file Permission
 
--R : Apply the permission change recursively to all the files and directories within the specified directory.
--h : Change the permissions of symbolic links instead of the files they point to.
+- chmod : used to change the permissions of a file
+	syntax : chmod [options] [mode] [File_name] 
+	ex. : chmod u=rwx,g=rw,o=r anime.txt 
+	
+	-R : Apply the permission change recursively to all the files and directories within the specified directory.
+	-h : Change the permissions of symbolic links instead of the files they point to.
+	
+	+ : Add permissions |  - : Remove permissions |  = : Set the permissions to the specified values
+	
+	r(4) : Read permission | w(2) : Write permission  |  x(1) : Execute permission
+	
+	u : Owner |  g : Group  |  o : Others  |  a : All (owner, groups, others)
 
-+ : Add permissions |  - : Remove permissions |  = : Set the permissions to the specified values
+20) change user/group of file
 
-r(4) : Read permission | w(2) : Write permission  |  x(1) : Execute permission
+- chown : change owner
+	syntax : chown [options] new_owner[:new_group] file(s)
+	ex. : chown master file1.txt     and     chown master:group1 file1.txt
+	
+	-c/-v : receive notifications about ownership alterations.
+	-f : forcefully or silently change ownership
 
-u : Owner |  g : Group  |  o : Others  |  a : All (owner, groups, others)
+- chgrp: change group
+	chgrp gname file/dir
 
-20) chown : change owner
-syntax : chown [options] new_owner[:new_group] file(s)
-ex. : chown master file1.txt     and     chown master:group1 file1.txt
+- Access Control List(ACL) for user/group:
+    ACLs allow you to define more precise access rights for specific users or groups.
 
--c/-v : receive notifications about ownership alterations.
--f : forcefully or silently change ownership
+  - getfacl (Get File ACL): This command displays the ACL of a file or directory
+	getfacl fname
+
+  - setfacl (Set File ACL): This command is used to modify or set ACLs on files and directories.
+	-m: --modify=acl    -x: --remove=acl     -b: --remove-all     -R: --recursive 
+	
+	- sudo setfacl -m u:uname:rwx file/dir
+	- sudo setfacl -m g:gname:rwx file/dir
+	- sudo setfacl -x u:uname file/dir
+	- sudo setfacl -b file/dir
+	- sudo setfacl -Rm u:uname:rwx file/dir
 
 21) install cmd : 
 
@@ -331,20 +353,21 @@ freeing up disk space. It removes everything from /var/cache/apt/archives/ excep
 	ex.    sudo apt clean
 
 50) User management
-id: Print user and group information for each specified USER
+id uname : Print user and group information for each specified USER
 useradd uname  or adduser uname : create user  
 passwd uname : set password
 
 sudo usermod -aG sudo username : Add user to the sudoers file
 useradd -u uid -G gid uname : create user with specific uid ,add it to specific group
-
 usermod -a -G gname uname :  add user in specific group
+su uname  :  switch/login to user 
 
 groupadd gname : create group
 groups uname : showes group names in ehich user is present
 gpaswd uname gname:  add user in group
-gpasswd -d uname gname : remove user from group
 gpasswd -M uname,uname gname : add multiple user to group
+gpasswd -d uname gname : remove user from group
+groupdel gname  : delete group
 
 51) awk: is a scripting language used for text processing and for data extraction 
 	scans a file line by line.
