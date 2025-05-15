@@ -277,10 +277,17 @@ dnf : Dandified YUM | fro fedora , Rocky Linux
 23) bashrc : bash read command
  configuration file for the Bash shell environment.  
 
-24) tar 
-tar [options] [tar-file-name] [file or directory to be tar]
-ex. tar -czvf anime.tar anime.txt (compress)
-    tar -xzvf anime.tar (extract)
+24) Compress file
+- zip: compresses one or more files or directories into a single.zip archive file. 
+	- This saves disk space, keeps data organized, and makes it simple to share or backup files.
+	- can unzip specific file form zip file
+   zip archive_name.zip file1 file2 folder/
+   unzip archive_name.zip
+
+- tar: tape archive 
+	tar [options] [tar-file-name] [file or directory to be tar]
+	ex. tar -czvf anime.tar.gz anime.txt (compress)
+    	tar -xzvf anime.tar.gz (extract)
 
 -c : Creates an archive by bundling files and directories together.
 
