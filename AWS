@@ -76,7 +76,7 @@ Amazon EBS (Elastic Block Store):
 
 Amazon IAM (Identity and Access Management):
   - Amazon IAM allows users to securely access and manage resources. To achieve complete access to the tools and resources provided by AWS.
-  - It gives you the right to have control over who has authorization (signed in) and authentication (has permissions) to access the resources. 
+  - It gives you the right to have control over who has authentication (signed in) and authorization (has permissions) to access the resources. 
   - It comes with attribute-based access control which helps you to create separate permissions on the basis of the user’s attributes such as job role, department, etc.
 
 - IAM Identities: 
