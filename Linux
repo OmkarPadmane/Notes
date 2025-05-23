@@ -165,15 +165,37 @@ sort -r example.txt
 
 -k : Sorts a table based on a specific column number.
 
-12) cp : copy files/dir
-syntax : cp source_file destination
-ex. : cp anime.txt /home/osboxes/Documents/
-      cp -r hi /home/osboxes/Documents/
-      cp *.txt /home/osboxex/hi/    (copy all .txt files)
+12) Copy files
 
--r or -R : Copies directory structure recursively.    
--i : Interactive copying with a warning before overwriting file.
--n : Does not overwrite the file
+- cp : copy files/dir
+	syntax : cp source_file destination
+	ex. : cp anime.txt /home/osboxes/Documents/
+	      cp -r hi /home/osboxes/Documents/
+	      cp *.txt /home/osboxex/hi/    (copy all .txt files)
+
+	-r or -R : Copies directory structure recursively.    
+	-i : Interactive copying with a warning before overwriting file.
+	-n : Does not overwrite the file
+
+- scp : Secure Copy Protocol
+	used for securely transferring files between a local machine and remote machine/server.
+	we can use remote_ip or hostname to copy files.	
+	-r : recursively copy dir
+
+	- Copying a file from a local machine to a remote machine: 
+	  scp local/file.txt username@remote_ip:/path/to/remote/
+
+	- Copying a file from a remote machine to a local machine: 
+	  scp username@remote_ip:/path/to/remote/file.txt /path/to/local/
+
+- rsync: remote synchronization 
+	- It is used to efficiently sync files and directories between two hosts or machines. 
+	- Files that do not exist on the remote-host are copied.
+	- Files that have been updated will be synced, rsync will copy only the changed parts of files to the remote host.
+	- files that are exactly the same are not copied to the remote host.
+	- -r : recursively copy dir
+
+   cmd: rsync local-path username@remote_ip:remote-path
 
 13) mv : move files / dir  or change name of file/dir
 move:
