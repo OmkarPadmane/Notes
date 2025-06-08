@@ -452,16 +452,8 @@ awk '/.f/ {print }' name
 awk '/^l/ {print}' name
 awk '/k$/ {print }' name 
 
-52) netstat : network statistics
-  - is a networking tool used for troubleshooting, configuration and as a monitoring tool for connections over the network. 
-Both incoming and outgoing connections, routing tables, port listening, and usage statistics are common uses for this command.
 
- netstat -a
-  t-tcp , u-udp, n- numerical address, l-listen , p-PID/Program name for sockets, r-rounting table
-  i-interface, s- statistics
-
-  
-53) Process Management:
+52) Process Management:
 Process is a running instance of a program.
 ps : process status
  - List all ruining processes
@@ -480,7 +472,7 @@ fg Command : fg command moves a background job in the current shell environment 
 	fg %job-id,  fg %4
 
 
-54) Log file:
+53) Log file:
 what is log : 
 - Log are records that stores events, processes, messages from applications, operating systems, or devices.in system
 - Log files helps to identify problems, troubleshoot when encountering an error by providing a detailed record of what has happened within a system. 
@@ -509,7 +501,7 @@ log files:
  - Enable/Disable a service to start at boot.
 	ex. sudo systemctl start <service_name>
 
-55) link : Use to create shotcut for accessing files/dir.
+54) link : Use to create shotcut for accessing files/dir.
 
 - Hard Links: creates a new file that points directly to the same inode (index node) as the original file.
    - can have multiple hard links, cannot create hard links to directories, if original file moved or deleted will not affect link
@@ -522,8 +514,32 @@ log files:
    - can create links to directories
 	ex.  ln -s a/b/c/sl.txt s1.txt
 
-56) shoutdown : turn off the system,  reboot: restart the system
+55) shoutdown : turn off the system,  reboot: restart the system
 
+56) Networking cmd
+
+  - ping:  used for testing network connectivity between two devices
+	ex. ping youtube.com   0r ping 192.168.45.88
+
+  - netstat : network statistics
+	- is a networking tool used for troubleshooting, configuration and as a monitoring tool for connections over the network. 
+	Both incoming and outgoing connections, routing tables, port listening, and usage statistics are common uses for this command.
+
+	 netstat -a
+	  t-tcp , u-udp, n- numerical address, l-listen , p-PID/Program name for sockets, r-rounting table, i-interface, s- statistics
+
+  - ifconfig: display network interface information
+  - traceroute/ tracepath: used to trace the path that network packets take from your device to a specified destination
+	ex. traceroute linkedin.com
+
+  - nslookup (Name Server Lookup): used to query the Domain Name System (DNS) for information about a domain or IP address
+	ex. nslookup youtube.com
+  - telnet: used to test connections to a specific port on a remote host. 
+  - ARP stands ( Address Resolution Protocol ):  is used display and to map IP addresses to their corresponding physical (MAC) addresses within a local network
+  - curl : lets you transfer data to/from a server using various protocols
+	ex. curl -X GET https://api.sampleapis.com/coffee/hot
+  - wget: download files from the internet directly to your active directory
+	ex.  wget https://api.sampleapis.com/coffee/hot
 
 
 
