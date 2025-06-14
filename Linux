@@ -398,6 +398,9 @@ gpasswd -M uname,uname gname : add multiple user to group
 gpasswd -d uname gname : remove user from group
 groupdel gname  : delete group
 
+last : displays a list of all users logged in/out since a particular log file was created. 
+	It reads from /var/log/wtmp
+
 51) awk: is a scripting language used for text processing and for data extraction 
 	scans a file line by line.
  	uses regular expressions for text processing
